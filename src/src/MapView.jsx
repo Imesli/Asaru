@@ -1,7 +1,7 @@
 import { useMemo, useState, useCallback } from 'react';
 import DeckGL from '@deck.gl/react';
 import { Map as MapGL } from 'react-map-gl';
-import { ScatterplotLayer, PathLayer, ArcLayer, TextLayer } from '@deck.gl/layers';
+import { ScatterplotLayer, PathLayer, ArcLayer, TextLayer, LineLayer } from '@deck.gl/layers';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
 const INITIAL_VIEW_STATE = {
@@ -18,26 +18,100 @@ const ROUTE_COLORS = {
   direct: [96, 165, 250],
   circuitous: [245, 158, 11],
   looping: [239, 68, 68],
+  ballistic_trajectory: [192, 132, 252],
   unknown: [148, 163, 184],
 };
 
-const CONFLICT_COLORS = {
+// Launch sites are ALWAYS green — "this is where it came from"
+const LAUNCH_COLOR = [52, 211, 153]; // emerald green
+
+// Targets are ALWAYS in the red/warm spectrum — "this got hit"
+const TARGET_COLORS = {
+  energy: [251, 146, 60],     // orange
+  military: [239, 68, 68],    // red
+  residential: [244, 114, 182], // pink
+  civilian: [244, 114, 182],  // pink
+  urban: [248, 113, 113],     // light red
+  industrial: [251, 191, 36], // amber
+  infrastructure: [251, 146, 60], // orange
+  transport: [251, 146, 60],  // orange
+  diplomatic: [192, 132, 252], // purple
+  religious: [192, 132, 252], // purple
+  mixed: [251, 146, 60],     // orange
+  unknown: [248, 113, 113],  // light red
+};
+
+// Conflict accent colors (used for arc tinting, not point colors)
+const CONFLICT_ACCENT = {
   ukraine_russia: [245, 197, 66],
   iran_2026: [224, 82, 82],
 };
 
-const TARGET_TYPE_COLORS = {
-  energy: [245, 158, 11],
-  military: [239, 68, 68],
-  residential: [167, 139, 250],
-  industrial: [100, 116, 139],
-  transport: [34, 211, 238],
-  mixed: [249, 115, 22],
-  unknown: [71, 85, 105],
+const LAYER_DEFS = [
+  { key: 'arcs', label: 'Strike arcs', color: '#94a3b8' },
+  { key: 'routes', label: 'Routes', color: '#60a5fa' },
+  { key: 'launches', label: 'Launch sites', color: '#34d399' },
+  { key: 'targets', label: 'Targets', color: '#ef4444' },
+  { key: 'labels', label: 'Labels', color: '#ffffff' },
+];
+
+const WEAPON_PRESETS = {
+  interceptor_base: {
+    label: 'Interceptor Drone Base',
+    assets: [
+      { type: 'interceptor_drone', weapon: 'sting', stock: 30, range_km: 15, speed_kmh: 250, reload_time_s: 8,
+        kill_probability: { shahed_136: 0.82, geran_2: 0.78, geran_3: 0.45, gerbera_decoy: 0.85, unknown: 0.70 },
+        can_discriminate_decoys: false },
+      { type: 'interceptor_drone', weapon: 'bullet', stock: 20, range_km: 12, speed_kmh: 300, reload_time_s: 5,
+        kill_probability: { shahed_136: 0.88, geran_2: 0.84, geran_3: 0.55, gerbera_decoy: 0.90, unknown: 0.75 },
+        can_discriminate_decoys: false },
+    ],
+    radar_range_km: 80,
+  },
+  sam_battery: {
+    label: 'SAM Battery',
+    assets: [
+      { type: 'sam_missile', weapon: 'nasams', stock: 16, range_km: 25, speed_kmh: null, reload_time_s: 15,
+        kill_probability: { shahed_136: 0.95, geran_2: 0.93, geran_3: 0.80, gerbera_decoy: 0.95, unknown: 0.85 },
+        can_discriminate_decoys: false },
+    ],
+    radar_range_km: 120,
+  },
+  mixed_defense: {
+    label: 'Mixed Defense',
+    assets: [
+      { type: 'interceptor_drone', weapon: 'octopus', stock: 25, range_km: 20, speed_kmh: 220, reload_time_s: 12,
+        kill_probability: { shahed_136: 0.78, geran_2: 0.74, geran_3: 0.40, gerbera_decoy: 0.80, unknown: 0.65 },
+        can_discriminate_decoys: true },
+      { type: 'aaa', weapon: 'gepard', stock: 150, range_km: 4, speed_kmh: null, reload_time_s: 0.1,
+        kill_probability: { shahed_136: 0.65, geran_2: 0.62, geran_3: 0.35, gerbera_decoy: 0.60, unknown: 0.50 },
+        can_discriminate_decoys: false },
+    ],
+    radar_range_km: 60,
+  },
+  ew_station: {
+    label: 'EW Station',
+    assets: [
+      { type: 'ew', weapon: 'ew_jammer', stock: 1, range_km: 30, speed_kmh: null, reload_time_s: null,
+        kill_probability: { shahed_136: 0.25, geran_2: 0.20, geran_3: 0.10, gerbera_decoy: 0.30, unknown: 0.15 },
+        can_discriminate_decoys: true },
+    ],
+    radar_range_km: 40,
+  },
+  anvil_base: {
+    label: 'Anvil Kinetic Kill',
+    assets: [
+      { type: 'interceptor_drone', weapon: 'anvil', stock: 20, range_km: 18, speed_kmh: 350, reload_time_s: 10,
+        kill_probability: { shahed_136: 0.92, geran_2: 0.90, geran_3: 0.65, gerbera_decoy: 0.92, unknown: 0.80 },
+        can_discriminate_decoys: false },
+    ],
+    radar_range_km: 90,
+  },
 };
 
-export default function MapView({ events, routes, selectedEvent, onSelectEvent, mapHighlight }) {
+export default function MapView({ events, routes, selectedEvent, onSelectEvent, mapHighlight, visibleLayers = {}, onToggleLayer, simTick, defenseSites = [], simMode = false, placeSiteMode = null, onPlaceSite }) {
   const [tooltip, setTooltip] = useState(null);
+  const [showLayerPanel, setShowLayerPanel] = useState(false);
 
   const viewState = useMemo(() => {
     if (selectedEvent) {
@@ -158,18 +232,37 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
     }
   }, []);
 
+  const handleMapClick = useCallback((info) => {
+    if (!placeSiteMode || !onPlaceSite || !info.coordinate) return;
+    const preset = WEAPON_PRESETS[placeSiteMode];
+    if (!preset) return;
+    const [lon, lat] = info.coordinate;
+    const newSite = {
+      id: `DS_USER_${Date.now()}`,
+      conflict: 'ukraine_russia',
+      name: `${preset.label} (${lat.toFixed(1)}, ${lon.toFixed(1)})`,
+      lat, lon,
+      status: 'active',
+      assets: JSON.parse(JSON.stringify(preset.assets)),
+      radar_range_km: preset.radar_range_km,
+      notes: `User-placed ${preset.label}`,
+      sources: [{ name: 'Sim placement', confidence: 'sim_placement' }],
+    };
+    onPlaceSite(newSite);
+  }, [placeSiteMode, onPlaceSite]);
+
   // ── Layers ──
 
   const layers = [
     // Strike corridors (arcs from launch to target)
-    new ArcLayer({
+    !simMode && visibleLayers.arcs !== false && new ArcLayer({
       id: 'strike-corridors',
       data: arcData,
       getSourcePosition: d => d.source,
       getTargetPosition: d => d.target,
-      getSourceColor: d => [...(CONFLICT_COLORS[d.event.conflict] || [150, 150, 150]), 80],
+      getSourceColor: [...LAUNCH_COLOR, 100],
       getTargetColor: d => {
-        const tc = TARGET_TYPE_COLORS[d.targetType] || TARGET_TYPE_COLORS.unknown;
+        const tc = TARGET_COLORS[d.targetType] || TARGET_COLORS.unknown;
         return [...tc, 160];
       },
       getWidth: d => {
@@ -182,7 +275,7 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
     }),
 
     // Flight route paths
-    new PathLayer({
+    !simMode && visibleLayers.routes !== false && new PathLayer({
       id: 'routes',
       data: pathData,
       getPath: d => d.path,
@@ -202,7 +295,7 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
     }),
 
     // Route waypoints
-    new ScatterplotLayer({
+    !simMode && visibleLayers.routes !== false && new ScatterplotLayer({
       id: 'waypoints',
       data: waypointData,
       getPosition: d => d.position,
@@ -213,11 +306,11 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
       },
       getFillColor: d => {
         const alpha = d.isHighlighted ? 240 : 160;
-        if (d.type === 'launch') return [100, 200, 100, alpha];
+        if (d.type === 'launch') return [...LAUNCH_COLOR, alpha];
         if (d.type === 'intercept') return [239, 68, 68, alpha];
         if (d.type === 'target') return [239, 68, 68, alpha];
         if (d.type === 'last_known') return [245, 158, 11, alpha];
-        return [148, 163, 184, alpha];
+        return [148, 163, 184, alpha]; // transit
       },
       radiusMinPixels: 2,
       radiusMaxPixels: 8,
@@ -229,15 +322,14 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
       },
     }),
 
-    // Launch sites (sized by total drones launched)
-    new ScatterplotLayer({
+    // Launch sites (sized by total drones launched) — ALWAYS GREEN
+    !simMode && visibleLayers.launches !== false && new ScatterplotLayer({
       id: 'launch-sites',
       data: launchPoints,
       getPosition: d => d.position,
       getFillColor: d => {
-        const c = CONFLICT_COLORS[d.conflict] || [150, 150, 150];
         const isHL = mapHighlight?.type === 'launch' && mapHighlight?.id === d.name;
-        return [...c, isHL ? 240 : 160];
+        return [...LAUNCH_COLOR, isHL ? 240 : 180];
       },
       getRadius: d => Math.max(8000, Math.sqrt(d.totalLaunched) * 400),
       radiusMinPixels: 6,
@@ -261,8 +353,8 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
       },
     }),
 
-    // Launch site pulse ring
-    new ScatterplotLayer({
+    // Launch site pulse ring — green glow
+    !simMode && visibleLayers.launches !== false && new ScatterplotLayer({
       id: 'launch-pulse',
       data: launchPoints,
       getPosition: d => d.position,
@@ -271,20 +363,17 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
       radiusMinPixels: 8,
       radiusMaxPixels: 30,
       stroked: true,
-      getLineColor: d => {
-        const c = CONFLICT_COLORS[d.conflict] || [150, 150, 150];
-        return [...c, 40];
-      },
+      getLineColor: [...LAUNCH_COLOR, 40],
       lineWidthMinPixels: 1,
     }),
 
-    // Target / strike zones (colored by target type)
-    new ScatterplotLayer({
+    // Target / strike zones — ALWAYS warm/red spectrum
+    !simMode && visibleLayers.targets !== false && new ScatterplotLayer({
       id: 'strike-zones',
       data: targetPoints,
       getPosition: d => d.position,
       getFillColor: d => {
-        const c = TARGET_TYPE_COLORS[d.targetType] || TARGET_TYPE_COLORS.unknown;
+        const c = TARGET_COLORS[d.targetType] || TARGET_COLORS.unknown;
         const isHL = mapHighlight?.type === 'target' && mapHighlight?.id === d.name;
         return [...c, isHL ? 220 : 150];
       },
@@ -311,7 +400,7 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
     }),
 
     // Strike zone outer ring
-    new ScatterplotLayer({
+    !simMode && visibleLayers.targets !== false && new ScatterplotLayer({
       id: 'strike-zone-ring',
       data: targetPoints,
       getPosition: d => d.position,
@@ -321,20 +410,20 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
       radiusMaxPixels: 24,
       stroked: true,
       getLineColor: d => {
-        const c = TARGET_TYPE_COLORS[d.targetType] || TARGET_TYPE_COLORS.unknown;
+        const c = TARGET_COLORS[d.targetType] || TARGET_COLORS.unknown;
         return [...c, 30];
       },
       lineWidthMinPixels: 1,
     }),
 
     // Labels
-    new TextLayer({
+    !simMode && visibleLayers.labels !== false && new TextLayer({
       id: 'launch-labels',
       data: launchPoints,
       getPosition: d => d.position,
       getText: d => d.name,
       getSize: 11,
-      getColor: [255, 255, 255, 140],
+      getColor: [...LAUNCH_COLOR, 180],
       getTextAnchor: 'start',
       getAlignmentBaseline: 'center',
       getPixelOffset: [14, 0],
@@ -346,14 +435,14 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
       getCollisionPriority: d => d.totalLaunched,
     }),
 
-    new TextLayer({
+    !simMode && visibleLayers.labels !== false && new TextLayer({
       id: 'target-labels',
       data: targetPoints,
       getPosition: d => d.position,
       getText: d => d.name,
       getSize: 11,
       getColor: d => {
-        const c = TARGET_TYPE_COLORS[d.targetType] || TARGET_TYPE_COLORS.unknown;
+        const c = TARGET_COLORS[d.targetType] || TARGET_COLORS.unknown;
         return [...c, 180];
       },
       getTextAnchor: 'start',
@@ -366,7 +455,124 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
       collisionEnabled: true,
       getCollisionPriority: d => d.eventCount,
     }),
-  ];
+
+    // ── Sim layers ──
+
+    // Defense site markers (blue diamonds)
+    defenseSites.length > 0 && new ScatterplotLayer({
+      id: 'defense-sites',
+      data: defenseSites,
+      getPosition: d => [d.lon, d.lat],
+      getFillColor: [59, 130, 246, 180],
+      getRadius: 10000,
+      radiusMinPixels: 6,
+      radiusMaxPixels: 14,
+      stroked: true,
+      getLineColor: [59, 130, 246, 80],
+      lineWidthMinPixels: 2,
+      pickable: true,
+      onHover: handleHover,
+    }),
+
+    // Defense site range rings
+    defenseSites.length > 0 && new ScatterplotLayer({
+      id: 'defense-ranges',
+      data: defenseSites.flatMap(s =>
+        s.assets.map(a => ({ ...s, range_km: a.range_km, assetType: a.type }))
+      ),
+      getPosition: d => [d.lon, d.lat],
+      getFillColor: [0, 0, 0, 0],
+      getRadius: d => d.range_km * 1000,
+      stroked: true,
+      getLineColor: [59, 130, 246, 25],
+      lineWidthMinPixels: 1,
+    }),
+
+    // Defense site labels
+    defenseSites.length > 0 && new TextLayer({
+      id: 'defense-labels',
+      data: defenseSites,
+      getPosition: d => [d.lon, d.lat],
+      getText: d => d.name,
+      getSize: 10,
+      getColor: [59, 130, 246, 160],
+      getTextAnchor: 'start',
+      getPixelOffset: [14, 0],
+      fontFamily: '-apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+      fontWeight: 500,
+      outlineWidth: 2,
+      outlineColor: [8, 9, 14, 220],
+    }),
+
+    // Sim drone trail lines (fading path behind each drone)
+    simTick && new PathLayer({
+      id: 'sim-trails',
+      data: simTick.drones.filter(d => d.trail && d.trail.length >= 2),
+      getPath: d => d.trail.map(p => [p[1], p[0]]),
+      getColor: d => {
+        if (d.status === 'intercepted') return [52, 211, 153, 80];
+        if (d.status === 'hit_target') return [239, 68, 68, 80];
+        return [255, 200, 50, 60];
+      },
+      getWidth: 2,
+      widthMinPixels: 1,
+      rounded: true,
+      updateTriggers: { getPath: [simTick.time], getColor: [simTick.time] },
+    }),
+
+    // Engagement lines (defense site → drone)
+    simTick && simTick.engagementLines && simTick.engagementLines.length > 0 && new LineLayer({
+      id: 'sim-engagements',
+      data: simTick.engagementLines,
+      getSourcePosition: d => [d.from[1], d.from[0]],
+      getTargetPosition: d => [d.to[1], d.to[0]],
+      getColor: d => d.outcome === 'intercepted' ? [52, 211, 153, 200] : [239, 68, 68, 150],
+      getWidth: 2,
+      widthMinPixels: 1,
+    }),
+
+    // Sim drone positions (animated dots during playback)
+    simTick && new ScatterplotLayer({
+      id: 'sim-drones',
+      data: simTick.drones.filter(d => d.status === 'inbound'),
+      getPosition: d => [d.position[1], d.position[0]],
+      getFillColor: [255, 200, 50, 220],
+      getRadius: 6000,
+      radiusMinPixels: 4,
+      radiusMaxPixels: 10,
+      updateTriggers: { getPosition: [simTick.time] },
+    }),
+
+    // Sim intercepted markers (green dot)
+    simTick && new ScatterplotLayer({
+      id: 'sim-intercepted',
+      data: simTick.drones.filter(d => d.status === 'intercepted'),
+      getPosition: d => [d.position[1], d.position[0]],
+      getFillColor: [52, 211, 153, 200],
+      getRadius: 8000,
+      radiusMinPixels: 5,
+      radiusMaxPixels: 12,
+      stroked: true,
+      getLineColor: [52, 211, 153, 100],
+      lineWidthMinPixels: 2,
+      updateTriggers: { getPosition: [simTick.time] },
+    }),
+
+    // Sim leakers (hit target — red pulse)
+    simTick && new ScatterplotLayer({
+      id: 'sim-leakers',
+      data: simTick.drones.filter(d => d.status === 'hit_target'),
+      getPosition: d => [d.position[1], d.position[0]],
+      getFillColor: [239, 68, 68, 220],
+      getRadius: 10000,
+      radiusMinPixels: 6,
+      radiusMaxPixels: 14,
+      stroked: true,
+      getLineColor: [239, 68, 68, 100],
+      lineWidthMinPixels: 2,
+      updateTriggers: { getPosition: [simTick.time] },
+    }),
+  ].filter(Boolean);
 
   // ── Tooltip ──
 
@@ -397,6 +603,12 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
     } else if (layerId === 'waypoints') {
       title = object.name;
       sub = `${object.type.replace(/_/g, ' ')} waypoint`;
+    } else if (layerId === 'defense-sites') {
+      title = `DEFENSE: ${object.name}`;
+      const totalStock = object.assets.reduce((s, a) => s + a.stock, 0);
+      const weapons = object.assets.map(a => a.weapon).join(', ');
+      sub = `${weapons} \u2014 ${totalStock} total stock`;
+      detail = `Radar: ${object.radar_range_km || '?'}km`;
     }
 
     return (
@@ -414,11 +626,72 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
         initialViewState={viewState}
         controller={true}
         layers={layers}
+        onClick={placeSiteMode ? handleMapClick : undefined}
+        getCursor={() => placeSiteMode ? 'crosshair' : 'grab'}
         style={{ width: '100%', height: '100%' }}
       >
         <MapGL mapStyle={MAP_STYLE} />
       </DeckGL>
       {renderTooltip()}
+      {simMode && simTick?.counts && (
+        <div className="sim-hud">
+          <div className="sim-hud-row">
+            <span className="sim-hud-dot sim-hud-inbound" />
+            <span className="sim-hud-label">Inbound</span>
+            <span className="sim-hud-val">{simTick.counts.inbound}</span>
+          </div>
+          <div className="sim-hud-row">
+            <span className="sim-hud-dot sim-hud-intercepted" />
+            <span className="sim-hud-label">Intercepted</span>
+            <span className="sim-hud-val">{simTick.counts.intercepted}</span>
+          </div>
+          <div className="sim-hud-row">
+            <span className="sim-hud-dot sim-hud-leaker" />
+            <span className="sim-hud-label">Leakers</span>
+            <span className="sim-hud-val">{simTick.counts.hit}</span>
+          </div>
+          <div className="sim-hud-divider" />
+          <div className="sim-hud-row">
+            <span className="sim-hud-label">Rate</span>
+            <span className="sim-hud-val sim-hud-rate">
+              {simTick.counts.intercepted + simTick.counts.hit > 0
+                ? Math.round(simTick.counts.intercepted / (simTick.counts.intercepted + simTick.counts.hit) * 100) + '%'
+                : '—'}
+            </span>
+          </div>
+        </div>
+      )}
+      {placeSiteMode && (
+        <div className="place-mode-banner">
+          Click map to place {WEAPON_PRESETS[placeSiteMode]?.label || 'defense site'}
+        </div>
+      )}
+      {!simMode && <div className="map-controls-br">
+        {showLayerPanel && onToggleLayer && (
+          <div className="ml-panel">
+            <div className="ml-section-label">Layers</div>
+            {LAYER_DEFS.map(({ key, label, color }) => (
+              <button
+                key={key}
+                className={`ml-toggle ${visibleLayers[key] !== false ? 'on' : 'off'}`}
+                onClick={() => onToggleLayer(key)}
+              >
+                <span className="ml-indicator" style={{
+                  background: visibleLayers[key] !== false ? color : 'transparent',
+                  borderColor: color,
+                }} />
+                {label}
+              </button>
+            ))}
+          </div>
+        )}
+        <button className="settings-cog" onClick={() => setShowLayerPanel(p => !p)} title="Map settings">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </button>
+      </div>}
     </>
   );
 }

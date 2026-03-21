@@ -150,7 +150,7 @@
           "lon": { "type": ["number", "null"] },
           "target_type": {
             "type": ["string", "null"],
-            "enum": ["energy", "military", "residential", "industrial", "transport", "mixed", "unknown", null]
+            "enum": ["energy", "military", "residential", "civilian", "urban", "industrial", "infrastructure", "transport", "diplomatic", "religious", "mixed", "unknown", null]
           }
         }
       }

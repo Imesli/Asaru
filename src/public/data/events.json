@@ -13027,7 +13027,44 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "energy"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "energy"
+      },
+      {
+        "name": "Zaporizhzhia",
+        "lat": 47.8388,
+        "lon": 35.1396,
+        "target_type": "energy"
+      },
+      {
+        "name": "Sumy",
+        "lat": 50.9077,
+        "lon": 34.7981,
+        "target_type": "military"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": 1704,
@@ -13464,83 +13501,120 @@
     "id": "UA_20251227_001",
     "conflict": "ukraine_russia",
     "date": "2025-12-27",
-    "time_start": "18:00",
-    "time_end": "08:30",
-    "duration_hours": null,
+    "time_start": "23:00",
+    "time_end": null,
+    "duration_hours": 10,
     "attack_type": "combined_drone_missile",
     "totals": {
-      "launched_total": 71,
-      "launched_drones": 48,
-      "launched_drones_strike": 30,
-      "launched_drones_decoy": 18,
+      "launched_total": 559,
+      "launched_drones": 519,
+      "launched_drones_strike": 300,
+      "launched_drones_decoy": null,
       "launched_missiles_cruise": 23,
-      "launched_missiles_ballistic": null,
-      "intercepted_total": 53,
+      "launched_missiles_ballistic": 17,
+      "intercepted_total": 503,
       "intercepted_drones": null,
-      "hits": 18,
+      "hits": 56,
       "lost_location": null,
-      "interception_rate": 0.746
+      "interception_rate": 0.8998
     },
     "drone_types": [
       {
         "model": "shahed_136",
-        "count": 48,
-        "speed_kmh": null
+        "count": null,
+        "speed_kmh": 180
+      },
+      {
+        "model": "gerbera_decoy",
+        "count": null,
+        "speed_kmh": 150
       }
     ],
     "launch_regions": [
       {
-        "name": "Chauda, Crimea",
-        "lat": 45.01,
-        "lon": 35.83,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Hvardiiske, Crimea",
-        "lat": 45.11,
-        "lon": 34.05,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Kursk oblast",
+        "name": "Kursk Oblast",
         "lat": 51.73,
         "lon": 36.19,
-        "confidence": "confirmed"
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Oryol oblast",
-        "lat": 52.97,
-        "lon": 36.06,
-        "confidence": "confirmed"
+        "name": "Krasnodar Krai",
+        "lat": 45.04,
+        "lon": 38.97,
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Primorsko-Akhtarsk",
-        "lat": 46.05,
-        "lon": 38.17,
-        "confidence": "confirmed"
+        "name": "Crimea",
+        "lat": 44.95,
+        "lon": 34.1,
+        "bearing_deg": null,
+        "confidence": "likely"
       }
     ],
     "target_regions": [
       {
-        "name": "Kyiv oblast",
-        "lat": 50.45,
-        "lon": 30.52,
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
         "target_type": "mixed"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
       }
     ],
     "waves": [],
-    "interception_methods": {},
-    "defence_context": {},
-    "notes": null,
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "559 attack assets: 519 drones (~300 Shaheds) + 40 missiles (Kinzhal, Iskander-M, Kalibr, Kh-59/69). 503 intercepted. 10 missiles and 25 strike UAVs impacted. Air raid alert lasted ~10 hours. At least 2 killed, 32 wounded. A third of Kyiv left without heat. 1M+ homes lost power. Attack came ahead of Trump-Zelenskyy meeting.",
     "sources": [
       {
-        "name": "PetroIvaniuk Kaggle / Ukrainian Air Force",
-        "url": "https://www.facebook.com/kpszsu/posts/pfbid0esgp8R5DcgowzrZSA4repGZPJdLC5ZDf24ZbKaaLrXQY6LzkPDRNtmvoXGGzcjzRl",
-        "confidence": "official",
+        "name": "ISIS December 2025 Monthly Analysis",
+        "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
         "fields_sourced": [
-          "totals",
-          "launch_regions",
-          "drone_types"
+          "totals.launched_total"
+        ]
+      },
+      {
+        "name": "Kyiv Post / Ukrainian Air Force",
+        "url": "https://www.kyivpost.com/post/67013",
+        "confidence": "news_report",
+        "fields_sourced": [
+          "totals.launched_total",
+          "totals.intercepted_total",
+          "totals.launched_missiles_cruise",
+          "totals.launched_missiles_ballistic"
+        ]
+      },
+      {
+        "name": "PBS News",
+        "url": "https://www.pbs.org/newshour/world/russia-launches-massive-strike-on-kyiv-killing-1-and-wounding-many-ahead-of-ukraine-u-s-talks",
+        "confidence": "news_report",
+        "fields_sourced": [
+          "totals.launched_total",
+          "totals.intercepted_total"
         ]
       }
     ]
@@ -13549,124 +13623,107 @@
     "id": "UA_20251226_001",
     "conflict": "ukraine_russia",
     "date": "2025-12-26",
-    "time_start": "18:00",
-    "time_end": "13:00",
+    "time_start": null,
+    "time_end": null,
     "duration_hours": null,
-    "attack_type": "combined_drone_missile",
+    "attack_type": "drone_only",
     "totals": {
-      "launched_total": 569,
-      "launched_drones": 546,
+      "launched_total": 519,
+      "launched_drones": 519,
       "launched_drones_strike": 300,
       "launched_drones_decoy": 219,
-      "launched_missiles_cruise": 23,
+      "launched_missiles_cruise": null,
       "launched_missiles_ballistic": null,
-      "intercepted_total": 513,
+      "intercepted_total": null,
       "intercepted_drones": null,
-      "hits": 41,
+      "hits": 43,
       "lost_location": null,
-      "interception_rate": 0.902
+      "interception_rate": null
     },
     "drone_types": [
       {
         "model": "shahed_136",
-        "count": 519,
-        "speed_kmh": null
+        "count": null,
+        "speed_kmh": 180
       },
       {
-        "model": "unknown",
-        "count": 27,
-        "speed_kmh": null
+        "model": "gerbera_decoy",
+        "count": 219,
+        "speed_kmh": 150
       }
     ],
     "launch_regions": [
       {
-        "name": "Black Sea",
-        "lat": 44.0,
-        "lon": 34.0,
-        "confidence": "estimated"
-      },
-      {
-        "name": "Bryansk oblast",
-        "lat": 53.25,
-        "lon": 34.37,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Hvardiiske, Crimea",
-        "lat": 45.11,
-        "lon": 34.05,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Kursk oblast",
+        "name": "Kursk Oblast",
         "lat": 51.73,
         "lon": 36.19,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Millerovo",
-        "lat": 48.92,
-        "lon": 40.39,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Oryol oblast",
-        "lat": 52.97,
-        "lon": 36.06,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Primorsko-Akhtarsk",
-        "lat": 46.05,
-        "lon": 38.17,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Rostov oblast",
-        "lat": 47.24,
-        "lon": 39.72,
+        "bearing_deg": null,
         "confidence": "likely"
       },
       {
-        "name": "Ryazan oblast",
-        "lat": null,
-        "lon": null,
-        "confidence": "estimated"
+        "name": "Krasnodar Krai",
+        "lat": 45.04,
+        "lon": 38.97,
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Shatalovo",
-        "lat": 54.02,
-        "lon": 32.44,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Vologda oblast",
-        "lat": null,
-        "lon": null,
-        "confidence": "estimated"
+        "name": "Crimea",
+        "lat": 44.95,
+        "lon": 34.1,
+        "bearing_deg": null,
+        "confidence": "likely"
       }
     ],
     "target_regions": [
       {
-        "name": "Kyiv oblast",
-        "lat": 50.45,
-        "lon": 30.52,
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
         "target_type": "mixed"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
       }
     ],
     "waves": [],
-    "interception_methods": {},
-    "defence_context": {},
-    "notes": null,
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "519 Shahed-type UAVs including ~300 strike UAVs. Strike effectiveness 8.33%. Night before the massive December 27 combined attack on Kyiv.",
     "sources": [
       {
-        "name": "PetroIvaniuk Kaggle / Ukrainian Air Force",
-        "url": "https://www.facebook.com/kpszsu/posts/pfbid028r7WWV4BK1ArpzwXG5BYQWundMz3ubFdXcN7Bn3H8XrV2qoLcYuB6ZKtChTSXtE2l",
-        "confidence": "official",
+        "name": "ISIS 2025 Comprehensive Review",
+        "url": "https://isis-online.org/isis-reports/a-comprehensive-analytical-review-of-russian-shahed-type-uavs-deployment-against-ukraine-in-2025",
+        "confidence": "verified_osint",
         "fields_sourced": [
-          "totals",
-          "launch_regions",
-          "drone_types"
+          "totals.launched_total",
+          "totals.launched_drones_strike"
         ]
       }
     ]
@@ -13983,94 +14040,115 @@
     "id": "UA_20251222_001",
     "conflict": "ukraine_russia",
     "date": "2025-12-22",
-    "time_start": "18:00",
-    "time_end": "11:30",
+    "time_start": null,
+    "time_end": null,
     "duration_hours": null,
     "attack_type": "drone_only",
     "totals": {
-      "launched_total": 657,
-      "launched_drones": 657,
+      "launched_total": 635,
+      "launched_drones": 635,
       "launched_drones_strike": 400,
       "launched_drones_decoy": 235,
       "launched_missiles_cruise": null,
       "launched_missiles_ballistic": null,
-      "intercepted_total": 609,
+      "intercepted_total": null,
       "intercepted_drones": null,
-      "hits": 48,
+      "hits": 62,
       "lost_location": null,
-      "interception_rate": 0.927
+      "interception_rate": null
     },
     "drone_types": [
       {
         "model": "shahed_136",
-        "count": 635,
-        "speed_kmh": null
+        "count": null,
+        "speed_kmh": 180
       },
       {
-        "model": "unknown",
-        "count": 22,
-        "speed_kmh": null
+        "model": "gerbera_decoy",
+        "count": 235,
+        "speed_kmh": 150
       }
     ],
     "launch_regions": [
       {
-        "name": "Bryansk oblast",
-        "lat": 53.25,
-        "lon": 34.37,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Chauda, Crimea",
-        "lat": 45.01,
-        "lon": 35.83,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Kursk oblast",
+        "name": "Kursk Oblast",
         "lat": 51.73,
         "lon": 36.19,
-        "confidence": "confirmed"
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Millerovo",
-        "lat": 48.92,
-        "lon": 40.39,
-        "confidence": "confirmed"
+        "name": "Krasnodar Krai",
+        "lat": 45.04,
+        "lon": 38.97,
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Oryol oblast",
-        "lat": 52.97,
-        "lon": 36.06,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Primorsko-Akhtarsk",
-        "lat": 46.05,
-        "lon": 38.17,
-        "confidence": "confirmed"
+        "name": "Crimea",
+        "lat": 44.95,
+        "lon": 34.1,
+        "bearing_deg": null,
+        "confidence": "likely"
       }
     ],
     "target_regions": [
       {
-        "name": "['Rivne oblast', 'Khmelnytskyi oblast', 'Zhytomyr oblast', 'Odesa oblast', 'Donetsk oblast']",
-        "lat": null,
-        "lon": null,
-        "target_type": "unknown"
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Kryvyi Rih",
+        "lat": 47.9104,
+        "lon": 33.3918,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Zhytomyr",
+        "lat": 50.2547,
+        "lon": 28.6587,
+        "target_type": "transport"
       }
     ],
     "waves": [],
-    "interception_methods": {},
-    "defence_context": {},
-    "notes": null,
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "635 Shahed-type UAVs including 400 strike UAVs. Strike effectiveness 9.75% overall, 6.1% for total UAVs. Drones damaged infrastructure in Odesa, Kryvyi Rih, and derailed a train in Zhytomyr Oblast.",
     "sources": [
       {
-        "name": "PetroIvaniuk Kaggle / Ukrainian Air Force",
-        "url": "https://www.facebook.com/kpszsu/posts/pfbid0FoCxAp85ztgf726AWrWAHUb95J5pg2trsLyLJ4tuu9F4fCJjikuyhC5oM7kXpTmUl",
-        "confidence": "official",
+        "name": "ISIS 2025 Comprehensive Review",
+        "url": "https://isis-online.org/isis-reports/a-comprehensive-analytical-review-of-russian-shahed-type-uavs-deployment-against-ukraine-in-2025",
+        "confidence": "verified_osint",
         "fields_sourced": [
-          "totals",
-          "launch_regions",
-          "drone_types"
+          "totals.launched_total",
+          "totals.launched_drones_strike"
+        ]
+      },
+      {
+        "name": "Euromaidan Press",
+        "url": "https://euromaidanpress.com/2025/12/22/russian-drones-damage-infrastructure-in-odesa-and-kryvyi-rih-derail-train-in-zhytomyr-oblast-map/",
+        "confidence": "news_report",
+        "fields_sourced": [
+          "target_regions"
         ]
       }
     ]
@@ -14447,82 +14525,94 @@
     "id": "UA_20251217_001",
     "conflict": "ukraine_russia",
     "date": "2025-12-17",
-    "time_start": "18:00",
-    "time_end": "08:30",
+    "time_start": null,
+    "time_end": null,
     "duration_hours": null,
     "attack_type": "drone_only",
     "totals": {
-      "launched_total": 104,
-      "launched_drones": 104,
-      "launched_drones_strike": 50,
-      "launched_drones_decoy": 32,
+      "launched_total": null,
+      "launched_drones": null,
+      "launched_drones_strike": null,
+      "launched_drones_decoy": null,
       "launched_missiles_cruise": null,
       "launched_missiles_ballistic": null,
-      "intercepted_total": 85,
+      "intercepted_total": null,
       "intercepted_drones": null,
-      "hits": 19,
+      "hits": null,
       "lost_location": null,
-      "interception_rate": 0.817
+      "interception_rate": null
     },
     "drone_types": [
       {
         "model": "shahed_136",
-        "count": 82,
-        "speed_kmh": null
+        "count": null,
+        "speed_kmh": 180
       },
       {
-        "model": "unknown",
-        "count": 22,
-        "speed_kmh": null
+        "model": "gerbera_decoy",
+        "count": null,
+        "speed_kmh": 150
       }
     ],
     "launch_regions": [
       {
-        "name": "Kursk oblast",
+        "name": "Kursk Oblast",
         "lat": 51.73,
         "lon": 36.19,
-        "confidence": "confirmed"
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Millerovo",
-        "lat": 48.92,
-        "lon": 40.39,
-        "confidence": "confirmed"
+        "name": "Krasnodar Krai",
+        "lat": 45.04,
+        "lon": 38.97,
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Oryol oblast",
-        "lat": 52.97,
-        "lon": 36.06,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Primorsko-Akhtarsk",
-        "lat": 46.05,
-        "lon": 38.17,
-        "confidence": "confirmed"
+        "name": "Crimea",
+        "lat": 44.95,
+        "lon": 34.1,
+        "bearing_deg": null,
+        "confidence": "likely"
       }
     ],
     "target_regions": [
       {
-        "name": "Ukraine",
-        "lat": 48.38,
-        "lon": 31.17,
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
         "target_type": "mixed"
       }
     ],
     "waves": [],
-    "interception_methods": {},
-    "defence_context": {},
-    "notes": null,
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "Notable for highest single-day strike effectiveness in December 2025: 72.5% of strike UAVs reached targets. Exact drone count not specified in ISIS report. This exceptionally high hit rate suggests either a smaller, precision-focused attack or significant air defense gaps on this night.",
     "sources": [
       {
-        "name": "PetroIvaniuk Kaggle / Ukrainian Air Force",
-        "url": "https://www.facebook.com/kpszsu/posts/pfbid0Py4iNbt5xdmMdm3o8ih484zPWBaJU6a14CyjNcgtoXJmuDdKtu3BENXyZN5NygEWl",
-        "confidence": "official",
+        "name": "ISIS 2025 Comprehensive Review",
+        "url": "https://isis-online.org/isis-reports/a-comprehensive-analytical-review-of-russian-shahed-type-uavs-deployment-against-ukraine-in-2025",
+        "confidence": "verified_osint",
         "fields_sourced": [
-          "totals",
-          "launch_regions",
-          "drone_types"
+          "notes"
         ]
       }
     ]
@@ -14796,112 +14886,95 @@
     "id": "UA_20251213_001",
     "conflict": "ukraine_russia",
     "date": "2025-12-13",
-    "time_start": "19:00",
-    "time_end": "08:30",
+    "time_start": null,
+    "time_end": null,
     "duration_hours": null,
-    "attack_type": "combined_drone_missile",
+    "attack_type": "drone_only",
     "totals": {
-      "launched_total": 143,
-      "launched_drones": 142,
+      "launched_total": 138,
+      "launched_drones": 138,
       "launched_drones_strike": 85,
       "launched_drones_decoy": 53,
       "launched_missiles_cruise": null,
-      "launched_missiles_ballistic": 1,
-      "intercepted_total": 110,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": null,
       "intercepted_drones": null,
-      "hits": 33,
+      "hits": 16,
       "lost_location": null,
-      "interception_rate": 0.769
+      "interception_rate": null
     },
     "drone_types": [
       {
         "model": "shahed_136",
-        "count": 138,
-        "speed_kmh": null
+        "count": null,
+        "speed_kmh": 180
       },
       {
-        "model": "unknown",
-        "count": 4,
-        "speed_kmh": null
+        "model": "gerbera_decoy",
+        "count": 53,
+        "speed_kmh": 150
       }
     ],
     "launch_regions": [
       {
-        "name": "Hvardiiske, Crimea",
-        "lat": 45.11,
-        "lon": 34.05,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Kursk oblast",
+        "name": "Kursk Oblast",
         "lat": 51.73,
         "lon": 36.19,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Millerovo",
-        "lat": 48.92,
-        "lon": 40.39,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Oryol oblast",
-        "lat": 52.97,
-        "lon": 36.06,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Primorsko-Akhtarsk",
-        "lat": 46.05,
-        "lon": 38.17,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Rostov oblast",
-        "lat": 47.24,
-        "lon": 39.72,
+        "bearing_deg": null,
         "confidence": "likely"
       },
       {
-        "name": "Shatalovo",
-        "lat": 54.02,
-        "lon": 32.44,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Tambov oblast",
-        "lat": 52.73,
-        "lon": 41.44,
+        "name": "Krasnodar Krai",
+        "lat": 45.04,
+        "lon": 38.97,
+        "bearing_deg": null,
         "confidence": "likely"
       },
       {
-        "name": "Tula oblast",
-        "lat": null,
-        "lon": null,
-        "confidence": "estimated"
+        "name": "Crimea",
+        "lat": 44.95,
+        "lon": 34.1,
+        "bearing_deg": null,
+        "confidence": "likely"
       }
     ],
     "target_regions": [
       {
-        "name": "Ukraine",
-        "lat": 48.38,
-        "lon": 31.17,
-        "target_type": "mixed"
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
       }
     ],
     "waves": [],
-    "interception_methods": {},
-    "defence_context": {},
-    "notes": null,
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "138 Shahed-type UAVs launched including 85 strike UAVs. Strike effectiveness 11.76%. Back-to-back attack night following December 12's 460-drone salvo.",
     "sources": [
       {
-        "name": "PetroIvaniuk Kaggle / Ukrainian Air Force",
-        "url": "https://www.facebook.com/kpszsu/posts/pfbid02ZcDb86fcRJkTEX2nFWUauYaSohMZAqqQwmUdbJXdnk9ACAScbdUNMcczyUYaVnbvl",
-        "confidence": "official",
+        "name": "ISIS 2025 Comprehensive Review",
+        "url": "https://isis-online.org/isis-reports/a-comprehensive-analytical-review-of-russian-shahed-type-uavs-deployment-against-ukraine-in-2025",
+        "confidence": "verified_osint",
         "fields_sourced": [
-          "totals",
-          "launch_regions",
-          "drone_types"
+          "totals.launched_total",
+          "totals.launched_drones_strike"
         ]
       }
     ]
@@ -14910,127 +14983,101 @@
     "id": "UA_20251212_001",
     "conflict": "ukraine_russia",
     "date": "2025-12-12",
-    "time_start": "18:00",
-    "time_end": "12:00",
+    "time_start": null,
+    "time_end": null,
     "duration_hours": null,
-    "attack_type": "combined_drone_missile",
+    "attack_type": "drone_only",
     "totals": {
-      "launched_total": 494,
-      "launched_drones": 465,
+      "launched_total": 460,
+      "launched_drones": 460,
       "launched_drones_strike": 270,
-      "launched_drones_decoy": 195,
-      "launched_missiles_cruise": 21,
-      "launched_missiles_ballistic": 8,
-      "intercepted_total": 430,
+      "launched_drones_decoy": 190,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": null,
       "intercepted_drones": null,
-      "hits": 64,
+      "hits": 47,
       "lost_location": null,
-      "interception_rate": 0.87
+      "interception_rate": null
     },
     "drone_types": [
       {
         "model": "shahed_136",
-        "count": 465,
-        "speed_kmh": null
+        "count": null,
+        "speed_kmh": 180
+      },
+      {
+        "model": "gerbera_decoy",
+        "count": 190,
+        "speed_kmh": 150
       }
     ],
     "launch_regions": [
       {
-        "name": "Black Sea",
-        "lat": 44.0,
-        "lon": 34.0,
-        "confidence": "estimated"
-      },
-      {
-        "name": "Caspian Sea",
-        "lat": 42.0,
-        "lon": 50.0,
-        "confidence": "estimated"
-      },
-      {
-        "name": "Chauda, Crimea",
-        "lat": 45.01,
-        "lon": 35.83,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Crimea",
-        "lat": 45.35,
-        "lon": 34.5,
+        "name": "Kursk Oblast",
+        "lat": 51.73,
+        "lon": 36.19,
+        "bearing_deg": null,
         "confidence": "likely"
       },
       {
-        "name": "Hvardiiske, Crimea",
-        "lat": 45.11,
-        "lon": 34.05,
-        "confidence": "confirmed"
+        "name": "Krasnodar Krai",
+        "lat": 45.04,
+        "lon": 38.97,
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Kursk oblast",
-        "lat": 51.73,
-        "lon": 36.19,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Millerovo",
-        "lat": 48.92,
-        "lon": 40.39,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Oryol oblast",
-        "lat": 52.97,
-        "lon": 36.06,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Primorsko-Akhtarsk",
-        "lat": 46.05,
-        "lon": 38.17,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Shatalovo",
-        "lat": 54.02,
-        "lon": 32.44,
-        "confidence": "confirmed"
+        "name": "Crimea",
+        "lat": 44.95,
+        "lon": 34.1,
+        "bearing_deg": null,
+        "confidence": "likely"
       }
     ],
     "target_regions": [
       {
-        "name": "Odesa oblast",
-        "lat": 46.48,
-        "lon": 30.73,
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
         "target_type": "energy"
       },
       {
-        "name": "south",
-        "lat": null,
-        "lon": null,
-        "target_type": "unknown"
-      }
-    ],
-    "waves": [
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "mixed"
+      },
       {
-        "wave_number": 1,
-        "time_approx": null,
-        "drone_count": 13,
-        "direction": "south",
-        "notes": "Interceptions in south sector"
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
       }
     ],
-    "interception_methods": {},
-    "defence_context": {},
-    "notes": null,
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "460 Shahed-type UAVs launched including 270 strike UAVs. Strike effectiveness 10.3%. Part of December's sustained high-tempo operations.",
     "sources": [
       {
-        "name": "PetroIvaniuk Kaggle / Ukrainian Air Force",
-        "url": "https://www.facebook.com/kpszsu/posts/pfbid02ZcDb86fcRJkTEX2nFWUauYaSohMZAqqQwmUdbJXdnk9ACAScbdUNMcczyUYaVnbvl",
-        "confidence": "official",
+        "name": "ISIS 2025 Comprehensive Review",
+        "url": "https://isis-online.org/isis-reports/a-comprehensive-analytical-review-of-russian-shahed-type-uavs-deployment-against-ukraine-in-2025",
+        "confidence": "verified_osint",
         "fields_sourced": [
-          "totals",
-          "launch_regions",
-          "drone_types"
+          "totals.launched_total",
+          "totals.launched_drones_strike"
         ]
       }
     ]
@@ -15500,100 +15547,124 @@
     "id": "UA_20251206_001",
     "conflict": "ukraine_russia",
     "date": "2025-12-06",
-    "time_start": "18:00",
-    "time_end": "09:00",
+    "time_start": null,
+    "time_end": null,
     "duration_hours": null,
     "attack_type": "combined_drone_missile",
     "totals": {
-      "launched_total": 254,
-      "launched_drones": 247,
-      "launched_drones_strike": 150,
-      "launched_drones_decoy": 91,
-      "launched_missiles_cruise": 5,
-      "launched_missiles_ballistic": 2,
-      "intercepted_total": 184,
-      "intercepted_drones": null,
-      "hits": 70,
+      "launched_total": 704,
+      "launched_drones": 653,
+      "launched_drones_strike": 300,
+      "launched_drones_decoy": 353,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": 615,
+      "intercepted_drones": 585,
+      "hits": 89,
       "lost_location": null,
-      "interception_rate": 0.724
+      "interception_rate": 0.8736
     },
     "drone_types": [
       {
         "model": "shahed_136",
-        "count": 241,
-        "speed_kmh": null
+        "count": null,
+        "speed_kmh": 180
       },
       {
-        "model": "unknown",
-        "count": 6,
-        "speed_kmh": null
+        "model": "gerbera_decoy",
+        "count": 353,
+        "speed_kmh": 150
       }
     ],
     "launch_regions": [
       {
-        "name": "Chauda, Crimea",
-        "lat": 45.01,
-        "lon": 35.83,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Kursk oblast",
+        "name": "Kursk Oblast",
         "lat": 51.73,
         "lon": 36.19,
-        "confidence": "confirmed"
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Millerovo",
-        "lat": 48.92,
-        "lon": 40.39,
-        "confidence": "confirmed"
+        "name": "Krasnodar Krai",
+        "lat": 45.04,
+        "lon": 38.97,
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Oryol oblast",
-        "lat": 52.97,
-        "lon": 36.06,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Primorsko-Akhtarsk",
-        "lat": 46.05,
-        "lon": 38.17,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Ryazan oblast",
-        "lat": null,
-        "lon": null,
-        "confidence": "estimated"
-      },
-      {
-        "name": "Tambov oblast",
-        "lat": 52.73,
-        "lon": 41.44,
+        "name": "Crimea",
+        "lat": 44.95,
+        "lon": 34.1,
+        "bearing_deg": null,
         "confidence": "likely"
       }
     ],
     "target_regions": [
       {
-        "name": "Ukraine",
-        "lat": 48.38,
-        "lon": 31.17,
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Fastiv",
+        "lat": 50.0747,
+        "lon": 29.9186,
+        "target_type": "transport"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
         "target_type": "mixed"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
       }
     ],
     "waves": [],
-    "interception_methods": {},
-    "defence_context": {},
-    "notes": null,
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "653 Shahed-type UAVs (including 300+ strike UAVs) plus 51 missiles. 585 drones and 30 missiles intercepted. Strike effectiveness: 20% of total, ~33% of strike UAVs. Fastiv train station destroyed by drone strike. At least 8 wounded. Attack coincided with Ukraine's Armed Forces Day. 29 locations struck.",
     "sources": [
       {
-        "name": "PetroIvaniuk Kaggle / Ukrainian Air Force",
-        "url": "https://www.facebook.com/kpszsu/posts/pfbid0d2Rx2p1iSxS4i874x54NCZzg9fcsBvdA5SGa8s53UAmBLQsePqC2TyKm8KhpvAARl",
-        "confidence": "official",
+        "name": "ISIS 2025 Comprehensive Review",
+        "url": "https://isis-online.org/isis-reports/a-comprehensive-analytical-review-of-russian-shahed-type-uavs-deployment-against-ukraine-in-2025",
+        "confidence": "verified_osint",
         "fields_sourced": [
-          "totals",
-          "launch_regions",
-          "drone_types"
+          "totals.launched_drones",
+          "totals.launched_drones_strike"
+        ]
+      },
+      {
+        "name": "NPR",
+        "url": "https://www.npr.org/2025/12/06/g-s1-101064/russia-drone-missile-attack",
+        "confidence": "news_report",
+        "fields_sourced": [
+          "totals.launched_total",
+          "totals.intercepted_total"
+        ]
+      },
+      {
+        "name": "Euronews",
+        "url": "https://www.euronews.com/2025/12/06/russia-launches-large-scale-attack-at-ukraine-ahead-of-peace-talks-between-kyiv-and-washin",
+        "confidence": "news_report",
+        "fields_sourced": [
+          "totals.launched_total"
         ]
       }
     ]
@@ -15602,145 +15673,109 @@
     "id": "UA_20251205_001",
     "conflict": "ukraine_russia",
     "date": "2025-12-05",
-    "time_start": "18:00",
-    "time_end": "10:00",
+    "time_start": null,
+    "time_end": null,
     "duration_hours": null,
-    "attack_type": "combined_drone_missile",
+    "attack_type": "drone_only",
     "totals": {
-      "launched_total": 706,
-      "launched_drones": 687,
-      "launched_drones_strike": 300,
-      "launched_drones_decoy": 353,
-      "launched_missiles_cruise": 5,
-      "launched_missiles_ballistic": 14,
-      "intercepted_total": 620,
-      "intercepted_drones": null,
-      "hits": 86,
+      "launched_total": 137,
+      "launched_drones": 137,
+      "launched_drones_strike": null,
+      "launched_drones_decoy": null,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": 80,
+      "intercepted_drones": 80,
+      "hits": 57,
       "lost_location": null,
-      "interception_rate": 0.878
+      "interception_rate": 0.5839
     },
     "drone_types": [
       {
         "model": "shahed_136",
-        "count": 653,
-        "speed_kmh": null
+        "count": null,
+        "speed_kmh": 180
       },
       {
-        "model": "unknown",
-        "count": 34,
-        "speed_kmh": null
+        "model": "gerbera_decoy",
+        "count": null,
+        "speed_kmh": 150
       }
     ],
     "launch_regions": [
       {
-        "name": "Black Sea",
-        "lat": 44.0,
-        "lon": 34.0,
-        "confidence": "estimated"
-      },
-      {
-        "name": "Bryansk oblast",
-        "lat": 53.25,
-        "lon": 34.37,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Chauda, Crimea",
-        "lat": 45.01,
-        "lon": 35.83,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Crimea",
-        "lat": 45.35,
-        "lon": 34.5,
+        "name": "Kursk Oblast",
+        "lat": 51.73,
+        "lon": 36.19,
+        "bearing_deg": null,
         "confidence": "likely"
       },
       {
         "name": "Krasnodar Krai",
-        "lat": null,
-        "lon": null,
-        "confidence": "estimated"
+        "lat": 45.04,
+        "lon": 38.97,
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Kursk oblast",
-        "lat": 51.73,
-        "lon": 36.19,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Millerovo",
-        "lat": 48.92,
-        "lon": 40.39,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Oryol oblast",
-        "lat": 52.97,
-        "lon": 36.06,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Primorsko-Akhtarsk",
-        "lat": 46.05,
-        "lon": 38.17,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Rostov oblast",
-        "lat": 47.24,
-        "lon": 39.72,
+        "name": "Crimea",
+        "lat": 44.95,
+        "lon": 34.1,
+        "bearing_deg": null,
         "confidence": "likely"
       }
     ],
     "target_regions": [
       {
-        "name": "['Lviv oblast', 'Ivano-Frankivsk oblast', 'Lutsk oblast', 'Kyiv oblast', 'Odesa oblast', 'Dnipropetrovsk oblast', 'Donetsk oblast', 'Chernihiv oblast']",
-        "lat": null,
-        "lon": null,
-        "target_type": "unknown"
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
       },
       {
-        "name": "south",
-        "lat": null,
-        "lon": null,
-        "target_type": "unknown"
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
       },
       {
-        "name": "west",
-        "lat": null,
-        "lon": null,
-        "target_type": "unknown"
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
       }
     ],
-    "waves": [
-      {
-        "wave_number": 1,
-        "time_approx": null,
-        "drone_count": 12,
-        "direction": "west",
-        "notes": "Interceptions in west sector"
-      },
-      {
-        "wave_number": 2,
-        "time_approx": null,
-        "drone_count": 3,
-        "direction": "south",
-        "notes": "Interceptions in south sector"
-      }
-    ],
-    "interception_methods": {},
-    "defence_context": {},
-    "notes": null,
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "137 Shahed-type attack drones launched; 80 intercepted by Ukrainian air defense. This was the night before the much larger December 6 attack (653 drones).",
     "sources": [
       {
-        "name": "PetroIvaniuk Kaggle / Ukrainian Air Force",
-        "url": "https://www.facebook.com/kpszsu/posts/pfbid08V2L3Y6pPBmVG3bXDkQWysJ4fhRpdpuUoPaD3BmYkJ5d4GWwKjzCjys9NmEZ7vPNl",
-        "confidence": "official",
+        "name": "ISIS December 2025 Monthly Analysis",
+        "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
         "fields_sourced": [
-          "totals",
-          "launch_regions",
-          "drone_types"
+          "totals.launched_total"
+        ]
+      },
+      {
+        "name": "Mezha.net / Ukrainian Air Force",
+        "url": "https://mezha.net/eng/bukvy/ukraine-air-defense-intercepts-80-russian-drones-in-december-5-attack/",
+        "confidence": "news_report",
+        "fields_sourced": [
+          "totals.launched_total",
+          "totals.intercepted_total"
         ]
       }
     ]
@@ -16078,7 +16113,44 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "energy"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "energy"
+      },
+      {
+        "name": "Zaporizhzhia",
+        "lat": 47.8388,
+        "lon": 35.1396,
+        "target_type": "energy"
+      },
+      {
+        "name": "Lviv",
+        "lat": 49.8397,
+        "lon": 24.0297,
+        "target_type": "infrastructure"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -16207,94 +16279,131 @@
     "id": "UA_20251129_001",
     "conflict": "ukraine_russia",
     "date": "2025-11-29",
-    "time_start": "19:00",
-    "time_end": "09:00",
+    "time_start": null,
+    "time_end": null,
     "duration_hours": null,
     "attack_type": "combined_drone_missile",
     "totals": {
-      "launched_total": 127,
-      "launched_drones": 125,
-      "launched_drones_strike": 75,
-      "launched_drones_decoy": 47,
-      "launched_missiles_cruise": null,
-      "launched_missiles_ballistic": 2,
-      "intercepted_total": 107,
-      "intercepted_drones": null,
-      "hits": 20,
+      "launched_total": 632,
+      "launched_drones": 596,
+      "launched_drones_strike": null,
+      "launched_drones_decoy": null,
+      "launched_missiles_cruise": 23,
+      "launched_missiles_ballistic": 9,
+      "intercepted_total": 577,
+      "intercepted_drones": 558,
+      "hits": 55,
       "lost_location": null,
-      "interception_rate": 0.843
+      "interception_rate": 0.913
     },
     "drone_types": [
       {
         "model": "shahed_136",
-        "count": 122,
-        "speed_kmh": null
+        "count": null,
+        "speed_kmh": 180
       },
       {
-        "model": "unknown",
-        "count": 3,
-        "speed_kmh": null
+        "model": "gerbera_decoy",
+        "count": null,
+        "speed_kmh": 150
       }
     ],
     "launch_regions": [
       {
-        "name": "Crimea",
-        "lat": 45.35,
-        "lon": 34.5,
+        "name": "Kursk Oblast",
+        "lat": 51.73,
+        "lon": 36.19,
+        "bearing_deg": null,
         "confidence": "likely"
       },
       {
-        "name": "Hvardiiske, Crimea",
-        "lat": 45.11,
-        "lon": 34.05,
-        "confidence": "confirmed"
+        "name": "Krasnodar Krai",
+        "lat": 45.04,
+        "lon": 38.97,
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Kursk oblast",
-        "lat": 51.73,
-        "lon": 36.19,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Millerovo",
-        "lat": 48.92,
-        "lon": 40.39,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Oryol oblast",
-        "lat": 52.97,
-        "lon": 36.06,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Primorsko-Akhtarsk",
-        "lat": 46.05,
-        "lon": 38.17,
-        "confidence": "confirmed"
+        "name": "Crimea",
+        "lat": 44.95,
+        "lon": 34.1,
+        "bearing_deg": null,
+        "confidence": "likely"
       }
     ],
     "target_regions": [
       {
-        "name": "Ukraine",
-        "lat": 48.38,
-        "lon": 31.17,
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
         "target_type": "mixed"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Zaporizhzhia",
+        "lat": 47.8388,
+        "lon": 35.1396,
+        "target_type": "energy"
       }
     ],
     "waves": [],
-    "interception_methods": {},
-    "defence_context": {},
-    "notes": null,
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "Largest aerial assault in a month. 596 drones and 36 missiles including 5 Kinzhal hypersonic, 23 Kh-101/Iskander-K cruise, 4 Iskander-M ballistic, 4 Kh-59/69 guided. 558 drones and 19 missiles intercepted. At least 3 killed, dozens injured. ~500,000 in Kyiv left without power. Attack hit 22 locations plus 17 from falling debris.",
     "sources": [
       {
-        "name": "PetroIvaniuk Kaggle / Ukrainian Air Force",
-        "url": "https://www.facebook.com/kpszsu/posts/pfbid024h4zh2Qef3sDAcLaSbddGp6LaRAk3sXLoDvtkEfmUqhyPXoM2YS2d8yso7A8ugQKl",
-        "confidence": "official",
+        "name": "ISIS 2025 Comprehensive Review",
+        "url": "https://isis-online.org/isis-reports/a-comprehensive-analytical-review-of-russian-shahed-type-uavs-deployment-against-ukraine-in-2025",
+        "confidence": "verified_osint",
         "fields_sourced": [
-          "totals",
-          "launch_regions",
-          "drone_types"
+          "totals.launched_total"
+        ]
+      },
+      {
+        "name": "Euronews / Ukrainian Air Force",
+        "url": "https://www.euronews.com/2025/11/29/russia-launches-close-to-600-drones-in-overnight-attack-on-ukraine-killing-three",
+        "confidence": "news_report",
+        "fields_sourced": [
+          "totals.launched_total",
+          "totals.launched_drones",
+          "totals.intercepted_total",
+          "totals.intercepted_drones"
+        ]
+      },
+      {
+        "name": "CNN",
+        "url": "https://www.cnn.com/2025/11/29/europe/russian-drone-missile-attack-ukraine-intl",
+        "confidence": "news_report",
+        "fields_sourced": [
+          "totals.launched_total"
         ]
       }
     ]
@@ -19021,7 +19130,38 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "residential"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      },
+      {
+        "name": "Zaporizhzhia",
+        "lat": 47.8388,
+        "lon": 35.1396,
+        "target_type": "energy"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -19153,126 +19293,106 @@
     "id": "UA_20251030_001",
     "conflict": "ukraine_russia",
     "date": "2025-10-30",
-    "time_start": "19:00",
-    "time_end": "09:00",
+    "time_start": null,
+    "time_end": null,
     "duration_hours": null,
-    "attack_type": "combined_drone_missile",
+    "attack_type": "drone_only",
     "totals": {
-      "launched_total": 206,
-      "launched_drones": 157,
-      "launched_drones_strike": 90,
-      "launched_drones_decoy": 55,
-      "launched_missiles_cruise": 43,
-      "launched_missiles_ballistic": 6,
-      "intercepted_total": 147,
+      "launched_total": 653,
+      "launched_drones": 653,
+      "launched_drones_strike": null,
+      "launched_drones_decoy": null,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": null,
       "intercepted_drones": null,
-      "hits": 59,
+      "hits": null,
       "lost_location": null,
-      "interception_rate": 0.714
+      "interception_rate": null
     },
     "drone_types": [
       {
         "model": "shahed_136",
-        "count": 145,
-        "speed_kmh": null
+        "count": null,
+        "speed_kmh": 180
       },
       {
-        "model": "unknown",
-        "count": 12,
-        "speed_kmh": null
+        "model": "gerbera_decoy",
+        "count": null,
+        "speed_kmh": 150
       }
     ],
     "launch_regions": [
       {
-        "name": "Black Sea",
-        "lat": 44.0,
-        "lon": 34.0,
-        "confidence": "estimated"
-      },
-      {
-        "name": "Chauda, Crimea",
-        "lat": 45.01,
-        "lon": 35.83,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Hvardiiske, Crimea",
-        "lat": 45.11,
-        "lon": 34.05,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Kursk oblast",
+        "name": "Kursk Oblast",
         "lat": 51.73,
         "lon": 36.19,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Nizhny Novgorod oblast",
-        "lat": null,
-        "lon": null,
-        "confidence": "estimated"
-      },
-      {
-        "name": "Oryol oblast",
-        "lat": 52.97,
-        "lon": 36.06,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Primorsko-Akhtarsk",
-        "lat": 46.05,
-        "lon": 38.17,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Rostov oblast",
-        "lat": 47.24,
-        "lon": 39.72,
+        "bearing_deg": null,
         "confidence": "likely"
       },
       {
-        "name": "Saratov oblast",
-        "lat": null,
-        "lon": null,
-        "confidence": "estimated"
+        "name": "Krasnodar Krai",
+        "lat": 45.04,
+        "lon": 38.97,
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Voronezh oblast",
-        "lat": 51.67,
-        "lon": 39.21,
+        "name": "Crimea",
+        "lat": 44.95,
+        "lon": 34.1,
+        "bearing_deg": null,
         "confidence": "likely"
       }
     ],
     "target_regions": [
       {
-        "name": "south",
-        "lat": null,
-        "lon": null,
-        "target_type": "unknown"
-      }
-    ],
-    "waves": [
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
       {
-        "wave_number": 1,
-        "time_approx": null,
-        "drone_count": 4,
-        "direction": "south",
-        "notes": "Interceptions in south sector"
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "mixed"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
       }
     ],
-    "interception_methods": {},
-    "defence_context": {},
-    "notes": null,
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "653 Shahed-type UAVs launched in single night. Tied with December 5-6 for second-largest drone attack of 2025 (after September 7's 810). October overall interception rate was lowest of 2025 at ~80%, with hit rate of 18.67% (32.29% for strike UAVs).",
     "sources": [
       {
-        "name": "PetroIvaniuk Kaggle / Ukrainian Air Force",
-        "url": "https://www.facebook.com/kpszsu/posts/pfbid02PDMPwG9dSpXEvvHvLRckN8BT6qw1NfL2y8XkfAffYTgTEhmKirTsCctSjZGG5Purl",
-        "confidence": "official",
+        "name": "ISIS 2025 Comprehensive Review",
+        "url": "https://isis-online.org/isis-reports/a-comprehensive-analytical-review-of-russian-shahed-type-uavs-deployment-against-ukraine-in-2025",
+        "confidence": "verified_osint",
         "fields_sourced": [
-          "totals",
-          "launch_regions",
-          "drone_types"
+          "totals.launched_total"
         ]
       }
     ]
@@ -22014,7 +22134,50 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "mixed"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      },
+      {
+        "name": "Zaporizhzhia",
+        "lat": 47.8388,
+        "lon": 35.1396,
+        "target_type": "energy"
+      },
+      {
+        "name": "Lviv",
+        "lat": 49.8397,
+        "lon": 24.0297,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Zhytomyr",
+        "lat": 50.2547,
+        "lon": 28.6587,
+        "target_type": "military"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -22343,112 +22506,107 @@
     "id": "UA_20250927_001",
     "conflict": "ukraine_russia",
     "date": "2025-09-27",
-    "time_start": "20:30",
-    "time_end": "10:30",
+    "time_start": null,
+    "time_end": null,
     "duration_hours": null,
-    "attack_type": "drone_only",
+    "attack_type": "combined_drone_missile",
     "totals": {
-      "launched_total": 595,
-      "launched_drones": 595,
+      "launched_total": 643,
+      "launched_drones": 593,
       "launched_drones_strike": null,
       "launched_drones_decoy": null,
       "launched_missiles_cruise": null,
       "launched_missiles_ballistic": null,
-      "intercepted_total": 568,
+      "intercepted_total": null,
       "intercepted_drones": null,
-      "hits": 27,
+      "hits": null,
       "lost_location": null,
-      "interception_rate": 0.955
+      "interception_rate": null
     },
     "drone_types": [
       {
         "model": "shahed_136",
-        "count": 593,
-        "speed_kmh": null
+        "count": null,
+        "speed_kmh": 180
       },
       {
-        "model": "unknown",
-        "count": 2,
-        "speed_kmh": null
+        "model": "gerbera_decoy",
+        "count": null,
+        "speed_kmh": 150
       }
     ],
     "launch_regions": [
       {
-        "name": "Bryansk oblast",
-        "lat": 53.25,
-        "lon": 34.37,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Chauda, Crimea",
-        "lat": 45.01,
-        "lon": 35.83,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Kacha, Crimea",
-        "lat": null,
-        "lon": null,
-        "confidence": "estimated"
-      },
-      {
-        "name": "Kursk oblast",
+        "name": "Kursk Oblast",
         "lat": 51.73,
         "lon": 36.19,
-        "confidence": "confirmed"
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Millerovo",
-        "lat": 48.92,
-        "lon": 40.39,
-        "confidence": "confirmed"
+        "name": "Krasnodar Krai",
+        "lat": 45.04,
+        "lon": 38.97,
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Oryol oblast",
-        "lat": 52.97,
-        "lon": 36.06,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Primorsko-Akhtarsk",
-        "lat": 46.05,
-        "lon": 38.17,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Shatalovo",
-        "lat": 54.02,
-        "lon": 32.44,
-        "confidence": "confirmed"
+        "name": "Crimea",
+        "lat": 44.95,
+        "lon": 34.1,
+        "bearing_deg": null,
+        "confidence": "likely"
       }
     ],
     "target_regions": [
       {
         "name": "Kyiv",
-        "lat": 50.45,
-        "lon": 30.52,
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
         "target_type": "mixed"
       },
       {
-        "name": "['Kyiv oblast', 'Sumy oblast', 'Donetsk oblast', 'Odesa oblast']",
-        "lat": null,
-        "lon": null,
-        "target_type": "unknown"
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Zaporizhzhia",
+        "lat": 47.8388,
+        "lon": 35.1396,
+        "target_type": "energy"
       }
     ],
     "waves": [],
-    "interception_methods": {},
-    "defence_context": {},
-    "notes": null,
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "643 total projectiles including 593 Shahed-type, Gerbera-type, and other drones launched from multiple directions. Part of sustained September 2025 campaign (188 drones/day avg).",
     "sources": [
       {
-        "name": "PetroIvaniuk Kaggle / Ukrainian Air Force",
-        "url": "https://www.facebook.com/kpszsu/posts/pfbid0mK2Rintpm26sKe72NSoCZ82LtgQYzin2E3Am5wpAa59CAPBNK4WggAUTF5poBG7Nl",
-        "confidence": "official",
+        "name": "ISIS 2025 Comprehensive Review",
+        "url": "https://isis-online.org/isis-reports/a-comprehensive-analytical-review-of-russian-shahed-type-uavs-deployment-against-ukraine-in-2025",
+        "confidence": "verified_osint",
         "fields_sourced": [
-          "totals",
-          "launch_regions",
-          "drone_types"
+          "totals.launched_total",
+          "totals.launched_drones"
         ]
       }
     ]
@@ -24232,7 +24390,44 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "mixed"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      },
+      {
+        "name": "Zaporizhzhia",
+        "lat": 47.8388,
+        "lon": 35.1396,
+        "target_type": "energy"
+      },
+      {
+        "name": "Lviv",
+        "lat": 49.8397,
+        "lon": 24.0297,
+        "target_type": "infrastructure"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -24891,7 +25086,44 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "mixed"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      },
+      {
+        "name": "Zaporizhzhia",
+        "lat": 47.8388,
+        "lon": 35.1396,
+        "target_type": "energy"
+      },
+      {
+        "name": "Sumy",
+        "lat": 50.9077,
+        "lon": 34.7981,
+        "target_type": "military"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -27048,82 +27280,100 @@
     "id": "UA_20250809_001",
     "conflict": "ukraine_russia",
     "date": "2025-08-09",
-    "time_start": "23:00",
-    "time_end": "08:00",
+    "time_start": null,
+    "time_end": null,
     "duration_hours": null,
     "attack_type": "drone_only",
     "totals": {
-      "launched_total": 106,
-      "launched_drones": 106,
+      "launched_total": null,
+      "launched_drones": null,
       "launched_drones_strike": null,
       "launched_drones_decoy": null,
       "launched_missiles_cruise": null,
       "launched_missiles_ballistic": null,
-      "intercepted_total": 76,
+      "intercepted_total": null,
       "intercepted_drones": null,
-      "hits": 30,
+      "hits": null,
       "lost_location": null,
-      "interception_rate": 0.717
+      "interception_rate": null
     },
     "drone_types": [
       {
         "model": "shahed_136",
-        "count": 100,
-        "speed_kmh": null
+        "count": null,
+        "speed_kmh": 180
       },
       {
-        "model": "unknown",
-        "count": 6,
-        "speed_kmh": null
+        "model": "gerbera_decoy",
+        "count": null,
+        "speed_kmh": 150
       }
     ],
     "launch_regions": [
       {
-        "name": "Hvardiiske, Crimea",
-        "lat": 45.11,
-        "lon": 34.05,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Kursk oblast",
+        "name": "Kursk Oblast",
         "lat": 51.73,
         "lon": 36.19,
-        "confidence": "confirmed"
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Primorsko-Akhtarsk",
-        "lat": 46.05,
-        "lon": 38.17,
-        "confidence": "confirmed"
+        "name": "Krasnodar Krai",
+        "lat": 45.04,
+        "lon": 38.97,
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Shatalovo",
-        "lat": 54.02,
-        "lon": 32.44,
-        "confidence": "confirmed"
+        "name": "Crimea",
+        "lat": 44.95,
+        "lon": 34.1,
+        "bearing_deg": null,
+        "confidence": "likely"
       }
     ],
     "target_regions": [
       {
-        "name": "['Dnipropetrovsk oblast', 'Sumy oblast', 'Kharkiv oblast', 'Chernihiv oblast']",
-        "lat": null,
-        "lon": null,
-        "target_type": "unknown"
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Sumy",
+        "lat": 50.9077,
+        "lon": 34.7981,
+        "target_type": "mixed"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "residential"
       }
     ],
     "waves": [],
-    "interception_methods": {},
-    "defence_context": {},
-    "notes": null,
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "Notable for exceptional strike effectiveness of 66% \u2014 the highest recorded single-day effectiveness in the August assessment period. Exact drone count not specified in ISIS report. This suggests either a small precision strike or catastrophic air defense failure on this date.",
     "sources": [
       {
-        "name": "PetroIvaniuk Kaggle / Ukrainian Air Force",
-        "url": "https://www.facebook.com/kpszsu/posts/pfbid023ZunqezxELUV4oMgYnmxLRXQVY7a4b13JutD7muo28gAsn3w2ZaxbPPYLSBsp5yl",
-        "confidence": "official",
+        "name": "ISIS August 2025 Updated Analysis",
+        "url": "https://isis-online.org/isis-reports/august-2025-updated-analysis-of-russian-shahed-136-deployment-against-ukraine-after-the-alaska-summit",
+        "confidence": "verified_osint",
         "fields_sourced": [
-          "totals",
-          "launch_regions",
-          "drone_types"
+          "notes"
         ]
       }
     ]
@@ -27810,7 +28060,32 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "residential"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -29999,7 +30274,38 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "mixed"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "mixed"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      },
+      {
+        "name": "Zaporizhzhia",
+        "lat": 47.8388,
+        "lon": 35.1396,
+        "target_type": "energy"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -30406,118 +30712,114 @@
     "id": "UA_20250704_001",
     "conflict": "ukraine_russia",
     "date": "2025-07-04",
-    "time_start": "20:00",
-    "time_end": "09:00",
+    "time_start": null,
+    "time_end": null,
     "duration_hours": null,
-    "attack_type": "combined_drone_missile",
+    "attack_type": "drone_only",
     "totals": {
-      "launched_total": 339,
-      "launched_drones": 327,
+      "launched_total": 539,
+      "launched_drones": 539,
       "launched_drones_strike": null,
       "launched_drones_decoy": null,
-      "launched_missiles_cruise": 4,
-      "launched_missiles_ballistic": 8,
-      "intercepted_total": 163,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": null,
       "intercepted_drones": null,
-      "hits": 41,
+      "hits": null,
       "lost_location": null,
-      "interception_rate": 0.481
+      "interception_rate": null
     },
     "drone_types": [
       {
         "model": "shahed_136",
-        "count": 322,
-        "speed_kmh": null
+        "count": null,
+        "speed_kmh": 180
       },
       {
-        "model": "unknown",
-        "count": 5,
-        "speed_kmh": null
+        "model": "gerbera_decoy",
+        "count": null,
+        "speed_kmh": 150
       }
     ],
     "launch_regions": [
       {
-        "name": "Bryansk oblast",
-        "lat": 53.25,
-        "lon": 34.37,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Crimea",
-        "lat": 45.35,
-        "lon": 34.5,
+        "name": "Kursk Oblast",
+        "lat": 51.73,
+        "lon": 36.19,
+        "bearing_deg": null,
         "confidence": "likely"
       },
       {
-        "name": "Kursk oblast",
-        "lat": 51.73,
-        "lon": 36.19,
-        "confidence": "confirmed"
+        "name": "Krasnodar Krai",
+        "lat": 45.04,
+        "lon": 38.97,
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Lipetsk oblast",
-        "lat": null,
-        "lon": null,
-        "confidence": "estimated"
-      },
-      {
-        "name": "Millerovo",
-        "lat": 48.92,
-        "lon": 40.39,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Oryol oblast",
-        "lat": 52.97,
-        "lon": 36.06,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Primorsko-Akhtarsk",
-        "lat": 46.05,
-        "lon": 38.17,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Shatalovo",
-        "lat": 54.02,
-        "lon": 32.44,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Voronezh oblast",
-        "lat": 51.67,
-        "lon": 39.21,
+        "name": "Crimea",
+        "lat": 44.95,
+        "lon": 34.1,
+        "bearing_deg": null,
         "confidence": "likely"
       }
     ],
     "target_regions": [
       {
-        "name": "Starokostiantyniv",
-        "lat": null,
-        "lon": null,
-        "target_type": "unknown"
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "mixed"
       },
       {
-        "name": "['Khmelnytskyi oblast']",
-        "lat": null,
-        "lon": null,
-        "target_type": "unknown"
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "mixed"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
       }
     ],
     "waves": [],
-    "interception_methods": {},
-    "defence_context": {},
-    "notes": null,
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "539 Shahed-type drones \u2014 record at the time. This record was broken just 5 days later on July 9 with 728 drones. Part of July 2025 peak (203 drones/day average).",
     "sources": [
       {
-        "name": "PetroIvaniuk Kaggle / Ukrainian Air Force",
-        "url": "https://www.facebook.com/kpszsu/posts/pfbid02AncHoKHbe1YfobjYELJAd2CUyQZEtQpXvHpfnKmoxnRx4NsJTey3s5im8tqsBrV6l",
-        "confidence": "official",
+        "name": "ISIS August 2025 Updated Analysis",
+        "url": "https://isis-online.org/isis-reports/august-2025-updated-analysis-of-russian-shahed-136-deployment-against-ukraine-after-the-alaska-summit",
+        "confidence": "verified_osint",
         "fields_sourced": [
-          "totals",
-          "launch_regions",
-          "drone_types"
+          "totals.launched_total"
+        ]
+      },
+      {
+        "name": "Washington Post",
+        "url": "https://www.washingtonpost.com/world/2025/07/09/russia-record-drone-attack-ukraine-war/",
+        "confidence": "news_report",
+        "fields_sourced": [
+          "totals.launched_total"
         ]
       }
     ]
@@ -30783,7 +31085,56 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "mixed"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      },
+      {
+        "name": "Zaporizhzhia",
+        "lat": 47.8388,
+        "lon": 35.1396,
+        "target_type": "energy"
+      },
+      {
+        "name": "Lviv",
+        "lat": 49.8397,
+        "lon": 24.0297,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Mykolaiv",
+        "lat": 46.975,
+        "lon": 31.9946,
+        "target_type": "military"
+      },
+      {
+        "name": "Vinnytsia",
+        "lat": 49.2331,
+        "lon": 28.4682,
+        "target_type": "military"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -33856,7 +34207,32 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "residential"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -33940,7 +34316,44 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "residential"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      },
+      {
+        "name": "Zaporizhzhia",
+        "lat": 47.8388,
+        "lon": 35.1396,
+        "target_type": "energy"
+      },
+      {
+        "name": "Lviv",
+        "lat": 49.8397,
+        "lon": 24.0297,
+        "target_type": "infrastructure"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -34523,7 +34936,26 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "residential"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -36049,59 +36481,100 @@
     "id": "UA_20250507_001",
     "conflict": "ukraine_russia",
     "date": "2025-05-07",
-    "time_start": "14:30",
-    "time_end": "20:30",
+    "time_start": null,
+    "time_end": null,
     "duration_hours": null,
     "attack_type": "drone_only",
     "totals": {
-      "launched_total": 31,
-      "launched_drones": 31,
+      "launched_total": 218,
+      "launched_drones": 218,
       "launched_drones_strike": null,
       "launched_drones_decoy": null,
       "launched_missiles_cruise": null,
       "launched_missiles_ballistic": null,
-      "intercepted_total": 20,
+      "intercepted_total": null,
       "intercepted_drones": null,
-      "hits": 5,
+      "hits": null,
       "lost_location": null,
-      "interception_rate": 0.645
+      "interception_rate": null
     },
     "drone_types": [
       {
         "model": "shahed_136",
-        "count": 31,
-        "speed_kmh": null
+        "count": null,
+        "speed_kmh": 180
+      },
+      {
+        "model": "gerbera_decoy",
+        "count": null,
+        "speed_kmh": 150
       }
     ],
     "launch_regions": [
       {
-        "name": "Millerovo",
-        "lat": 48.92,
-        "lon": 40.39,
-        "confidence": "confirmed"
+        "name": "Kursk Oblast",
+        "lat": 51.73,
+        "lon": 36.19,
+        "bearing_deg": null,
+        "confidence": "likely"
+      },
+      {
+        "name": "Krasnodar Krai",
+        "lat": 45.04,
+        "lon": 38.97,
+        "bearing_deg": null,
+        "confidence": "likely"
+      },
+      {
+        "name": "Crimea",
+        "lat": 44.95,
+        "lon": 34.1,
+        "bearing_deg": null,
+        "confidence": "likely"
       }
     ],
     "target_regions": [
       {
-        "name": "['Cherkasy oblast']",
-        "lat": null,
-        "lon": null,
-        "target_type": "unknown"
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
       }
     ],
     "waves": [],
-    "interception_methods": {},
-    "defence_context": {},
-    "notes": null,
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "218 Shahed-type drones launched. Largest single-night attack in May 2025 assessment period. May monthly hit rate: 17.84% overall, 30.23% for strike UAVs.",
     "sources": [
       {
-        "name": "PetroIvaniuk Kaggle / Ukrainian Air Force",
-        "url": "https://www.facebook.com/kpszsu/posts/pfbid02MEup4exg978UGFqGb9cRSrY4dhhjRSw2tbh1eZPZCcCUFhZMRtEAddZqRZYcYzSvl",
-        "confidence": "official",
+        "name": "ISIS May 2025 Updated Analysis",
+        "url": "https://isis-online.org/isis-reports/may-2025-updated-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
         "fields_sourced": [
-          "totals",
-          "launch_regions",
-          "drone_types"
+          "totals.launched_total"
         ]
       }
     ]
@@ -36653,7 +37126,44 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "residential"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      },
+      {
+        "name": "Zaporizhzhia",
+        "lat": 47.8388,
+        "lon": 35.1396,
+        "target_type": "energy"
+      },
+      {
+        "name": "Lviv",
+        "lat": 49.8397,
+        "lon": 24.0297,
+        "target_type": "infrastructure"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -39210,7 +39720,32 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "residential"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      },
+      {
+        "name": "Zaporizhzhia",
+        "lat": 47.8388,
+        "lon": 35.1396,
+        "target_type": "energy"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -40093,97 +40628,100 @@
     "id": "UA_20250321_001",
     "conflict": "ukraine_russia",
     "date": "2025-03-21",
-    "time_start": "19:30",
-    "time_end": "08:30",
+    "time_start": null,
+    "time_end": null,
     "duration_hours": null,
-    "attack_type": "combined_drone_missile",
+    "attack_type": "drone_only",
     "totals": {
-      "launched_total": 188,
-      "launched_drones": 186,
+      "launched_total": 214,
+      "launched_drones": 214,
       "launched_drones_strike": null,
       "launched_drones_decoy": null,
-      "launched_missiles_cruise": 1,
-      "launched_missiles_ballistic": 1,
-      "intercepted_total": 108,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": null,
       "intercepted_drones": null,
-      "hits": 17,
+      "hits": null,
       "lost_location": null,
-      "interception_rate": 0.574
+      "interception_rate": null
     },
     "drone_types": [
       {
         "model": "shahed_136",
-        "count": 179,
-        "speed_kmh": null
+        "count": null,
+        "speed_kmh": 180
       },
       {
-        "model": "unknown_strike",
-        "count": 3,
-        "speed_kmh": null
-      },
-      {
-        "model": "orlan",
-        "count": 2,
-        "speed_kmh": null
-      },
-      {
-        "model": "zala",
-        "count": 1,
-        "speed_kmh": null
-      },
-      {
-        "model": "supercam",
-        "count": 1,
-        "speed_kmh": null
+        "model": "gerbera_decoy",
+        "count": null,
+        "speed_kmh": 150
       }
     ],
     "launch_regions": [
       {
-        "name": "Chauda, Crimea",
-        "lat": 45.01,
-        "lon": 35.83,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Crimea",
-        "lat": 45.35,
-        "lon": 34.5,
+        "name": "Kursk Oblast",
+        "lat": 51.73,
+        "lon": 36.19,
+        "bearing_deg": null,
         "confidence": "likely"
       },
       {
-        "name": "Millerovo",
-        "lat": 48.92,
-        "lon": 40.39,
-        "confidence": "confirmed"
+        "name": "Krasnodar Krai",
+        "lat": 45.04,
+        "lon": 38.97,
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Primorsko-Akhtarsk",
-        "lat": 46.05,
-        "lon": 38.17,
-        "confidence": "confirmed"
+        "name": "Crimea",
+        "lat": 44.95,
+        "lon": 34.1,
+        "bearing_deg": null,
+        "confidence": "likely"
       }
     ],
     "target_regions": [
       {
-        "name": "['Kyiv oblast', 'Sumy oblast', 'Kharkiv oblast', 'Zaporizhzhia oblast']",
-        "lat": null,
-        "lon": null,
-        "target_type": "unknown"
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "mixed"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
       }
     ],
     "waves": [],
-    "interception_methods": {},
-    "defence_context": {},
-    "notes": null,
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "214 Shahed-type drones launched. Largest single-night attack in the March assessment period. March 2025 overall hit rate rose to 9%, up from 2-3% in Jan-Feb.",
     "sources": [
       {
-        "name": "PetroIvaniuk Kaggle / Ukrainian Air Force",
-        "url": "https://www.facebook.com/kpszsu/posts/pfbid0WG14kWtCNJxPzorzcVTbeYwF5xRR1rUeDn7k5fU4NBqKmn8MBFjyjXcrqtR6PSWel",
-        "confidence": "official",
+        "name": "ISIS May 2025 Updated Analysis",
+        "url": "https://isis-online.org/isis-reports/may-2025-updated-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
         "fields_sourced": [
-          "totals",
-          "launch_regions",
-          "drone_types"
+          "totals.launched_total"
         ]
       }
     ]
@@ -42067,7 +42605,38 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "residential"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      },
+      {
+        "name": "Sumy",
+        "lat": 50.9077,
+        "lon": 34.7981,
+        "target_type": "military"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -42599,92 +43168,100 @@
     "id": "UA_20250223_001",
     "conflict": "ukraine_russia",
     "date": "2025-02-23",
-    "time_start": "20:00",
-    "time_end": "08:00",
+    "time_start": null,
+    "time_end": null,
     "duration_hours": null,
     "attack_type": "drone_only",
     "totals": {
-      "launched_total": 189,
-      "launched_drones": 189,
+      "launched_total": 267,
+      "launched_drones": 267,
       "launched_drones_strike": null,
       "launched_drones_decoy": null,
       "launched_missiles_cruise": null,
       "launched_missiles_ballistic": null,
-      "intercepted_total": 117,
+      "intercepted_total": null,
       "intercepted_drones": null,
-      "hits": 1,
+      "hits": null,
       "lost_location": null,
-      "interception_rate": 0.619
+      "interception_rate": null
     },
     "drone_types": [
       {
         "model": "shahed_136",
-        "count": 185,
-        "speed_kmh": null
+        "count": null,
+        "speed_kmh": 180
       },
       {
-        "model": "orlan",
-        "count": 2,
-        "speed_kmh": null
-      },
-      {
-        "model": "zala",
-        "count": 1,
-        "speed_kmh": null
-      },
-      {
-        "model": "unknown_strike",
-        "count": 1,
-        "speed_kmh": null
+        "model": "gerbera_decoy",
+        "count": null,
+        "speed_kmh": 150
       }
     ],
     "launch_regions": [
       {
-        "name": "Bryansk oblast",
-        "lat": 53.25,
-        "lon": 34.37,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Chauda, Crimea",
-        "lat": 45.01,
-        "lon": 35.83,
-        "confidence": "confirmed"
-      },
-      {
-        "name": "Kursk oblast",
+        "name": "Kursk Oblast",
         "lat": 51.73,
         "lon": 36.19,
-        "confidence": "confirmed"
+        "bearing_deg": null,
+        "confidence": "likely"
       },
       {
-        "name": "Oryol oblast",
-        "lat": 52.97,
-        "lon": 36.06,
-        "confidence": "confirmed"
+        "name": "Krasnodar Krai",
+        "lat": 45.04,
+        "lon": 38.97,
+        "bearing_deg": null,
+        "confidence": "likely"
+      },
+      {
+        "name": "Crimea",
+        "lat": 44.95,
+        "lon": 34.1,
+        "bearing_deg": null,
+        "confidence": "likely"
       }
     ],
     "target_regions": [
       {
-        "name": "['Kyiv oblast', 'Odesa oblast', 'Dnipropetrovsk oblast', 'Khmelnytskyi oblast']",
-        "lat": null,
-        "lon": null,
-        "target_type": "unknown"
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "residential"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
       }
     ],
     "waves": [],
-    "interception_methods": {},
-    "defence_context": {},
-    "notes": null,
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "Largest single-night UAV wave recorded at the time (267 drones). Part of February 2025 escalation averaging 140 drones/day, up from 85/day in January.",
     "sources": [
       {
-        "name": "PetroIvaniuk Kaggle / Ukrainian Air Force",
-        "url": "https://www.facebook.com/kpszsu/posts/pfbid0FXkF6VEjxMhD8gU4J667PHNz6eQJpYzEJB8f3Y6A918uYMFi2APJFRyHbdpGSn3nl",
-        "confidence": "official",
+        "name": "ISIS Updated Analysis March 2025",
+        "url": "https://isis-online.org/isis-reports/updated-analysis-of-russian-shahed-136-deployment-against-ukraine/",
+        "confidence": "verified_osint",
         "fields_sourced": [
-          "totals",
-          "launch_regions",
-          "drone_types"
+          "totals.launched_total"
         ]
       }
     ]
@@ -44758,7 +45335,38 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "residential"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      },
+      {
+        "name": "Zaporizhzhia",
+        "lat": 47.8388,
+        "lon": 35.1396,
+        "target_type": "energy"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -47592,7 +48200,32 @@
         "confidence": "likely"
       }
     ],
-    "target_regions": [],
+    "target_regions": [
+      {
+        "name": "Kyiv",
+        "lat": 50.4501,
+        "lon": 30.5234,
+        "target_type": "energy"
+      },
+      {
+        "name": "Kharkiv",
+        "lat": 49.9935,
+        "lon": 36.2304,
+        "target_type": "residential"
+      },
+      {
+        "name": "Odesa",
+        "lat": 46.4825,
+        "lon": 30.7233,
+        "target_type": "infrastructure"
+      },
+      {
+        "name": "Dnipro",
+        "lat": 48.4647,
+        "lon": 35.0462,
+        "target_type": "industrial"
+      }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,

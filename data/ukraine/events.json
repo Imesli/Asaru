@@ -29,7 +29,12 @@
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
       { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "energy" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "residential" },
+      { "name": "Odesa", "lat": 46.4825, "lon": 30.7233, "target_type": "infrastructure" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "industrial" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -84,7 +89,13 @@
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
       { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "energy" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "residential" },
+      { "name": "Odesa", "lat": 46.4825, "lon": 30.7233, "target_type": "infrastructure" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "industrial" },
+      { "name": "Zaporizhzhia", "lat": 47.8388, "lon": 35.1396, "target_type": "energy" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -139,7 +150,13 @@
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
       { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "energy" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "residential" },
+      { "name": "Odesa", "lat": 46.4825, "lon": 30.7233, "target_type": "infrastructure" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "industrial" },
+      { "name": "Sumy", "lat": 50.9077, "lon": 34.7981, "target_type": "military" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -193,7 +210,12 @@
       { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "energy" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "residential" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "industrial" },
+      { "name": "Zaporizhzhia", "lat": 47.8388, "lon": 35.1396, "target_type": "energy" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -248,7 +270,14 @@
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
       { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "energy" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "residential" },
+      { "name": "Odesa", "lat": 46.4825, "lon": 30.7233, "target_type": "infrastructure" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "industrial" },
+      { "name": "Zaporizhzhia", "lat": 47.8388, "lon": 35.1396, "target_type": "energy" },
+      { "name": "Lviv", "lat": 49.8397, "lon": 24.0297, "target_type": "infrastructure" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -301,7 +330,11 @@
       { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "energy" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "industrial" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "residential" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -355,7 +388,12 @@
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
       { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "energy" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "residential" },
+      { "name": "Odesa", "lat": 46.4825, "lon": 30.7233, "target_type": "infrastructure" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "industrial" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -410,7 +448,14 @@
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
       { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "energy" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "residential" },
+      { "name": "Odesa", "lat": 46.4825, "lon": 30.7233, "target_type": "infrastructure" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "industrial" },
+      { "name": "Zaporizhzhia", "lat": 47.8388, "lon": 35.1396, "target_type": "energy" },
+      { "name": "Lviv", "lat": 49.8397, "lon": 24.0297, "target_type": "infrastructure" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -472,7 +517,16 @@
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
       { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "energy" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "mixed" },
+      { "name": "Odesa", "lat": 46.4825, "lon": 30.7233, "target_type": "infrastructure" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "industrial" },
+      { "name": "Zaporizhzhia", "lat": 47.8388, "lon": 35.1396, "target_type": "energy" },
+      { "name": "Lviv", "lat": 49.8397, "lon": 24.0297, "target_type": "infrastructure" },
+      { "name": "Mykolaiv", "lat": 46.975, "lon": 31.9946, "target_type": "military" },
+      { "name": "Vinnytsia", "lat": 49.2331, "lon": 28.4682, "target_type": "military" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -533,7 +587,13 @@
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
       { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "mixed" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "mixed" },
+      { "name": "Odesa", "lat": 46.4825, "lon": 30.7233, "target_type": "infrastructure" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "industrial" },
+      { "name": "Zaporizhzhia", "lat": 47.8388, "lon": 35.1396, "target_type": "energy" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -588,7 +648,12 @@
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
       { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "energy" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "residential" },
+      { "name": "Odesa", "lat": 46.4825, "lon": 30.7233, "target_type": "infrastructure" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "industrial" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -644,7 +709,14 @@
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
       { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "energy" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "mixed" },
+      { "name": "Odesa", "lat": 46.4825, "lon": 30.7233, "target_type": "infrastructure" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "industrial" },
+      { "name": "Zaporizhzhia", "lat": 47.8388, "lon": 35.1396, "target_type": "energy" },
+      { "name": "Sumy", "lat": 50.9077, "lon": 34.7981, "target_type": "military" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -699,7 +771,14 @@
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
       { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "energy" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "mixed" },
+      { "name": "Odesa", "lat": 46.4825, "lon": 30.7233, "target_type": "infrastructure" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "industrial" },
+      { "name": "Zaporizhzhia", "lat": 47.8388, "lon": 35.1396, "target_type": "energy" },
+      { "name": "Lviv", "lat": 49.8397, "lon": 24.0297, "target_type": "infrastructure" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -762,7 +841,15 @@
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
       { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "energy" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "mixed" },
+      { "name": "Odesa", "lat": 46.4825, "lon": 30.7233, "target_type": "infrastructure" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "industrial" },
+      { "name": "Zaporizhzhia", "lat": 47.8388, "lon": 35.1396, "target_type": "energy" },
+      { "name": "Lviv", "lat": 49.8397, "lon": 24.0297, "target_type": "infrastructure" },
+      { "name": "Zhytomyr", "lat": 50.2547, "lon": 28.6587, "target_type": "military" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -824,7 +911,13 @@
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
       { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "energy" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "residential" },
+      { "name": "Odesa", "lat": 46.4825, "lon": 30.7233, "target_type": "infrastructure" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "industrial" },
+      { "name": "Zaporizhzhia", "lat": 47.8388, "lon": 35.1396, "target_type": "energy" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -880,7 +973,14 @@
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
       { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "energy" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "energy" },
+      { "name": "Odesa", "lat": 46.4825, "lon": 30.7233, "target_type": "infrastructure" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "energy" },
+      { "name": "Zaporizhzhia", "lat": 47.8388, "lon": 35.1396, "target_type": "energy" },
+      { "name": "Lviv", "lat": 49.8397, "lon": 24.0297, "target_type": "infrastructure" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": null,
@@ -942,7 +1042,14 @@
       { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
       { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
     ],
-    "target_regions": [],
+    "target_regions": [
+      { "name": "Kyiv", "lat": 50.4501, "lon": 30.5234, "target_type": "energy" },
+      { "name": "Kharkiv", "lat": 49.9935, "lon": 36.2304, "target_type": "energy" },
+      { "name": "Odesa", "lat": 46.4825, "lon": 30.7233, "target_type": "infrastructure" },
+      { "name": "Dnipro", "lat": 48.4647, "lon": 35.0462, "target_type": "energy" },
+      { "name": "Zaporizhzhia", "lat": 47.8388, "lon": 35.1396, "target_type": "energy" },
+      { "name": "Sumy", "lat": 50.9077, "lon": 34.7981, "target_type": "military" }
+    ],
     "waves": [],
     "interception_methods": {
       "interceptor_drone": 1704,

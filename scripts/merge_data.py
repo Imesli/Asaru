@@ -29,6 +29,9 @@ def merge_events():
     ua_curated = load_json(os.path.join(DATA, "ukraine", "events.json"))
     ir_curated = load_json(os.path.join(DATA, "iran", "events.json"))
 
+    # ISIS 2025 events
+    ua_isis = load_json(os.path.join(DATA, "ukraine", "isis_2025_events.json"))
+
     # Kaggle events
     ua_kaggle = load_json(os.path.join(DATA, "ukraine", "kaggle_events.json"))
 
@@ -37,8 +40,10 @@ def merge_events():
     for e in ua_curated:
         curated_dates.add(e["date"])
 
-    # Merge: keep all curated, add Kaggle where date not already covered
-    merged = list(ua_curated) + list(ir_curated)
+    # Merge: keep all curated + ISIS, add Kaggle where date not already covered
+    merged = list(ua_curated) + list(ir_curated) + list(ua_isis)
+    for e in ua_isis:
+        curated_dates.add(e["date"])
     kaggle_added = 0
     for e in ua_kaggle:
         if e["date"] not in curated_dates:
@@ -65,6 +70,7 @@ def merge_events():
     print(f"Events merged:")
     print(f"  Ukraine curated: {len(ua_curated)}")
     print(f"  Iran curated:    {len(ir_curated)}")
+    print(f"  ISIS 2025:       {len(ua_isis)}")
     print(f"  Kaggle total:    {len(ua_kaggle)}")
     print(f"  Kaggle added:    {kaggle_added} (skipped {len(ua_kaggle) - kaggle_added} overlapping dates)")
     print(f"  Final total:     {len(merged)}")
@@ -90,6 +96,16 @@ def merge_routes():
 
     example_added = len(routes) - curated_count
 
+    # Shahed Tracker routes (verified OSINT)
+    st_path = os.path.join(DATA, "ukraine", "shahed_tracker_routes.json")
+    st_routes = load_json(st_path)
+    st_added = 0
+    for r in st_routes:
+        if r["id"] not in route_ids:
+            routes.append(r)
+            route_ids.add(r["id"])
+            st_added += 1
+
     # Generated/interpolated routes
     generated_path = os.path.join(DATA, "ukraine", "generated_routes.json")
     generated = load_json(generated_path)
@@ -106,6 +122,7 @@ def merge_routes():
 
     print(f"Routes merged:")
     print(f"  Hand-curated:  {curated_count}")
+    print(f"  Shahed Tracker: {st_added}")
     print(f"  Examples:      {example_added}")
     print(f"  Generated:     {gen_added}")
     print(f"  Total:         {len(routes)}")

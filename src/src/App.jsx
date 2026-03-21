@@ -1,5 +1,6 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import MapView from './MapView';
+import SimPanel from './sim/SimPanel';
 import './App.css';
 
 const CONFLICT_META = {
@@ -7,14 +8,21 @@ const CONFLICT_META = {
   iran_2026: { label: 'Iran 2026', color: '#e05252', short: 'IRN' },
 };
 
+const LAUNCH_COLOR = '#34d399'; // emerald green — consistent with map
+
 const TARGET_TYPE_COLORS = {
-  energy: '#f59e0b',
+  energy: '#fb923c',
   military: '#ef4444',
-  residential: '#a78bfa',
-  industrial: '#64748b',
-  transport: '#22d3ee',
-  mixed: '#f97316',
-  unknown: '#475569',
+  residential: '#f472b6',
+  civilian: '#f472b6',
+  urban: '#f87171',
+  industrial: '#fbbf24',
+  infrastructure: '#fb923c',
+  transport: '#fb923c',
+  diplomatic: '#c084fc',
+  religious: '#c084fc',
+  mixed: '#fb923c',
+  unknown: '#f87171',
 };
 
 const ROUTE_TYPE_META = {
@@ -50,15 +58,38 @@ function App() {
   const [selectedConflict, setSelectedConflict] = useState('all');
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [activeTab, setActiveTab] = useState('sit');
-  const [mapHighlight, setMapHighlight] = useState(null); // { type: 'launch'|'target'|'route', id }
+  const [mapHighlight, setMapHighlight] = useState(null);
+  const [layers, setLayers] = useState({
+    arcs: true,
+    routes: true,
+    launches: true,
+    targets: true,
+    labels: true,
+  });
+  const [defenseSites, setDefenseSites] = useState([]);
+  const [simTick, setSimTick] = useState(null);
+  const [simResults, setSimResults] = useState(null);
+  const [placeSiteMode, setPlaceSiteMode] = useState(null); // null or preset key string
+
+  const toggleLayer = (key) => setLayers(prev => ({ ...prev, [key]: !prev[key] }));
+  const handleSimTick = useCallback((tick) => setSimTick(tick), []);
+  const handleSimResults = useCallback((results) => setSimResults(results), []);
+  const handlePlaceSiteMode = useCallback((presetKey) => setPlaceSiteMode(presetKey), []);
+  const handleMapPlaceSite = useCallback((site) => {
+    setDefenseSites(prev => [...prev, site]);
+    setPlaceSiteMode(null);
+  }, []);
 
   useEffect(() => {
+    const base = import.meta.env.BASE_URL;
     Promise.all([
-      fetch('/data/events.json').then(r => r.json()),
-      fetch('/data/routes.json').then(r => r.json()),
-    ]).then(([evts, rts]) => {
+      fetch(`${base}data/events.json`).then(r => r.json()),
+      fetch(`${base}data/routes.json`).then(r => r.json()),
+      fetch(`${base}data/defense_sites.json`).then(r => r.json()).catch(() => []),
+    ]).then(([evts, rts, sites]) => {
       setEvents(evts);
       setRoutes(rts);
+      setDefenseSites(sites);
     });
   }, []);
 
@@ -238,7 +269,7 @@ function App() {
                 onMouseLeave={() => setMapHighlight(null)}
               >
                 <td>
-                  <span className="site-dot" style={{ background: CONFLICT_META[s.conflict]?.color || '#888' }} />
+                  <span className="site-dot" style={{ background: LAUNCH_COLOR }} />
                   {s.name}
                 </td>
                 <td className="num">{s.eventCount}</td>
@@ -351,8 +382,8 @@ function App() {
             </div>
             {route.notes && <div className="rc-notes">{route.notes}</div>}
             <div className="rc-meta">
-              <span className={`conf-badge conf-${route.source.confidence}`}>{route.source.confidence}</span>
-              <span className="rc-src">{route.source.name}</span>
+              <span className={`conf-badge conf-${route.sources?.[0]?.confidence || 'estimate'}`}>{route.sources?.[0]?.confidence || 'estimate'}</span>
+              <span className="rc-src">{route.sources?.[0]?.name || 'Unknown'}</span>
             </div>
           </div>
         ))}
@@ -501,11 +532,22 @@ function App() {
           <button className={`ptab ${activeTab === 'sit' ? 'active' : ''}`} onClick={() => setActiveTab('sit')}>SITUATIONAL</button>
           <button className={`ptab ${activeTab === 'events' ? 'active' : ''}`} onClick={() => setActiveTab('events')}>EVENTS</button>
           <button className={`ptab ${activeTab === 'routes' ? 'active' : ''}`} onClick={() => setActiveTab('routes')}>ROUTES</button>
+          <button className={`ptab ${activeTab === 'sim' ? 'active' : ''}`} onClick={() => setActiveTab('sim')}>SIM</button>
         </div>
 
         {activeTab === 'sit' && renderSitTab()}
         {activeTab === 'events' && renderEventsTab()}
         {activeTab === 'routes' && renderRoutesTab()}
+        <SimPanel
+          events={filteredEvents}
+          routes={filteredRoutes}
+          defenseSites={defenseSites}
+          onSimTick={handleSimTick}
+          onSimResults={handleSimResults}
+          onUpdateDefenseSites={setDefenseSites}
+          onPlaceSiteMode={handlePlaceSiteMode}
+          visible={activeTab === 'sim'}
+        />
       </div>
 
       <div className="map-container">
@@ -515,6 +557,13 @@ function App() {
           selectedEvent={selectedEvent}
           onSelectEvent={setSelectedEvent}
           mapHighlight={mapHighlight}
+          visibleLayers={layers}
+          onToggleLayer={toggleLayer}
+          simTick={simTick}
+          defenseSites={defenseSites}
+          simMode={activeTab === 'sim'}
+          placeSiteMode={placeSiteMode}
+          onPlaceSite={handleMapPlaceSite}
         />
       </div>
     </div>

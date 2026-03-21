@@ -1,0 +1,346 @@
+[
+  {
+    "id": "DS_UA_001",
+    "conflict": "ukraine_russia",
+    "name": "Kyiv North — Interceptor Drone Battery",
+    "lat": 50.55,
+    "lon": 30.45,
+    "status": "active",
+    "assets": [
+      {
+        "type": "interceptor_drone",
+        "weapon": "sting",
+        "stock": 40,
+        "range_km": 15,
+        "speed_kmh": 250,
+        "reload_time_s": 8,
+        "kill_probability": {
+          "shahed_136": 0.82,
+          "geran_2": 0.78,
+          "geran_3": 0.45,
+          "gerbera_decoy": 0.85,
+          "unknown": 0.70
+        },
+        "can_discriminate_decoys": false
+      },
+      {
+        "type": "interceptor_drone",
+        "weapon": "bullet",
+        "stock": 25,
+        "range_km": 12,
+        "speed_kmh": 300,
+        "reload_time_s": 5,
+        "kill_probability": {
+          "shahed_136": 0.88,
+          "geran_2": 0.84,
+          "geran_3": 0.55,
+          "gerbera_decoy": 0.90,
+          "unknown": 0.75
+        },
+        "can_discriminate_decoys": false
+      }
+    ],
+    "radar_range_km": 80,
+    "notes": "Primary interceptor drone base north of Kyiv. High throughput, critical for northern approach defense.",
+    "sources": [{ "name": "Ukrainian Air Force statements + OSINT", "confidence": "verified_osint" }]
+  },
+  {
+    "id": "DS_UA_002",
+    "conflict": "ukraine_russia",
+    "name": "Kyiv South — Mixed Defense",
+    "lat": 50.35,
+    "lon": 30.60,
+    "status": "active",
+    "assets": [
+      {
+        "type": "interceptor_drone",
+        "weapon": "octopus",
+        "stock": 30,
+        "range_km": 20,
+        "speed_kmh": 220,
+        "reload_time_s": 12,
+        "kill_probability": {
+          "shahed_136": 0.78,
+          "geran_2": 0.74,
+          "geran_3": 0.40,
+          "gerbera_decoy": 0.80,
+          "unknown": 0.65
+        },
+        "can_discriminate_decoys": true
+      },
+      {
+        "type": "sam_missile",
+        "weapon": "gepard",
+        "stock": 120,
+        "range_km": 4,
+        "speed_kmh": null,
+        "reload_time_s": 0.5,
+        "kill_probability": {
+          "shahed_136": 0.75,
+          "geran_2": 0.72,
+          "geran_3": 0.60,
+          "gerbera_decoy": 0.70,
+          "unknown": 0.65
+        },
+        "can_discriminate_decoys": false
+      }
+    ],
+    "radar_range_km": 60,
+    "notes": "Southern Kyiv defense. Octopus drones can discriminate decoys via IR signature analysis.",
+    "sources": [{ "name": "OSINT geolocation + news reports", "confidence": "osint" }]
+  },
+  {
+    "id": "DS_UA_003",
+    "conflict": "ukraine_russia",
+    "name": "Kyiv West — NASAMS Battery",
+    "lat": 50.47,
+    "lon": 30.20,
+    "status": "active",
+    "assets": [
+      {
+        "type": "sam_missile",
+        "weapon": "nasams",
+        "stock": 16,
+        "range_km": 25,
+        "speed_kmh": null,
+        "reload_time_s": 15,
+        "kill_probability": {
+          "shahed_136": 0.95,
+          "geran_2": 0.93,
+          "geran_3": 0.80,
+          "gerbera_decoy": 0.95,
+          "unknown": 0.85
+        },
+        "can_discriminate_decoys": false
+      },
+      {
+        "type": "interceptor_drone",
+        "weapon": "sting",
+        "stock": 35,
+        "range_km": 15,
+        "speed_kmh": 250,
+        "reload_time_s": 8,
+        "kill_probability": {
+          "shahed_136": 0.82,
+          "geran_2": 0.78,
+          "geran_3": 0.45,
+          "gerbera_decoy": 0.85,
+          "unknown": 0.70
+        },
+        "can_discriminate_decoys": false
+      }
+    ],
+    "radar_range_km": 120,
+    "notes": "NASAMS battery with interceptor drone augmentation. NASAMS missiles are expensive — assignment algorithm should prefer drones for slow targets, reserve NASAMS for fast Geran-3 or saturation scenarios.",
+    "sources": [{ "name": "Norwegian MoD transfer announcements + OSINT", "confidence": "verified_osint" }]
+  },
+  {
+    "id": "DS_UA_004",
+    "conflict": "ukraine_russia",
+    "name": "Vinnytsia — Forward Intercept",
+    "lat": 49.25,
+    "lon": 28.50,
+    "status": "active",
+    "assets": [
+      {
+        "type": "interceptor_drone",
+        "weapon": "bullet",
+        "stock": 30,
+        "range_km": 12,
+        "speed_kmh": 300,
+        "reload_time_s": 5,
+        "kill_probability": {
+          "shahed_136": 0.88,
+          "geran_2": 0.84,
+          "geran_3": 0.55,
+          "gerbera_decoy": 0.90,
+          "unknown": 0.75
+        },
+        "can_discriminate_decoys": false
+      }
+    ],
+    "radar_range_km": 70,
+    "notes": "Forward intercept point on the southern approach corridor. Drones transiting from Mykolaiv toward Kyiv pass through this zone.",
+    "sources": [{ "name": "Shahed Tracker route analysis", "confidence": "osint" }]
+  },
+  {
+    "id": "DS_UA_005",
+    "conflict": "ukraine_russia",
+    "name": "Odesa — Port Defense",
+    "lat": 46.50,
+    "lon": 30.70,
+    "status": "active",
+    "assets": [
+      {
+        "type": "sam_missile",
+        "weapon": "iris_t",
+        "stock": 8,
+        "range_km": 40,
+        "speed_kmh": null,
+        "reload_time_s": 20,
+        "kill_probability": {
+          "shahed_136": 0.96,
+          "geran_2": 0.94,
+          "geran_3": 0.85,
+          "gerbera_decoy": 0.96,
+          "unknown": 0.88
+        },
+        "can_discriminate_decoys": false
+      },
+      {
+        "type": "interceptor_drone",
+        "weapon": "sting",
+        "stock": 20,
+        "range_km": 15,
+        "speed_kmh": 250,
+        "reload_time_s": 8,
+        "kill_probability": {
+          "shahed_136": 0.82,
+          "geran_2": 0.78,
+          "geran_3": 0.45,
+          "gerbera_decoy": 0.85,
+          "unknown": 0.70
+        },
+        "can_discriminate_decoys": false
+      },
+      {
+        "type": "aaa",
+        "weapon": "gepard",
+        "stock": 200,
+        "range_km": 4,
+        "speed_kmh": null,
+        "reload_time_s": 0.1,
+        "kill_probability": {
+          "shahed_136": 0.65,
+          "geran_2": 0.62,
+          "geran_3": 0.35,
+          "gerbera_decoy": 0.60,
+          "unknown": 0.50
+        },
+        "can_discriminate_decoys": false
+      }
+    ],
+    "radar_range_km": 100,
+    "notes": "Critical port defense. IRIS-T is the most capable system but extremely limited stock. Assignment must prioritize strike drones over decoys here.",
+    "sources": [{ "name": "German MoD IRIS-T delivery confirmations", "confidence": "verified_osint" }]
+  },
+  {
+    "id": "DS_UA_006",
+    "conflict": "ukraine_russia",
+    "name": "Kharkiv — Eastern Shield",
+    "lat": 50.05,
+    "lon": 36.15,
+    "status": "active",
+    "assets": [
+      {
+        "type": "interceptor_drone",
+        "weapon": "sting",
+        "stock": 25,
+        "range_km": 15,
+        "speed_kmh": 250,
+        "reload_time_s": 8,
+        "kill_probability": {
+          "shahed_136": 0.82,
+          "geran_2": 0.78,
+          "geran_3": 0.45,
+          "gerbera_decoy": 0.85,
+          "unknown": 0.70
+        },
+        "can_discriminate_decoys": false
+      },
+      {
+        "type": "sam_missile",
+        "weapon": "hawk",
+        "stock": 12,
+        "range_km": 30,
+        "speed_kmh": null,
+        "reload_time_s": 18,
+        "kill_probability": {
+          "shahed_136": 0.88,
+          "geran_2": 0.85,
+          "geran_3": 0.70,
+          "gerbera_decoy": 0.88,
+          "unknown": 0.78
+        },
+        "can_discriminate_decoys": false
+      }
+    ],
+    "radar_range_km": 90,
+    "notes": "Eastern defense zone. Short warning time due to proximity to Russian launch sites (Belgorod ~80km).",
+    "sources": [{ "name": "OSINT + Spanish MoD Hawk transfer", "confidence": "osint" }]
+  },
+  {
+    "id": "DS_UA_007",
+    "conflict": "ukraine_russia",
+    "name": "Dnipro — Central Defense",
+    "lat": 48.50,
+    "lon": 35.00,
+    "status": "active",
+    "assets": [
+      {
+        "type": "interceptor_drone",
+        "weapon": "bullet",
+        "stock": 20,
+        "range_km": 12,
+        "speed_kmh": 300,
+        "reload_time_s": 5,
+        "kill_probability": {
+          "shahed_136": 0.88,
+          "geran_2": 0.84,
+          "geran_3": 0.55,
+          "gerbera_decoy": 0.90,
+          "unknown": 0.75
+        },
+        "can_discriminate_decoys": false
+      },
+      {
+        "type": "ew",
+        "weapon": "ew_jammer",
+        "stock": 1,
+        "range_km": 30,
+        "speed_kmh": null,
+        "reload_time_s": null,
+        "kill_probability": {
+          "shahed_136": 0.25,
+          "geran_2": 0.20,
+          "geran_3": 0.10,
+          "gerbera_decoy": 0.30,
+          "unknown": 0.15
+        },
+        "can_discriminate_decoys": true
+      }
+    ],
+    "radar_range_km": 75,
+    "notes": "Central hub defending industrial targets. EW jammer provides soft-kill capability and can help discriminate decoys by observing GPS-seeking behavior.",
+    "sources": [{ "name": "OSINT + Ukrainian EW deployment reports", "confidence": "osint" }]
+  },
+  {
+    "id": "DS_UA_008",
+    "conflict": "ukraine_russia",
+    "name": "Khmelnytskyi — Western Corridor",
+    "lat": 49.42,
+    "lon": 26.98,
+    "status": "active",
+    "assets": [
+      {
+        "type": "interceptor_drone",
+        "weapon": "sting",
+        "stock": 30,
+        "range_km": 15,
+        "speed_kmh": 250,
+        "reload_time_s": 8,
+        "kill_probability": {
+          "shahed_136": 0.82,
+          "geran_2": 0.78,
+          "geran_3": 0.45,
+          "gerbera_decoy": 0.85,
+          "unknown": 0.70
+        },
+        "can_discriminate_decoys": false
+      }
+    ],
+    "radar_range_km": 65,
+    "notes": "Western corridor intercept. Many Shaheds route through this area to approach Kyiv from the west, avoiding the heavier southern defenses.",
+    "sources": [{ "name": "Shahed Tracker flight path patterns", "confidence": "osint" }]
+  }
+]

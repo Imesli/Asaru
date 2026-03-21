@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Asaru Defense Site",
+  "description": "A defensive position with interceptor assets. Used in simulation to model automated assignment of interceptors against incoming drone swarms.",
+  "type": "object",
+  "required": ["id", "conflict", "name", "lat", "lon", "assets"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique site ID. Format: DS_{conflict}_{seq}. e.g. DS_UA_001",
+      "pattern": "^DS_(UA|IR)_\\d{3}$"
+    },
+    "conflict": {
+      "type": "string",
+      "enum": ["ukraine_russia", "iran_2026"]
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name. e.g. 'Kyiv North Interceptor Base'"
+    },
+    "lat": { "type": "number" },
+    "lon": { "type": "number" },
+    "status": {
+      "type": "string",
+      "enum": ["active", "degraded", "destroyed", "unknown"],
+      "default": "active"
+    },
+    "assets": {
+      "type": "array",
+      "description": "Weapon systems deployed at this site",
+      "items": {
+        "type": "object",
+        "required": ["type", "weapon", "stock", "range_km"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["interceptor_drone", "sam_missile", "ew", "aaa", "manpads"],
+            "description": "Category matching interception_methods in attack_event schema"
+          },
+          "weapon": {
+            "type": "string",
+            "description": "Specific system. e.g. 'sting', 'bullet', 'octopus', 'anvil', 'gepard', 'iris_t', 'nasams', 'hawk'"
+          },
+          "stock": {
+            "type": "integer",
+            "description": "Number of rounds/interceptors available at start of engagement"
+          },
+          "range_km": {
+            "type": "number",
+            "description": "Maximum effective engagement range in km"
+          },
+          "speed_kmh": {
+            "type": ["number", "null"],
+            "description": "Interceptor speed in km/h. Relevant for drone-on-drone engagements. Null for stationary systems."
+          },
+          "reload_time_s": {
+            "type": ["number", "null"],
+            "description": "Seconds between launches from same launcher. Null if single-use or N/A."
+          },
+          "kill_probability": {
+            "type": "object",
+            "description": "P(kill) by target drone type at optimal range",
+            "properties": {
+              "shahed_136": { "type": "number", "minimum": 0, "maximum": 1 },
+              "geran_2": { "type": "number", "minimum": 0, "maximum": 1 },
+              "geran_3": { "type": "number", "minimum": 0, "maximum": 1 },
+              "gerbera_decoy": { "type": "number", "minimum": 0, "maximum": 1 },
+              "unknown": { "type": "number", "minimum": 0, "maximum": 1 }
+            },
+            "additionalProperties": { "type": "number", "minimum": 0, "maximum": 1 }
+          },
+          "can_discriminate_decoys": {
+            "type": "boolean",
+            "description": "Whether this system can distinguish strike drones from decoys before engagement",
+            "default": false
+          }
+        }
+      }
+    },
+    "radar_range_km": {
+      "type": ["number", "null"],
+      "description": "Detection range of the site's radar. Determines when incoming drones become visible to the assignment algorithm."
+    },
+    "notes": {
+      "type": ["string", "null"]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "url": { "type": ["string", "null"] },
+          "confidence": {
+            "type": "string",
+            "enum": ["official", "verified_osint", "osint", "news_report", "estimate", "sim_placement"]
+          }
+        }
+      }
+    }
+  }
+}

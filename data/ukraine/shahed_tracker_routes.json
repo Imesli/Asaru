@@ -1,0 +1,345 @@
+[
+  {
+    "id": "UA_20240103_001_R01",
+    "event_id": "UA_20240103_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": 1,
+    "route_type": "circuitous",
+    "approach_direction": "S",
+    "outcome": "intercepted",
+    "waypoints": [
+      {"seq": 1, "name": "Mykolaiv", "lat": 46.97, "lon": 32.00, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Kirovohrad", "lat": 48.51, "lon": 32.26, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Cherkasy", "lat": 49.44, "lon": 32.06, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 4, "name": "Kyiv", "lat": 50.45, "lon": 30.52, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 5, "name": "Vinnytsia", "lat": 49.23, "lon": 28.47, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 6, "name": "Khmelnytskyi", "lat": 49.42, "lon": 26.99, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "Explicit route from @ShahedTracker: looped north through Kyiv then west to Khmelnytskyi",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20240103_001_R02",
+    "event_id": "UA_20240103_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": 1,
+    "route_type": "looping",
+    "approach_direction": "S",
+    "outcome": "intercepted",
+    "waypoints": [
+      {"seq": 1, "name": "Mykolaiv", "lat": 46.97, "lon": 32.00, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Odesa", "lat": 46.48, "lon": 30.73, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Kirovohrad", "lat": 48.51, "lon": 32.26, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 4, "name": "Vinnytsia", "lat": 49.23, "lon": 28.47, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 5, "name": "Khmelnytskyi", "lat": 49.42, "lon": 26.99, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 6, "name": "Ternopil", "lat": 49.55, "lon": 25.59, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 7, "name": "Khmelnytskyi", "lat": 49.42, "lon": 26.99, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "Explicit route from @ShahedTracker: looping pattern — went to Ternopil then doubled back to Khmelnytskyi",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20240519_001_R01",
+    "event_id": "UA_20240519_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "circuitous",
+    "approach_direction": "S",
+    "outcome": "intercepted",
+    "waypoints": [
+      {"seq": 1, "name": "Mykolaiv", "lat": 46.97, "lon": 32.00, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Odesa", "lat": 46.48, "lon": 30.73, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Vinnytsia", "lat": 49.23, "lon": 28.47, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 4, "name": "Khmelnytskyi", "lat": 49.42, "lon": 26.99, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 5, "name": "Ternopil", "lat": 49.55, "lon": 25.59, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 6, "name": "Ivano-Frankivsk", "lat": 48.92, "lon": 24.71, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 7, "name": "Lviv", "lat": 49.84, "lon": 24.03, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "Explicit route from @ShahedTracker: long circuitous path from south coast to western Ukraine",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20240519_001_R02",
+    "event_id": "UA_20240519_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": "N",
+    "outcome": "intercepted",
+    "waypoints": [
+      {"seq": 1, "name": "Kursk", "lat": 51.73, "lon": 36.19, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Sumy", "lat": 50.91, "lon": 34.80, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Kharkiv", "lat": 49.99, "lon": 36.23, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 4, "name": "Poltava", "lat": 49.59, "lon": 34.55, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "Inferred from @ShahedTracker: 'Groups traveled from Sumy and Kharkiv' to reach Poltava",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20240519_001_R03",
+    "event_id": "UA_20240519_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": "S",
+    "outcome": "intercepted",
+    "waypoints": [
+      {"seq": 1, "name": "Primorsko-Akhtarsk", "lat": 46.05, "lon": 38.17, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Black Sea", "lat": 44.50, "lon": 33.50, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Kherson", "lat": 46.64, "lon": 32.62, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 4, "name": "Mykolaiv", "lat": 46.97, "lon": 32.00, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "Inferred from @ShahedTracker: 'UAVs traveled from the Black Sea and Kherson' to reach Mykolaiv",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20240519_001_R04",
+    "event_id": "UA_20240519_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": "S",
+    "outcome": "intercepted",
+    "waypoints": [
+      {"seq": 1, "name": "Primorsko-Akhtarsk", "lat": 46.05, "lon": 38.17, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Black Sea", "lat": 44.50, "lon": 33.50, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Odesa", "lat": 46.48, "lon": 30.73, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "Inferred from @ShahedTracker: 'UAVs reached the Odesa district from the Black Sea'",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20240531_001_R01",
+    "event_id": "UA_20240531_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "circuitous",
+    "approach_direction": "S",
+    "outcome": "intercepted",
+    "waypoints": [
+      {"seq": 1, "name": "Primorsko-Akhtarsk", "lat": 46.05, "lon": 38.17, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Kherson", "lat": 46.64, "lon": 32.62, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Mykolaiv", "lat": 46.97, "lon": 32.00, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 4, "name": "Kirovohrad", "lat": 48.51, "lon": 32.26, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 5, "name": "Dnipro", "lat": 48.46, "lon": 35.05, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "Inferred from @ShahedTracker: UAVs reached Pavlohrad, Dnipro, Kryvyi Rih and Kamianske districts",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20240531_001_R02",
+    "event_id": "UA_20240531_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": "S",
+    "outcome": "intercepted",
+    "waypoints": [
+      {"seq": 1, "name": "Primorsko-Akhtarsk", "lat": 46.05, "lon": 38.17, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Kherson", "lat": 46.64, "lon": 32.62, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Mykolaiv", "lat": 46.97, "lon": 32.00, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "Inferred from @ShahedTracker: UAVs reached Mykolaiv district from south",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20240531_001_R03",
+    "event_id": "UA_20240531_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "circuitous",
+    "approach_direction": "S",
+    "outcome": "intercepted",
+    "waypoints": [
+      {"seq": 1, "name": "Primorsko-Akhtarsk", "lat": 46.05, "lon": 38.17, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Mykolaiv", "lat": 46.97, "lon": 32.00, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Vinnytsia", "lat": 49.23, "lon": 28.47, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 4, "name": "Khmelnytskyi", "lat": 49.42, "lon": 26.99, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 5, "name": "Lviv", "lat": 49.84, "lon": 24.03, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "Inferred from @ShahedTracker: UAVs reached Stryi district in Lviv — standard western corridor",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20240531_001_R04",
+    "event_id": "UA_20240531_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "circuitous",
+    "approach_direction": "S",
+    "outcome": "intercepted",
+    "waypoints": [
+      {"seq": 1, "name": "Primorsko-Akhtarsk", "lat": 46.05, "lon": 38.17, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Kherson", "lat": 46.64, "lon": 32.62, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Zaporizhzhia", "lat": 47.84, "lon": 35.14, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 4, "name": "Kremenchuk", "lat": 49.07, "lon": 33.42, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 5, "name": "Poltava", "lat": 49.59, "lon": 34.55, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "Inferred from @ShahedTracker: UAVs reached Kremenchuk and Poltava districts",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20240917_001_R01",
+    "event_id": "UA_20240917_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": "N",
+    "outcome": "hit_target",
+    "waypoints": [
+      {"seq": 1, "name": "Kursk", "lat": 51.73, "lon": 36.19, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Sumy", "lat": 50.91, "lon": 34.80, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "From @ShahedTracker: hit critical infrastructure, fire at substation in Sumy",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20240917_001_R02",
+    "event_id": "UA_20240917_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": "S",
+    "outcome": "crashed",
+    "waypoints": [
+      {"seq": 1, "name": "Yeysk", "lat": 46.71, "lon": 38.27, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Mykolaiv", "lat": 46.97, "lon": 32.00, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Kropyvnytskyi", "lat": 48.51, "lon": 32.26, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "From @ShahedTracker: drone crashed in Kropyvnytskyi, damaging 19 residential buildings",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20240917_001_R03",
+    "event_id": "UA_20240917_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "circuitous",
+    "approach_direction": "S",
+    "outcome": "unknown",
+    "waypoints": [
+      {"seq": 1, "name": "Yeysk", "lat": 46.71, "lon": 38.27, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Mykolaiv", "lat": 46.97, "lon": 32.00, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Kirovohrad", "lat": 48.51, "lon": 32.26, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 4, "name": "Rivne", "lat": 50.62, "lon": 26.25, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "Inferred from @ShahedTracker: UAS reached Sarny district in Rivne",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20241213_001_R01",
+    "event_id": "UA_20241213_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "circuitous",
+    "approach_direction": "S",
+    "outcome": "hit_target",
+    "waypoints": [
+      {"seq": 1, "name": "Primorsko-Akhtarsk", "lat": 46.05, "lon": 38.17, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Mykolaiv", "lat": 46.97, "lon": 32.00, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Kirovohrad", "lat": 48.51, "lon": 32.26, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 4, "name": "Cherkasy", "lat": 49.44, "lon": 32.06, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 5, "name": "Uman", "lat": 48.75, "lon": 30.22, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "From @ShahedTracker: UASs reached Uman district, power line damaged by debris",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20241213_001_R02",
+    "event_id": "UA_20241213_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": "E",
+    "outcome": "hit_target",
+    "waypoints": [
+      {"seq": 1, "name": "Millerovo", "lat": 48.92, "lon": 40.39, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Dnipro", "lat": 48.46, "lon": 35.05, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "From @ShahedTracker: hit power line in Samar district, damage to 3 houses and a shop",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20241213_001_R03",
+    "event_id": "UA_20241213_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "circuitous",
+    "approach_direction": "N",
+    "outcome": "hit_target",
+    "waypoints": [
+      {"seq": 1, "name": "Kursk", "lat": 51.73, "lon": 36.19, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Chernihiv", "lat": 51.50, "lon": 31.30, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Kyiv", "lat": 50.45, "lon": 30.52, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "From @ShahedTracker: debris damaged admin building, warehouses, and car in Kyiv Oblast",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20260120_001_R01",
+    "event_id": "UA_20260120_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": 1,
+    "route_type": "direct",
+    "approach_direction": "S",
+    "outcome": "hit_target",
+    "waypoints": [
+      {"seq": 1, "name": "Black Sea", "lat": 44.50, "lon": 33.50, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Odesa", "lat": 46.48, "lon": 30.73, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Malodolyns'ke", "lat": 46.34, "lon": 30.63, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "From @ShahedTracker: Shahed damaged 110kV substation at 46.34437, 30.62967",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20260120_001_R02",
+    "event_id": "UA_20260120_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "shahed_136",
+    "drone_count": 1,
+    "route_type": "direct",
+    "approach_direction": "S",
+    "outcome": "hit_target",
+    "waypoints": [
+      {"seq": 1, "name": "Black Sea", "lat": 44.50, "lon": 33.50, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Odesa", "lat": 46.48, "lon": 30.73, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Chornomorsk", "lat": 46.30, "lon": 30.65, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "From @ShahedTracker: debris hit 9-story residential building roof, fire. 46.29749, 30.64624",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  },
+  {
+    "id": "UA_20260125_001_R01",
+    "event_id": "UA_20260125_001",
+    "conflict": "ukraine_russia",
+    "drone_type": "geran_3",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": "N",
+    "outcome": "hit_target",
+    "waypoints": [
+      {"seq": 1, "name": "Kursk", "lat": 51.73, "lon": 36.19, "type": "launch", "altitude_m": null, "time_approx": null},
+      {"seq": 2, "name": "Chernihiv", "lat": 51.50, "lon": 31.30, "type": "transit", "altitude_m": null, "time_approx": null},
+      {"seq": 3, "name": "Moshchne", "lat": 51.52, "lon": 31.83, "type": "target", "altitude_m": null, "time_approx": null}
+    ],
+    "notes": "From @ShahedTracker: Geran-3 and Geran-2 struck agricultural cooperative. Precise coords: 51.51947, 31.82767",
+    "source": {"name": "Shahed Tracker (@ShahedTracker)", "url": "https://x.com/ShahedTracker", "confidence": "verified_osint"}
+  }
+]
