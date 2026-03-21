@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import MapView from './MapView';
 import SimPanel from './sim/SimPanel';
+import BootScreen from './BootScreen';
 import './App.css';
 
 const CONFLICT_META = {
@@ -81,6 +82,8 @@ function App() {
   }, []);
 
   const [loading, setLoading] = useState(true);
+  const [booting, setBooting] = useState(true);
+  const [bootCounts, setBootCounts] = useState(null);
 
   // Deep link: read event ID from URL hash on load
   useEffect(() => {
@@ -113,6 +116,7 @@ function App() {
       setEvents(evts);
       setRoutes(rts);
       setDefenseSites(sites);
+      setBootCounts({ events: evts.length, routes: rts.length, sites: sites.length });
       setLoading(false);
     });
   }, []);
@@ -536,6 +540,14 @@ function App() {
     );
   }
 
+  if (booting && bootCounts) {
+    return (
+      <div className="app">
+        <BootScreen counts={bootCounts} onComplete={() => setBooting(false)} />
+      </div>
+    );
+  }
+
   return (
     <div className="app">
       <div className="sidebar">
@@ -547,10 +559,6 @@ function App() {
                 <h1>ASARU</h1>
                 <div className="tagline">Visual Intelligence Platform</div>
               </div>
-            </div>
-            <div className="sh-brand" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <img src={`${import.meta.env.BASE_URL}imesli-logo.svg`} alt="Imesli" style={{ width: 14, height: 14, opacity: 0.5 }} />
-              IMESLI
             </div>
           </div>
         </div>
@@ -588,6 +596,14 @@ function App() {
           onPlaceSiteMode={handlePlaceSiteMode}
           visible={activeTab === 'sim'}
         />
+
+        <div className="sidebar-footer">
+          <img src={`${import.meta.env.BASE_URL}imesli-logo.svg`} alt="Imesli" className="sf-logo" />
+          <div className="sf-text">
+            <span className="sf-name">IMESLI</span>
+            <span className="sf-sub">Defence Systems</span>
+          </div>
+        </div>
       </div>
 
       <div className="map-container">

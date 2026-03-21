@@ -4,7 +4,7 @@
   position: relative;
 }
 
-/* ── Loading screen ── */
+/* ── Loading screen (pre-data) ── */
 .loading-screen {
   display: flex;
   flex-direction: column;
@@ -37,6 +37,142 @@
 @keyframes loadingPulse {
   0%, 100% { opacity: 0.4; transform: scale(0.95); }
   50% { opacity: 1; transform: scale(1); }
+}
+
+/* ── Terminal boot screen ── */
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  background: #040506;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.5s ease-out;
+}
+
+.boot-screen.boot-fade-out {
+  opacity: 0;
+}
+
+.boot-terminal {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #34d399;
+}
+
+.boot-line {
+  white-space: pre;
+  animation: bootLineIn 0.05s ease-out;
+}
+
+@keyframes bootLineIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.boot-brand {
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  opacity: 0.4;
+}
+
+.boot-title {
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.boot-rule {
+  color: rgba(59, 130, 246, 0.25);
+}
+
+.boot-ok {
+  color: #34d399;
+}
+
+.boot-ready {
+  color: #3b82f6;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  animation: bootReadyPulse 1s ease-in-out infinite;
+}
+
+@keyframes bootReadyPulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.boot-cursor {
+  animation: bootBlink 0.6s step-end infinite;
+  margin-left: 2px;
+  color: #34d399;
+}
+
+@keyframes bootBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.boot-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.boot-footer-logo {
+  width: 20px;
+  height: 20px;
+  opacity: 0.3;
+}
+
+.boot-footer-text {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Sidebar footer (Imesli branding) ── */
+.sidebar-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.sf-logo {
+  width: 22px;
+  height: 22px;
+  opacity: 0.4;
+}
+
+.sf-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.sf-name {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.sf-sub {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.04em;
 }
 
 /* ── Sidebar ── */

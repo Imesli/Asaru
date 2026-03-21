@@ -1,17 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
-  <!-- Sound wave / voice radiating outward — "Imesli" = voice -->
+  <!-- Imesli mark: tifinagh-inspired 'voice' glyph -->
+  <!-- Based on the Amazigh/Berber ⵉ (yi) character, abstracted into a signal tower -->
 
-  <!-- Central vertical bar — the "I" of Imesli, also a signal origin -->
-  <rect x="244" y="176" width="24" height="160" rx="12" fill="#ffffff"/>
+  <!-- Central pillar — the 'I', the origin of the voice -->
+  <rect x="240" y="140" width="32" height="232" rx="16" fill="#ffffff"/>
 
-  <!-- Radiating arcs — voice / signal propagation -->
-  <!-- Left arcs -->
-  <path d="M210 200 C180 230 180 282 210 312" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.7"/>
-  <path d="M175 175 C130 220 130 292 175 337" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.45"/>
-  <path d="M140 150 C80 210 80 302 140 362" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.25"/>
+  <!-- Top beacon — the point of broadcast -->
+  <circle cx="256" cy="120" r="24" fill="#ffffff"/>
 
-  <!-- Right arcs -->
-  <path d="M302 200 C332 230 332 282 302 312" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.7"/>
-  <path d="M337 175 C382 220 382 292 337 337" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.45"/>
-  <path d="M372 150 C432 210 432 302 372 362" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.25"/>
+  <!-- Ground base — stability -->
+  <rect x="200" y="372" width="112" height="20" rx="10" fill="#ffffff" opacity="0.3"/>
+
+  <!-- Signal arcs — the voice propagating -->
+  <!-- Close arcs -->
+  <path d="M200 180 C170 220 170 310 200 350" stroke="#ffffff" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M312 180 C342 220 342 310 312 350" stroke="#ffffff" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Far arcs -->
+  <path d="M155 155 C110 215 110 315 155 375" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.3"/>
+  <path d="M357 155 C402 215 402 315 357 375" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.3"/>
+
+  <!-- Furthest arcs -->
+  <path d="M115 135 C55 215 55 315 115 395" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.12"/>
+  <path d="M397 135 C457 215 457 315 397 395" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.12"/>
 </svg>
