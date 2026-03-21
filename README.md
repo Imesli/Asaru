@@ -1,125 +1,150 @@
-# Asaru
+<p align="center">
+  <img src="src/public/asaru-logo.svg" alt="Asaru" height="80" />
+</p>
 
-**Open, machine-readable dataset of mass drone attack patterns from active conflicts.**
+<h1 align="center">Asaru</h1>
 
-Structured data covering Russian Shahed drone campaigns against Ukraine (2022–present) and Iranian drone strikes against Gulf states and US assets (2026–present). Designed for simulation, analysis, and building automated air defence systems.
+<p align="center">
+  Visual intelligence platform for mass drone attack data from active conflicts.
+</p>
 
-## Why This Exists
+<p align="center">
+  <a href="https://imesli.github.io/Asaru/">Live Demo</a> ·
+  <a href="#data-sources">Data Sources</a> ·
+  <a href="#getting-started">Getting Started</a> ·
+  <a href="https://github.com/Imesli/Asaru">GitHub</a>
+</p>
 
-Every night, hundreds of drones attack Ukrainian cities. Iran has launched thousands of drones against Gulf states since February 2026. The data about these attacks exists — in Ukrainian Air Force reports, OSINT trackers, think tank analyses, and news articles. But it's scattered across PDFs, tweets, Telegram channels, and dashboards that aren't machine-readable.
+---
 
-If you're building a drone defence simulation, training an interceptor assignment algorithm, or analysing attack patterns, you need this data in a format you can actually use. That's what this is.
+Asaru ("watch/observe") is an open-source platform that combines a structured, machine-readable dataset of real drone attack patterns with an interactive dark-mode map visualisation. It covers 1,107 attack events and 461 reconstructed flight routes from the Russia-Ukraine and Iran-Gulf conflicts, making it the most comprehensive structured record of mass drone warfare available.
 
-## What's In The Dataset
+Built by [Imesli](https://github.com/Imesli), a UK defence tech company building open tools for automated drone defence.
 
-### Attack Events
-Each record is a single attack event (typically one night's campaign) or a monthly aggregate.
+## Live Demo
 
-Fields include: total drones launched, strike vs decoy breakdown, interception rates, drone types and speeds, launch regions, target regions, wave timing, interception method breakdown, and data provenance with confidence levels.
+**[imesli.github.io/Asaru](https://imesli.github.io/Asaru/)**
 
-### Route Traces
-Where available, individual drone flight paths reconstructed from ground observer reports and OSINT tracking. Encoded as ordered waypoint sequences with geocoded coordinates.
+Interactive map showing attack origins, targets, flight paths, and interception data across both conflicts. Dark-mode interface built with deck.gl and MapLibre GL.
 
-These are approximate transit routes through named locations — not precise GPS tracks. They're accurate enough for simulation use: realistic attack geometry, approach directions, and the circuitous routing patterns drones use to evade air defences.
+## Features
 
-## Data Quality
+- **Interactive attack map** -- Visualise 1,107 drone attack events across Ukraine and the Gulf on a dark-mode globe with deck.gl rendering
+- **Flight path traces** -- 461 reconstructed drone routes from ground observer reports, showing the circuitous paths drones use to evade air defences
+- **Sim engine** -- Replay real attacks, place your own defence sites, and test interceptor assignment algorithms against historical data
+- **Structured dataset** -- Every record is machine-readable JSON with full provenance: source citations, confidence levels, and completeness metadata
+- **Two active conflicts** -- Ukraine/Russia (Sep 2022 -- present, 54,000+ drones in 2025 alone) and Iran/Gulf states (Feb 2026 -- present, 2,000+ drones launched)
+- **Strike vs decoy classification** -- Distinguishes between strike drones (Shahed-136, Geran-2/3) and decoy variants (Gerbera), critical for realistic simulation
+- **Schema-validated** -- JSON Schema definitions with automated validation and completeness reporting
 
-Every record includes source citations and confidence tags:
+## Data Sources
 
-- **official** — Government or military source (Ukrainian Air Force, Gulf state defence ministries)
-- **verified_osint** — Cross-checked by multiple independent OSINT sources (CSIS-verified Kaggle dataset, ISIS reports)
-- **osint** — Single OSINT source (Shahed Tracker, monitoring Telegram channels)
-- **news_report** — Journalist citing named or unnamed sources
-- **estimate** — Calculated or derived from other data
+| Source | Coverage | Confidence |
+|--------|----------|------------|
+| Ukrainian Air Force via [PetroIvaniuk/Kaggle](https://www.kaggle.com/datasets/piterfm/massive-missile-attacks-on-ukraine) | Sep 2022 -- Nov 2024 | Official, CSIS-verified |
+| [ISIS Monthly Shahed Analysis](https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine) | Jan 2025 -- Jan 2026 | Verified OSINT |
+| [Shahed Tracker](https://x.com/ShahedTracker) (flight paths + nightly totals) | 2024 -- present | OSINT |
+| Konrad Adenauer Foundation Air War Monitor | 2024 -- present | Verified OSINT |
+| Gulf state defence ministries and CENTCOM | Feb 2026 -- present | Official (via news) |
 
-The completeness report (`python scripts/validate.py`) shows exactly which fields are filled and which are sparse. We'd rather have honest gaps than fabricated data.
+Every record includes source citations and one of five confidence levels: `official`, `verified_osint`, `osint`, `news_report`, or `estimate`.
 
-## Primary Sources
+## Tech Stack
 
-| Source | Type | Coverage | Confidence |
-|--------|------|----------|------------|
-| Ukrainian Air Force (via PetroIvaniuk/Kaggle) | Daily attack totals | Sep 2022 – Nov 2024 | Official, CSIS-verified |
-| ISIS (Institute for Science & International Security) | Monthly analysis with strike/decoy splits | Jan 2025 – Jan 2026 | Verified OSINT |
-| Shahed Tracker (@ShahedTracker) | Nightly summaries, route traces | 2024 – present | OSINT |
-| Konrad Adenauer Foundation Air War Monitor | Monthly interception rates by weapon type | 2024 – present | Verified OSINT |
-| Gulf state defence ministries (via news) | Iran conflict intercept data | Feb 2026 – present | Official (via news reports) |
-| CENTCOM statements | Iran conflict totals | Feb 2026 – present | Official |
+- **Frontend** -- React 19, Vite, deck.gl, MapLibre GL via react-map-gl
+- **Data** -- JSON with JSON Schema validation
+- **Validation** -- Python (`scripts/validate.py`)
+- **Deployment** -- Static site on GitHub Pages
 
-## Schema
+## Getting Started
 
-JSON Schema definitions in `schema/`:
-- `attack_event.schema.json` — Attack event records
-- `route_trace.schema.json` — Flight path records
+```bash
+# Clone the repository
+git clone https://github.com/Imesli/Asaru.git
+cd Asaru/src
 
-Run `python scripts/validate.py` to validate all data files and see completeness reports.
+# Install dependencies
+npm install
 
-## Repo Structure
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+### Validate the dataset
+
+```bash
+python scripts/validate.py
+```
+
+This runs schema validation against all data files and prints a completeness report showing field coverage.
+
+## Data Schema
+
+Two JSON Schema definitions in `schema/`:
+
+**Attack Events** (`schema/attack_event.schema.json`) -- One record per attack event or monthly aggregate. Fields include date, duration, total drones launched, strike/decoy split, drone types and speeds, launch and target regions with coordinates, interception rates and methods, wave data, and source citations.
+
+**Route Traces** (`schema/route_trace.schema.json`) -- Individual drone flight paths as ordered waypoint sequences with geocoded coordinates. Includes approach direction, route type (direct/circuitous/looping), and outcome (intercepted/hit_target/crashed). These are approximate transit routes through named locations -- accurate enough for simulation and algorithm testing.
+
+## Project Structure
 
 ```
-asaru/
-├── schema/                    # JSON Schema definitions
+Asaru/
+├── schema/                # JSON Schema definitions
 │   ├── attack_event.schema.json
 │   └── route_trace.schema.json
 ├── data/
-│   ├── ukraine/              # Ukraine/Russia conflict data
-│   └── iran/                 # Iran 2026 conflict data
-├── examples/                  # Example records for reference
+│   ├── ukraine/           # Ukraine/Russia conflict data
+│   └── iran/              # Iran 2026 conflict data
+├── examples/              # Example records
 ├── scripts/
-│   └── validate.py           # Schema validation + completeness reporting
-└── docs/                      # Data dictionary and methodology
+│   └── validate.py        # Schema validation + completeness reporting
+├── src/                   # Frontend application
+│   ├── src/
+│   │   ├── App.jsx        # Main application
+│   │   ├── MapView.jsx    # deck.gl map visualisation
+│   │   └── sim/           # Simulation engine and UI
+│   └── public/
+│       ├── asaru-logo.svg
+│       └── imesli-logo.svg
+└── docs/                  # Data dictionary and methodology
 ```
-
-## Usage
-
-```python
-import json
-
-# Load attack events
-with open('data/ukraine/events_2025.json') as f:
-    events = json.load(f)
-
-# Filter to large-scale attacks
-large_attacks = [e for e in events if (e['totals']['launched_total'] or 0) > 200]
-
-# Load route traces
-with open('data/ukraine/routes_2025.json') as f:
-    routes = json.load(f)
-
-# Get routes for a specific event
-event_routes = [r for r in routes if r['event_id'] == 'UA_20250907_001']
-```
-
-## For Simulation
-
-This dataset is designed to be ingested by air defence simulations. A typical workflow:
-
-1. Load attack events to define threat scenarios
-2. Use route traces to generate realistic approach geometries
-3. Use strike/decoy ratios to populate simulated threat mixes
-4. Use interception rates as validation targets — does your simulated defence achieve similar rates?
 
 ## Contributing
 
-This dataset grows through manual extraction from public sources. Contributions welcome:
+Contributions welcome. The dataset grows through manual extraction from public sources:
 
-1. New attack events from Ukrainian Air Force reports or news
-2. Route trace data from Shahed Tracker or monitoring channels
-3. Iran conflict data as it emerges
-4. Corrections to existing records
+1. **New attack events** from Ukrainian Air Force reports, ISIS monthly analyses, or news coverage
+2. **Route trace data** from Shahed Tracker or monitoring channels
+3. **Iran conflict data** as the situation develops
+4. **Corrections** to existing records with source citations
+5. **Frontend improvements** to the map visualisation or sim engine
 
-All contributions must include source citations and confidence levels.
+All data contributions must include source citations and confidence levels. Run `python scripts/validate.py` before submitting to ensure schema compliance.
 
-## Licence
+## Roadmap
 
-Data: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — free to use, share, and adapt with attribution.
-Code: MIT
+Asaru is the first building block toward an automated interceptor assignment engine:
 
-## Related Projects
+1. **Asaru dataset + visualisation** (current) -- Structured data and interactive map
+2. **Asaru sim** (in progress) -- Replay real attacks and test assignment algorithms
+3. **Asaru engine** (future) -- Automated system connecting radar tracks to interceptor launch decisions
 
-- [CSIS Russian Firepower Strike Tracker](https://www.csis.org/programs/futures-lab/projects/russian-firepower-strike-tracker-analyzing-missile-attacks-ukraine) — Interactive dashboard of missile attacks
-- [PetroIvaniuk/2022-Ukraine-Russia-War-Dataset](https://github.com/PetroIvaniuk/2022-Ukraine-Russia-War-Dataset) — Foundation dataset (CSIS-verified)
-- [ISIS Monthly Shahed Analysis](https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine) — Detailed monthly reports
+## License
 
-## Context
+Code: [MIT](LICENSE)
+Data: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
-This project is part of a broader effort to build open tools for automated drone defence. The dataset feeds directly into simulation and assignment algorithm development. If you're working on counter-drone systems, reach out.
+---
+
+<p align="center">
+  <img src="src/public/imesli-logo.svg" alt="Imesli" height="28" />
+  <br />
+  Built by <a href="https://github.com/Imesli">Imesli</a> — open tools for automated drone defence.
+</p>

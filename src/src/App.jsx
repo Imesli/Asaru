@@ -80,6 +80,29 @@ function App() {
     setPlaceSiteMode(null);
   }, []);
 
+  const [loading, setLoading] = useState(true);
+
+  // Deep link: read event ID from URL hash on load
+  useEffect(() => {
+    const hash = window.location.hash.slice(1); // e.g. #UA_20251206_001
+    if (hash && events.length > 0 && !selectedEvent) {
+      const evt = events.find(e => e.id === hash);
+      if (evt) {
+        setSelectedEvent(evt);
+        setActiveTab('events');
+      }
+    }
+  }, [events]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Update URL hash when event is selected
+  useEffect(() => {
+    if (selectedEvent) {
+      window.history.replaceState(null, '', `#${selectedEvent.id}`);
+    } else {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+  }, [selectedEvent]);
+
   useEffect(() => {
     const base = import.meta.env.BASE_URL;
     Promise.all([
@@ -90,6 +113,7 @@ function App() {
       setEvents(evts);
       setRoutes(rts);
       setDefenseSites(sites);
+      setLoading(false);
     });
   }, []);
 
@@ -502,16 +526,32 @@ function App() {
     </div>
   );
 
+  if (loading) {
+    return (
+      <div className="app loading-screen">
+        <img src={`${import.meta.env.BASE_URL}asaru-logo.svg`} alt="Asaru" className="loading-logo" />
+        <div className="loading-text">ASARU</div>
+        <div className="loading-sub">Loading intelligence data...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="app">
       <div className="sidebar">
         <div className="sidebar-header">
           <div className="sh-top">
-            <div>
-              <h1>ASARU</h1>
-              <div className="tagline">Visual Intelligence Platform</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <img src={`${import.meta.env.BASE_URL}asaru-logo.svg`} alt="Asaru" style={{ width: 28, height: 28 }} />
+              <div>
+                <h1>ASARU</h1>
+                <div className="tagline">Visual Intelligence Platform</div>
+              </div>
             </div>
-            <div className="sh-brand">IMESLI</div>
+            <div className="sh-brand" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <img src={`${import.meta.env.BASE_URL}imesli-logo.svg`} alt="Imesli" style={{ width: 14, height: 14, opacity: 0.5 }} />
+              IMESLI
+            </div>
           </div>
         </div>
 

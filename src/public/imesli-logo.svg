@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Sound wave / voice radiating outward — "Imesli" = voice -->
+
+  <!-- Central vertical bar — the "I" of Imesli, also a signal origin -->
+  <rect x="244" y="176" width="24" height="160" rx="12" fill="#ffffff"/>
+
+  <!-- Radiating arcs — voice / signal propagation -->
+  <!-- Left arcs -->
+  <path d="M210 200 C180 230 180 282 210 312" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M175 175 C130 220 130 292 175 337" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.45"/>
+  <path d="M140 150 C80 210 80 302 140 362" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.25"/>
+
+  <!-- Right arcs -->
+  <path d="M302 200 C332 230 332 282 302 312" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M337 175 C382 220 382 292 337 337" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.45"/>
+  <path d="M372 150 C432 210 432 302 372 362" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.25"/>
+</svg>
