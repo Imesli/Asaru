@@ -1,0 +1,223 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OpenSkyData Attack Event",
+  "description": "A single aerial attack event, typically one night's drone/missile campaign. May contain multiple waves.",
+  "type": "object",
+  "required": ["id", "conflict", "date", "totals", "sources"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique event ID. Format: {conflict}_{YYYYMMDD}_{seq}. e.g. UA_20250907_001",
+      "pattern": "^(UA|IR)_\\d{8}_[A-Z0-9]{3}$"
+    },
+    "conflict": {
+      "type": "string",
+      "enum": ["ukraine_russia", "iran_2026"],
+      "description": "Which conflict this event belongs to"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of attack (YYYY-MM-DD). For overnight attacks, use the date the attack began."
+    },
+    "time_start": {
+      "type": ["string", "null"],
+      "description": "Approximate start time in UTC if known (HH:MM). Null if unknown."
+    },
+    "time_end": {
+      "type": ["string", "null"],
+      "description": "Approximate end time in UTC if known. Null if unknown."
+    },
+    "duration_hours": {
+      "type": ["number", "null"],
+      "description": "Approximate duration in hours. Null if unknown."
+    },
+    "attack_type": {
+      "type": "string",
+      "enum": ["drone_only", "combined_drone_missile", "missile_only", "unknown"],
+      "description": "Whether attack used drones only, missiles only, or a combination"
+    },
+    "totals": {
+      "type": "object",
+      "description": "Aggregate numbers for the entire event across all waves",
+      "required": ["launched_total"],
+      "properties": {
+        "launched_total": {
+          "type": ["integer", "null"],
+          "description": "Total aerial threats launched (drones + missiles if combined). Null for records where only rates/percentages are known."
+        },
+        "launched_drones": {
+          "type": ["integer", "null"],
+          "description": "Total drones launched (strike + decoy). Null if breakdown unavailable."
+        },
+        "launched_drones_strike": {
+          "type": ["integer", "null"],
+          "description": "Strike drones only. Null if breakdown unavailable."
+        },
+        "launched_drones_decoy": {
+          "type": ["integer", "null"],
+          "description": "Decoy drones only (Gerbera/Parody types). Null if breakdown unavailable."
+        },
+        "launched_missiles_cruise": {
+          "type": ["integer", "null"],
+          "description": "Cruise missiles launched. Null if not applicable or unknown."
+        },
+        "launched_missiles_ballistic": {
+          "type": ["integer", "null"],
+          "description": "Ballistic missiles launched. Null if not applicable or unknown."
+        },
+        "intercepted_total": {
+          "type": ["integer", "null"],
+          "description": "Total threats intercepted/neutralised by all methods"
+        },
+        "intercepted_drones": {
+          "type": ["integer", "null"],
+          "description": "Drones specifically intercepted. Null if breakdown unavailable."
+        },
+        "hits": {
+          "type": ["integer", "null"],
+          "description": "Threats that reached their targets. Null if unknown."
+        },
+        "lost_location": {
+          "type": ["integer", "null"],
+          "description": "Drones that went off radar / crashed / returned to Russia. Null if unknown."
+        },
+        "interception_rate": {
+          "type": ["number", "null"],
+          "description": "Calculated interception rate as decimal (0.0-1.0). Null if insufficient data.",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "drone_types": {
+      "type": "array",
+      "description": "Breakdown by drone model if known",
+      "items": {
+        "type": "object",
+        "required": ["model", "count"],
+        "properties": {
+          "model": {
+            "type": "string",
+            "enum": [
+              "shahed_136", "shahed_131", "shahed_238",
+              "geran_2", "geran_3", "geran_5",
+              "gerbera_decoy", "parody_decoy",
+              "supercam", "zala", "orlan",
+              "unknown_strike", "unknown_decoy", "unknown"
+            ]
+          },
+          "count": { "type": ["integer", "null"] },
+          "speed_kmh": {
+            "type": ["integer", "null"],
+            "description": "Approximate speed in km/h for this type if known"
+          }
+        }
+      }
+    },
+    "launch_regions": {
+      "type": "array",
+      "description": "Known or estimated launch origins",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Region/base name. e.g. 'Kursk Oblast', 'Krasnodar Krai', 'Crimea', 'Cape Chabahar'"
+          },
+          "lat": { "type": ["number", "null"] },
+          "lon": { "type": ["number", "null"] },
+          "bearing_deg": {
+            "type": ["number", "null"],
+            "description": "Approximate bearing FROM launch point TO target area in degrees. Null if unknown."
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["confirmed", "likely", "estimated"],
+            "description": "How sure we are about this launch origin"
+          }
+        }
+      }
+    },
+    "target_regions": {
+      "type": "array",
+      "description": "Targeted areas",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "Region or city name" },
+          "lat": { "type": ["number", "null"] },
+          "lon": { "type": ["number", "null"] },
+          "target_type": {
+            "type": ["string", "null"],
+            "enum": ["energy", "military", "residential", "industrial", "transport", "mixed", "unknown", null]
+          }
+        }
+      }
+    },
+    "waves": {
+      "type": "array",
+      "description": "Individual waves within the attack if distinguishable. Empty array if attack was single wave or wave data unavailable.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "wave_number": { "type": "integer" },
+          "time_approx": { "type": ["string", "null"], "description": "Approximate time this wave was detected (HH:MM UTC)" },
+          "drone_count": { "type": ["integer", "null"] },
+          "direction": { "type": ["string", "null"], "description": "Cardinal or intercardinal direction of approach. e.g. 'south', 'southeast'" },
+          "notes": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "interception_methods": {
+      "type": "object",
+      "description": "Breakdown of how threats were neutralised if known. All fields null if unavailable.",
+      "properties": {
+        "interceptor_drone": { "type": ["integer", "null"], "description": "Kills by interceptor drones (Sting, Bullet, etc.)" },
+        "sam_missile": { "type": ["integer", "null"], "description": "Kills by surface-to-air missiles (Patriot, NASAMS, etc.)" },
+        "electronic_warfare": { "type": ["integer", "null"], "description": "Suppressed/diverted by EW" },
+        "anti_aircraft_guns": { "type": ["integer", "null"], "description": "Kills by AAA / mobile fire groups" },
+        "aircraft": { "type": ["integer", "null"], "description": "Kills by manned aircraft" },
+        "other": { "type": ["integer", "null"] }
+      }
+    },
+    "defence_context": {
+      "type": "object",
+      "description": "Context about the defending side if known",
+      "properties": {
+        "interceptor_drones_deployed": { "type": ["integer", "null"], "description": "Number of interceptor drones launched in response" },
+        "sorties_flown": { "type": ["integer", "null"] },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Free text notes about notable aspects of this attack"
+    },
+    "sources": {
+      "type": "array",
+      "description": "Data provenance. Every record must cite at least one source.",
+      "items": {
+        "type": "object",
+        "required": ["name", "confidence"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Source identifier. e.g. 'Ukrainian Air Force', 'Shahed Tracker', 'ISIS Report Jan 2026'"
+          },
+          "url": { "type": ["string", "null"] },
+          "confidence": {
+            "type": "string",
+            "enum": ["official", "verified_osint", "osint", "news_report", "estimate"],
+            "description": "official=government source, verified_osint=cross-checked by multiple OSINT, osint=single OSINT source, news_report=journalist citing unnamed sources, estimate=calculated/derived"
+          },
+          "fields_sourced": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Which fields in this record came from this source. e.g. ['totals.launched_total', 'totals.intercepted_total']"
+          }
+        }
+      }
+    }
+  }
+}

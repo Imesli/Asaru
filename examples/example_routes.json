@@ -1,0 +1,71 @@
+[
+  {
+    "id": "UA_20260101_AGG_R01",
+    "event_id": "UA_20260101_AGG",
+    "drone_count": 1,
+    "drone_type": null,
+    "outcome": "unknown",
+    "waypoints": [
+      { "seq": 0, "name": "Mykolaiv", "lat": 46.97, "lon": 31.99, "type": "transit", "time_approx": null },
+      { "seq": 1, "name": "Kirovohrad", "lat": 48.51, "lon": 32.26, "type": "transit", "time_approx": null },
+      { "seq": 2, "name": "Cherkasy", "lat": 49.44, "lon": 32.06, "type": "transit", "time_approx": null },
+      { "seq": 3, "name": "Kyiv", "lat": 50.45, "lon": 30.52, "type": "transit", "time_approx": null },
+      { "seq": 4, "name": "Vinnytsia", "lat": 49.23, "lon": 28.47, "type": "transit", "time_approx": null },
+      { "seq": 5, "name": "Khmelnytskyi", "lat": 49.42, "lon": 26.98, "type": "last_known", "time_approx": null }
+    ],
+    "approach_direction": "S",
+    "route_type": "circuitous",
+    "estimated_distance_km": null,
+    "notes": "Drone took a highly circuitous route — north through central Ukraine past Kyiv, then west. Classic evasion pattern to confuse directional air defences. Source: Shahed Tracker tweet showing approximate movement through oblasts.",
+    "source": {
+      "name": "Shahed Tracker (@ShahedTracker)",
+      "url": "https://x.com/ShahedTracker",
+      "confidence": "osint"
+    }
+  },
+  {
+    "id": "UA_20260101_AGG_R02",
+    "event_id": "UA_20260101_AGG",
+    "drone_count": 1,
+    "drone_type": null,
+    "outcome": "unknown",
+    "waypoints": [
+      { "seq": 0, "name": "Mykolaiv", "lat": 46.97, "lon": 31.99, "type": "transit", "time_approx": null },
+      { "seq": 1, "name": "Odesa", "lat": 46.48, "lon": 30.72, "type": "transit", "time_approx": null },
+      { "seq": 2, "name": "Kirovohrad", "lat": 48.51, "lon": 32.26, "type": "transit", "time_approx": null },
+      { "seq": 3, "name": "Vinnytsia", "lat": 49.23, "lon": 28.47, "type": "transit", "time_approx": null },
+      { "seq": 4, "name": "Khmelnytskyi", "lat": 49.42, "lon": 26.98, "type": "transit", "time_approx": null },
+      { "seq": 5, "name": "Ternopil", "lat": 49.55, "lon": 25.59, "type": "transit", "time_approx": null },
+      { "seq": 6, "name": "Khmelnytskyi", "lat": 49.42, "lon": 26.98, "type": "last_known", "time_approx": null }
+    ],
+    "approach_direction": "S",
+    "route_type": "looping",
+    "estimated_distance_km": null,
+    "notes": "Drone looped — went west through Vinnytsia and Khmelnytskyi, continued to Ternopil, then returned to Khmelnytskyi. Looping behaviour observed increasingly in late 2025 as drones attempt to exhaust interceptor coverage in a region.",
+    "source": {
+      "name": "Shahed Tracker (@ShahedTracker)",
+      "url": "https://x.com/ShahedTracker",
+      "confidence": "osint"
+    }
+  },
+  {
+    "id": "UA_20260101_AGG_R03",
+    "event_id": "UA_20260101_AGG",
+    "drone_count": 2,
+    "drone_type": null,
+    "outcome": "unknown",
+    "waypoints": [
+      { "seq": 0, "name": "Khmelnytskyi Oblast (west)", "lat": 49.50, "lon": 26.50, "type": "transit", "time_approx": null },
+      { "seq": 1, "name": "Starokostyantyniv", "lat": 49.75, "lon": 27.21, "type": "last_known", "time_approx": null }
+    ],
+    "approach_direction": "W",
+    "route_type": "direct",
+    "estimated_distance_km": null,
+    "notes": "Two UAVs reached Starokostyantyniv from the west. Notable because Starokostyantyniv hosts a Ukrainian air base — likely deliberate targeting of military aviation infrastructure.",
+    "source": {
+      "name": "Shahed Tracker (@ShahedTracker)",
+      "url": "https://x.com/ShahedTracker",
+      "confidence": "osint"
+    }
+  }
+]

@@ -1,0 +1,232 @@
+[
+  {
+    "id": "UA_20250907_001",
+    "conflict": "ukraine_russia",
+    "date": "2025-09-07",
+    "time_start": "20:30",
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 805,
+      "launched_drones": 805,
+      "launched_drones_strike": null,
+      "launched_drones_decoy": null,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": null,
+      "intercepted_drones": null,
+      "hits": null,
+      "lost_location": null,
+      "interception_rate": null
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 },
+      { "model": "gerbera_decoy", "count": null, "speed_kmh": 150 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": "Largest single Shahed attack of the war at time of launch. Referenced in multiple OSINT reports."
+    },
+    "notes": "Record-breaking single-night Shahed launch. Part of sustained autumn 2025 escalation campaign. Russia's largest drone campaign of the war at this date.",
+    "sources": [
+      {
+        "name": "ASPI Strategist",
+        "url": "https://www.aspistrategist.org.au/editors-picks-for-2025-ever-faster-weapon-cycles-innovation-and-economics-in-the-war-in-ukraine/",
+        "confidence": "news_report",
+        "fields_sourced": ["totals.launched_total", "date"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20251030_001",
+    "conflict": "ukraine_russia",
+    "date": "2025-10-30",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": null,
+      "launched_drones": null,
+      "launched_drones_strike": null,
+      "launched_drones_decoy": null,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": null,
+      "intercepted_drones": null,
+      "hits": null,
+      "lost_location": null,
+      "interception_rate": 0.80
+    },
+    "drone_types": [],
+    "launch_regions": [],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "October 2025 monthly total: 5,312 drones of all types launched, 4,242 intercepted. Lowest monthly interception rate of 2025 at ~80%. Per ABC News analysis of Ukrainian Air Force data.",
+    "sources": [
+      {
+        "name": "ABC News / Ukrainian Air Force data",
+        "url": "https://abcnews.go.com/International/ukraines-interception-rates-russias-drones-missiles-slipping-data/story",
+        "confidence": "official",
+        "fields_sourced": ["totals.interception_rate"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20260101_AGG",
+    "conflict": "ukraine_russia",
+    "date": "2026-01-01",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 4452,
+      "launched_drones": 4452,
+      "launched_drones_strike": 2915,
+      "launched_drones_decoy": 1537,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": 3719,
+      "intercepted_drones": 3719,
+      "hits": 649,
+      "lost_location": 84,
+      "interception_rate": 0.84
+    },
+    "drone_types": [
+      { "model": "unknown_strike", "count": 2915, "speed_kmh": null },
+      { "model": "unknown_decoy", "count": 1537, "speed_kmh": null }
+    ],
+    "launch_regions": [],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": "Median attack size: 116 drones. Average decoy rate: ~34%. Zero days without drone attacks in January."
+    },
+    "notes": "MONTHLY AGGREGATE for January 2026. Not a single event. Strike drone proportion at 66% — highest observed since tracking began Sep 2025. Lowest total monthly launches since autumn onset, but strike proportion higher.",
+    "sources": [
+      {
+        "name": "Shahed Tracker (@ShahedTracker)",
+        "url": "https://x.com/ShahedTracker",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_total", "totals.launched_drones_strike", "totals.intercepted_total", "totals.hits", "totals.interception_rate"]
+      },
+      {
+        "name": "ISIS Report - Monthly Analysis Jan 2026",
+        "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_drones_strike", "totals.launched_drones_decoy"]
+      }
+    ]
+  },
+  {
+    "id": "IR_20260228_001",
+    "conflict": "iran_2026",
+    "date": "2026-02-28",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "combined_drone_missile",
+    "totals": {
+      "launched_total": 2500,
+      "launched_drones": 2000,
+      "launched_drones_strike": null,
+      "launched_drones_decoy": null,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": 500,
+      "intercepted_total": null,
+      "intercepted_drones": null,
+      "hits": null,
+      "lost_location": null,
+      "interception_rate": null
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 185 }
+    ],
+    "launch_regions": [
+      { "name": "Iran (various)", "lat": 32.43, "lon": 53.69, "bearing_deg": null, "confidence": "estimated" }
+    ],
+    "target_regions": [
+      { "name": "UAE", "lat": 23.42, "lon": 53.85, "target_type": "mixed" },
+      { "name": "Bahrain", "lat": 26.07, "lon": 50.55, "target_type": "military" },
+      { "name": "Qatar", "lat": 25.35, "lon": 51.18, "target_type": "military" },
+      { "name": "Kuwait", "lat": 29.38, "lon": 47.99, "target_type": "military" },
+      { "name": "Saudi Arabia", "lat": 23.89, "lon": 45.08, "target_type": "mixed" }
+    ],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": "US, Israel, and Gulf state air defences engaged. Patriot and fighter aircraft primary intercept methods. No interceptor drones deployed in Gulf theatre at this time."
+    },
+    "notes": "CUMULATIVE TOTAL Feb 28 - Mar 5 2026. Iran's opening wave of strikes following US/Israeli attack. 500+ ballistic missiles and ~2000 drones as of Mar 5 per Fars News / CENTCOM. Approximately 40% aimed at Israel, 60% at US targets in Gulf. UAE intercepted 1,001 of 1,072 detected drones. Bahrain destroyed 123. Kuwait intercepted 384. Qatar intercepted 24 of 39.",
+    "sources": [
+      {
+        "name": "Wikipedia - 2026 Iran conflict",
+        "url": "https://en.wikipedia.org/wiki/2026_Iran_conflict",
+        "confidence": "news_report",
+        "fields_sourced": ["totals.launched_total", "totals.launched_drones", "totals.launched_missiles_ballistic"]
+      },
+      {
+        "name": "Al Jazeera - Gulf state defence ministries",
+        "url": "https://www.aljazeera.com/news/2026/3/6/we-know-shaheds-ukraine-touts-drone-expertise-in-us-israel-war-with-iran",
+        "confidence": "official",
+        "fields_sourced": ["target_regions"]
+      },
+      {
+        "name": "Fars News Agency via Wikipedia",
+        "url": null,
+        "confidence": "news_report",
+        "fields_sourced": ["totals.launched_missiles_ballistic"]
+      }
+    ]
+  }
+]

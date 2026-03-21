@@ -1,0 +1,2638 @@
+[
+  {
+    "id": "IR_20260228_BHR_R01",
+    "event_id": "IR_20260228_BHR",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Bushehr Province",
+        "lat": 28.97,
+        "lon": 50.84,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Persian Gulf (mid)",
+        "lat": 27.5,
+        "lon": 50.5,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "NSA Bahrain / 5th Fleet HQ",
+        "lat": 26.22,
+        "lon": 50.6,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "N",
+    "route_type": "direct",
+    "estimated_distance_km": 310,
+    "notes": "Short Gulf crossing from Bushehr to Bahrain. 5th Fleet HQ partially hit. Video showed Shahed striking tower near naval headquarters.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from Al Jazeera reporting",
+        "url": "https://www.aljazeera.com/news/2026/2/28/multiple-gulf-arab-states-that-host-us-assets-targeted-in-iran-retaliation",
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260228_IRQ_R01",
+    "event_id": "IR_20260228_IRQ",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Kermanshah",
+        "lat": 34.31,
+        "lon": 47.07,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Sulaymaniyah (overfly)",
+        "lat": 35.56,
+        "lon": 45.44,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Erbil International Airport",
+        "lat": 36.24,
+        "lon": 43.96,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "E",
+    "route_type": "direct",
+    "estimated_distance_km": 350,
+    "notes": "Short-range strike on Erbil airport. Hosts US and coalition forces. One drone intercepted.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from Al Jazeera reporting",
+        "url": "https://www.aljazeera.com/news/2026/2/28/multiple-gulf-arab-states-that-host-us-assets-targeted-in-iran-retaliation",
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260228_ISR_R01",
+    "event_id": "IR_20260228_ISR",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Kermanshah",
+        "lat": 34.31,
+        "lon": 47.07,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Iraq (overfly)",
+        "lat": 33.3,
+        "lon": 44.37,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Syria (overfly)",
+        "lat": 33.5,
+        "lon": 38.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Jordan (overfly)",
+        "lat": 32.5,
+        "lon": 36.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 4,
+        "name": "Tel Aviv",
+        "lat": 32.07,
+        "lon": 34.78,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "E",
+    "route_type": "direct",
+    "estimated_distance_km": 1300,
+    "notes": "Primary drone corridor to Israel: Kermanshah across Iraq, Syria, Jordan to Tel Aviv. ~1,300km. Drones overfly 3 countries. IAF intercepted 100+ drones on this axis. NATO assets in Eastern Mediterranean also engaged.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from launch regions and reported overfly path",
+        "url": "https://www.euronews.com/video/2026/02/28/explosions-light-up-tel-aviv-sky-as-israel-intercepts-missiles",
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260228_ISR_R02",
+    "event_id": "IR_20260228_ISR",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Isfahan",
+        "lat": 32.65,
+        "lon": 51.68,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Iraq (overfly)",
+        "lat": 33.3,
+        "lon": 44.37,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Syria (overfly)",
+        "lat": 33.5,
+        "lon": 38.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Haifa",
+        "lat": 32.79,
+        "lon": 34.99,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "E",
+    "route_type": "direct",
+    "estimated_distance_km": 1700,
+    "notes": "Northern Israel corridor: Isfahan across Iraq and Syria to Haifa. Longer route. Israeli defence systems intercepted missiles over Haifa per Euronews footage.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from Euronews footage of Haifa intercepts",
+        "url": "https://www.euronews.com/video/2026/02/28/israeli-defence-systems-intercept-iranian-missiles-over-haifa",
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260228_JOR_R01",
+    "event_id": "IR_20260228_JOR",
+    "conflict": "iran_2026",
+    "date": "2026-02-28",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "name": "Kermanshah",
+        "lat": 34.31,
+        "lon": 47.07,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Iraq airspace",
+        "lat": 33.3,
+        "lon": 44.4,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Jordan airspace",
+        "lat": 31.5,
+        "lon": 36.5,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Muwaffaq al-Salti Air Base (Azraq)",
+        "lat": 31.83,
+        "lon": 36.78,
+        "type": "intercept",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Kermanshah \u2192 Iraq airspace \u2192 Jordan airspace \u2192 Muwaffaq al-Salti Air Base (Azraq)",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260228_JOR_R02",
+    "event_id": "IR_20260228_JOR",
+    "conflict": "iran_2026",
+    "date": "2026-02-28",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "name": "Kermanshah",
+        "lat": 34.31,
+        "lon": 47.07,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Iraq airspace",
+        "lat": 33.3,
+        "lon": 44.4,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Jordan airspace",
+        "lat": 31.5,
+        "lon": 36.5,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "US THAAD Radar Site",
+        "lat": 31.83,
+        "lon": 36.75,
+        "type": "target",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Kermanshah \u2192 Iraq airspace \u2192 Jordan airspace \u2192 US THAAD Radar Site",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260228_KWT_R01",
+    "event_id": "IR_20260228_KWT",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Khuzestan Province",
+        "lat": 31.32,
+        "lon": 48.67,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Abadan",
+        "lat": 30.34,
+        "lon": 48.3,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Shatt al-Arab",
+        "lat": 29.97,
+        "lon": 48.5,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Ali al-Salem Air Base",
+        "lat": 29.35,
+        "lon": 47.52,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "N",
+    "route_type": "direct",
+    "estimated_distance_km": 250,
+    "notes": "Short-range corridor from Khuzestan across Iraq border region to Ali al-Salem. Shortest route in the campaign \u2014 only ~250km. All ballistic missiles intercepted.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from launch and target coordinates",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260228_KWT_R02",
+    "event_id": "IR_20260228_KWT",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Khuzestan Province",
+        "lat": 31.32,
+        "lon": 48.67,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Basra (overfly)",
+        "lat": 30.51,
+        "lon": 47.81,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Kuwait International Airport",
+        "lat": 29.23,
+        "lon": 47.97,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "N",
+    "route_type": "direct",
+    "estimated_distance_km": 270,
+    "notes": "Drone reached Kuwait International Airport. Minor injuries to employees, material damage to passenger building.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from Al Jazeera reporting",
+        "url": "https://www.aljazeera.com/news/2026/2/28/multiple-gulf-arab-states-that-host-us-assets-targeted-in-iran-retaliation",
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260228_OMN_R01",
+    "event_id": "IR_20260228_OMN",
+    "drone_count": 2,
+    "drone_type": "shahed_136",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Chabahar",
+        "lat": 25.29,
+        "lon": 60.64,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Gulf of Oman",
+        "lat": 23.5,
+        "lon": 59.5,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Oman coast",
+        "lat": 21.5,
+        "lon": 58.5,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Duqm Port",
+        "lat": 19.67,
+        "lon": 57.7,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "NE",
+    "route_type": "direct",
+    "estimated_distance_km": 700,
+    "notes": "Longest drone route \u2014 Chabahar to Duqm along Omani coast. Both drones hit port. Oman had no Shahed-class air defence. 0% interception.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from DSM reporting",
+        "url": "https://dsm.forecastinternational.com/2026/03/02/iranian-missile-drone-strikes-target-gulf-countries/",
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260228_QAT_R01",
+    "event_id": "IR_20260228_QAT",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Bushehr Province",
+        "lat": 28.97,
+        "lon": 50.84,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Persian Gulf (mid)",
+        "lat": 27.2,
+        "lon": 51.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Al Udeid Air Base",
+        "lat": 25.12,
+        "lon": 51.31,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "N",
+    "route_type": "direct",
+    "estimated_distance_km": 430,
+    "notes": "Direct Gulf crossing to Al Udeid (CENTCOM forward HQ). All intercepted by Patriot batteries.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from launch and target coordinates",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260228_UAE_R01",
+    "event_id": "IR_20260228_UAE",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Isfahan",
+        "lat": 32.65,
+        "lon": 51.68,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Shiraz",
+        "lat": 29.59,
+        "lon": 52.58,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Bandar Abbas",
+        "lat": 27.19,
+        "lon": 56.27,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Strait of Hormuz",
+        "lat": 26.56,
+        "lon": 56.25,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 4,
+        "name": "Al Dhafra Air Base",
+        "lat": 24.25,
+        "lon": 54.55,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "NE",
+    "route_type": "direct",
+    "estimated_distance_km": 1100,
+    "notes": "Primary strike corridor: Isfahan launch area across southern Iran, through Strait of Hormuz to Al Dhafra. Direct route \u2014 no evasion needed as drones fly over Iranian territory until the Gulf crossing.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from launch region and target coordinates",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260228_UAE_R02",
+    "event_id": "IR_20260228_UAE",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Shiraz",
+        "lat": 29.59,
+        "lon": 52.58,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Bushehr coast",
+        "lat": 28.97,
+        "lon": 50.84,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Persian Gulf (mid)",
+        "lat": 26.8,
+        "lon": 52.5,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Dubai Intl Airport (DXB T3)",
+        "lat": 25.25,
+        "lon": 55.36,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "NE",
+    "route_type": "direct",
+    "estimated_distance_km": 800,
+    "notes": "Drone corridor to Dubai International Airport. Crossed Gulf on direct bearing. DXB Terminal 3 hit \u2014 evacuated, flights suspended.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from Euronews / CNN reporting on DXB strike",
+        "url": "https://www.euronews.com/2026/03/01/iranian-strikes-hit-dubai-and-abu-dhabi-damaging-airport-terminals-and-the-burj-al-arab",
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260228_UAE_R03",
+    "event_id": "IR_20260228_UAE",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Isfahan",
+        "lat": 32.65,
+        "lon": 51.68,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Bandar Abbas",
+        "lat": 27.19,
+        "lon": 56.27,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Strait of Hormuz",
+        "lat": 26.56,
+        "lon": 56.25,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Palm Jumeirah (Fairmont)",
+        "lat": 25.11,
+        "lon": 55.13,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "NE",
+    "route_type": "direct",
+    "estimated_distance_km": 1050,
+    "notes": "Drone struck near Fairmont hotel on Palm Jumeirah. 4 injured from debris and blast. Fire broke out.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from TIME / Al Jazeera reporting",
+        "url": "https://time.com/7381884/iran-missiles-dubai-palm-gulf/",
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260228_UAE_R04",
+    "event_id": "IR_20260228_UAE",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Isfahan",
+        "lat": 32.65,
+        "lon": 51.68,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Persian Gulf (mid)",
+        "lat": 26.8,
+        "lon": 52.5,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Jebel Ali Port",
+        "lat": 25.0,
+        "lon": 55.06,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "NE",
+    "route_type": "direct",
+    "estimated_distance_km": 1000,
+    "notes": "Debris from aerial interception caused fire at Jebel Ali Port \u2014 one of world's largest container ports.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from Euronews reporting",
+        "url": "https://www.euronews.com/2026/03/01/iranian-strikes-hit-dubai-and-abu-dhabi-damaging-airport-terminals-and-the-burj-al-arab",
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260301_ISR_R01",
+    "event_id": "IR_20260301_ISR",
+    "drone_count": null,
+    "drone_type": null,
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Kermanshah",
+        "lat": 34.31,
+        "lon": 47.07,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Iraq (overfly)",
+        "lat": 33.3,
+        "lon": 44.37,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Syria (overfly)",
+        "lat": 33.5,
+        "lon": 38.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Beit Shemesh",
+        "lat": 31.75,
+        "lon": 34.99,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "E",
+    "route_type": "direct",
+    "estimated_distance_km": 1250,
+    "notes": "BM to Beit Shemesh \u2014 INTERCEPTORS FAILED. ~500kg warhead destroyed synagogue and bomb shelter. 9 killed, 49 injured. Deadliest single strike on Israel. IAF investigating intercept failure.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Times of Israel / Al Jazeera",
+        "url": "https://www.timesofisrael.com/nine-people-killed-in-iranian-missile-strike-on-residential-area-in-beit-shemesh/",
+        "confidence": "news_report"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260301_ISR_R02",
+    "event_id": "IR_20260301_ISR",
+    "drone_count": null,
+    "drone_type": null,
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Isfahan",
+        "lat": 32.65,
+        "lon": 51.68,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Iraq (overfly)",
+        "lat": 33.3,
+        "lon": 44.37,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Jordan (overfly)",
+        "lat": 32.5,
+        "lon": 36.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Tel Aviv",
+        "lat": 32.07,
+        "lon": 34.78,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "E",
+    "route_type": "direct",
+    "estimated_distance_km": 1700,
+    "notes": "BM struck Tel Aviv residential block. 1 killed (home health aide), dozens wounded.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Times of Israel",
+        "url": "https://www.timesofisrael.com/liveblog-march-01-2026/",
+        "confidence": "news_report"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260302_HEZ_R01",
+    "event_id": "IR_20260302_HEZ",
+    "conflict": "iran_2026",
+    "date": "2026-03-02",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "name": "Southern Lebanon",
+        "lat": 33.27,
+        "lon": 35.2,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Northern Israel",
+        "lat": 33.0,
+        "lon": 35.5,
+        "type": "target",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Southern Lebanon \u2192 Northern Israel",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260302_SAU_R01",
+    "event_id": "IR_20260302_SAU",
+    "conflict": "iran_2026",
+    "date": "2026-03-02",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "name": "Khuzestan",
+        "lat": 31.32,
+        "lon": 48.67,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Persian Gulf (north)",
+        "lat": 28.5,
+        "lon": 50.0,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Saudi airspace",
+        "lat": 26.0,
+        "lon": 47.0,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "US Embassy Riyadh",
+        "lat": 24.71,
+        "lon": 46.67,
+        "type": "target",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Khuzestan \u2192 Persian Gulf (north) \u2192 Saudi airspace \u2192 US Embassy Riyadh",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260302_SAU_R02",
+    "event_id": "IR_20260302_SAU",
+    "conflict": "iran_2026",
+    "date": "2026-03-02",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "name": "Khuzestan",
+        "lat": 31.32,
+        "lon": 48.67,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Persian Gulf (north)",
+        "lat": 28.5,
+        "lon": 50.0,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Saudi airspace",
+        "lat": 26.0,
+        "lon": 47.0,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Ras Tanura Refinery",
+        "lat": 26.64,
+        "lon": 50.17,
+        "type": "intercept",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Khuzestan \u2192 Persian Gulf (north) \u2192 Saudi airspace \u2192 Ras Tanura Refinery",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260305_BHR_R01",
+    "event_id": "IR_20260305_BHR",
+    "conflict": "iran_2026",
+    "date": "2026-03-05",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "name": "Bushehr",
+        "lat": 28.97,
+        "lon": 50.84,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Persian Gulf (north)",
+        "lat": 28.5,
+        "lon": 50.0,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Bapco Refinery",
+        "lat": 26.15,
+        "lon": 50.62,
+        "type": "intercept",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Bushehr \u2192 Persian Gulf (north) \u2192 Bapco Refinery",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260305_ISR_R01",
+    "event_id": "IR_20260305_ISR",
+    "conflict": "iran_2026",
+    "date": "2026-03-05",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "name": "Kermanshah",
+        "lat": 34.31,
+        "lon": 47.07,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Iraq airspace",
+        "lat": 33.3,
+        "lon": 44.4,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Syria airspace",
+        "lat": 34.8,
+        "lon": 38.0,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Tel Aviv",
+        "lat": 32.08,
+        "lon": 34.78,
+        "type": "target",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Kermanshah \u2192 Iraq airspace \u2192 Syria airspace \u2192 Tel Aviv",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260305_ISR_R02",
+    "event_id": "IR_20260305_ISR",
+    "conflict": "iran_2026",
+    "date": "2026-03-05",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "name": "Kermanshah",
+        "lat": 34.31,
+        "lon": 47.07,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Iraq airspace",
+        "lat": 33.3,
+        "lon": 44.4,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Syria airspace",
+        "lat": 34.8,
+        "lon": 38.0,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Nevatim Air Base",
+        "lat": 31.21,
+        "lon": 34.94,
+        "type": "intercept",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Kermanshah \u2192 Iraq airspace \u2192 Syria airspace \u2192 Nevatim Air Base",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260305_QAT_R01",
+    "event_id": "IR_20260305_QAT",
+    "conflict": "iran_2026",
+    "date": "2026-03-05",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "name": "Bushehr",
+        "lat": 28.97,
+        "lon": 50.84,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Persian Gulf (mid)",
+        "lat": 26.8,
+        "lon": 52.5,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Mesaieed LNG",
+        "lat": 24.98,
+        "lon": 51.55,
+        "type": "intercept",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Bushehr \u2192 Persian Gulf (mid) \u2192 Mesaieed LNG",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260305_QAT_R02",
+    "event_id": "IR_20260305_QAT",
+    "conflict": "iran_2026",
+    "date": "2026-03-05",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "name": "Bushehr",
+        "lat": 28.97,
+        "lon": 50.84,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Persian Gulf (mid)",
+        "lat": 26.8,
+        "lon": 52.5,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Ras Laffan LNG",
+        "lat": 25.92,
+        "lon": 51.53,
+        "type": "intercept",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Bushehr \u2192 Persian Gulf (mid) \u2192 Ras Laffan LNG",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260305_UAE_R01",
+    "event_id": "IR_20260305_UAE",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "unknown",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "IRGC Navy vessel",
+        "lat": 26.5,
+        "lon": 52.0,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Persian Gulf (south)",
+        "lat": 25.5,
+        "lon": 53.5,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Al Dhafra Air Base",
+        "lat": 24.25,
+        "lon": 54.55,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "N",
+    "route_type": "direct",
+    "estimated_distance_km": 350,
+    "notes": "Sea-launched drone attack from IRGC Navy vessel. First known ship-based OWA drone attack in conflict. Short range \u2014 vessels positioned mid-Gulf for quicker strike time.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from Navy Times / CENTCOM reporting",
+        "url": "https://www.navytimes.com/news/2026/03/05/us-has-destroyed-iranian-drone-carrier-centcom-commander-says/",
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260307_JOR_R01",
+    "event_id": "IR_20260307_JOR",
+    "conflict": "iran_2026",
+    "date": "2026-03-07",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "name": "Kermanshah",
+        "lat": 34.31,
+        "lon": 47.07,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Iraq airspace",
+        "lat": 33.3,
+        "lon": 44.4,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Jordan airspace",
+        "lat": 31.5,
+        "lon": 36.5,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Aqaba",
+        "lat": 29.53,
+        "lon": 35.01,
+        "type": "intercept",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Kermanshah \u2192 Iraq airspace \u2192 Jordan airspace \u2192 Aqaba",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260307_QAT_R01",
+    "event_id": "IR_20260307_QAT",
+    "conflict": "iran_2026",
+    "date": "2026-03-07",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "name": "Bushehr",
+        "lat": 28.97,
+        "lon": 50.84,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Persian Gulf (mid)",
+        "lat": 26.8,
+        "lon": 52.5,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Qatar",
+        "lat": 25.29,
+        "lon": 51.53,
+        "type": "intercept",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Bushehr \u2192 Persian Gulf (mid) \u2192 Qatar",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260307_SAU_R01",
+    "event_id": "IR_20260307_SAU",
+    "drone_count": 6,
+    "drone_type": "shahed_136",
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Shiraz",
+        "lat": 29.59,
+        "lon": 52.58,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Persian Gulf (west)",
+        "lat": 27.0,
+        "lon": 50.5,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Saudi coastline",
+        "lat": 25.5,
+        "lon": 50.2,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Shaybah Oilfield",
+        "lat": 22.52,
+        "lon": 54.03,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "NE",
+    "route_type": "direct",
+    "estimated_distance_km": 900,
+    "notes": "Long-range drone corridor to Shaybah \u2014 deep in Saudi desert near UAE border. All 6 drones intercepted. Targeting energy infrastructure.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from Al Jazeera reporting",
+        "url": "https://www.aljazeera.com/news/2026/3/7/iranian-missiles-intercepted-over-saudi-jordan-drones-launched-at-qatar",
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260307_UAE_R01",
+    "event_id": "IR_20260307_UAE",
+    "conflict": "iran_2026",
+    "date": "2026-03-07",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "name": "Isfahan",
+        "lat": 32.65,
+        "lon": 51.68,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Shiraz",
+        "lat": 29.59,
+        "lon": 52.58,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Bandar Abbas",
+        "lat": 27.19,
+        "lon": 56.27,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Strait of Hormuz",
+        "lat": 26.56,
+        "lon": 56.25,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Al Dhafra Air Base",
+        "lat": 24.25,
+        "lon": 54.55,
+        "type": "intercept",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Isfahan \u2192 Shiraz \u2192 Bandar Abbas \u2192 Strait of Hormuz \u2192 Al Dhafra Air Base",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260308_KWT_R01",
+    "event_id": "IR_20260308_KWT",
+    "conflict": "iran_2026",
+    "date": "2026-03-08",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "name": "Khuzestan",
+        "lat": 31.32,
+        "lon": 48.67,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Persian Gulf (north)",
+        "lat": 28.5,
+        "lon": 50.0,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Kuwait City high-rise",
+        "lat": 29.38,
+        "lon": 47.99,
+        "type": "target",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Khuzestan \u2192 Persian Gulf (north) \u2192 Kuwait City high-rise",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260308_KWT_R02",
+    "event_id": "IR_20260308_KWT",
+    "conflict": "iran_2026",
+    "date": "2026-03-08",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "name": "Khuzestan",
+        "lat": 31.32,
+        "lon": 48.67,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Persian Gulf (north)",
+        "lat": 28.5,
+        "lon": 50.0,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Kuwait International Airport",
+        "lat": 29.23,
+        "lon": 47.97,
+        "type": "target",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Khuzestan \u2192 Persian Gulf (north) \u2192 Kuwait International Airport",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260308_TUR_R01",
+    "event_id": "IR_20260308_TUR",
+    "conflict": "iran_2026",
+    "date": "2026-03-08",
+    "drone_type": null,
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": "NW",
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "name": "Tabriz North Missile Base",
+        "lat": 38.25,
+        "lon": 46.13,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Turkey (NATO intercept)",
+        "lat": 37.0,
+        "lon": 35.32,
+        "type": "intercept",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "FIRST NATO INTERCEPTION of the conflict. Iranian missile directed toward Turkey intercepted by NATO air defense systems.",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260308_UA2_R01",
+    "event_id": "IR_20260308_UA2",
+    "conflict": "iran_2026",
+    "date": "2026-03-08",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "name": "Isfahan",
+        "lat": 32.65,
+        "lon": 51.68,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Shiraz",
+        "lat": 29.59,
+        "lon": 52.58,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Bandar Abbas",
+        "lat": 27.19,
+        "lon": 56.27,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Strait of Hormuz",
+        "lat": 26.56,
+        "lon": 56.25,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Al Dhafra Air Base",
+        "lat": 24.25,
+        "lon": 54.55,
+        "type": "intercept",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Isfahan \u2192 Shiraz \u2192 Bandar Abbas \u2192 Strait of Hormuz \u2192 Al Dhafra Air Base",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260308_UA2_R02",
+    "event_id": "IR_20260308_UA2",
+    "conflict": "iran_2026",
+    "date": "2026-03-08",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": null,
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "name": "Isfahan",
+        "lat": 32.65,
+        "lon": 51.68,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Shiraz",
+        "lat": 29.59,
+        "lon": 52.58,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Bandar Abbas",
+        "lat": 27.19,
+        "lon": 56.27,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Strait of Hormuz",
+        "lat": 26.56,
+        "lon": 56.25,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Al Dhafra Satcom Facilities",
+        "lat": 24.25,
+        "lon": 54.56,
+        "type": "intercept",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Interpolated route: Isfahan \u2192 Shiraz \u2192 Bandar Abbas \u2192 Strait of Hormuz \u2192 Al Dhafra Satcom Facilities",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT data",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260309_ISR_R01",
+    "event_id": "IR_20260309_ISR",
+    "conflict": "iran_2026",
+    "date": "2026-03-09",
+    "drone_type": null,
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": "E",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "name": "Kangavar Missile Base",
+        "lat": 34.44,
+        "lon": 47.87,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Iraq airspace",
+        "lat": 33.3,
+        "lon": 44.4,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Syria airspace",
+        "lat": 34.8,
+        "lon": 38.0,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Tel Aviv",
+        "lat": 32.08,
+        "lon": 34.78,
+        "type": "target",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Ballistic missile with cluster sub-munition warhead. Launched after Mojtaba Khamenei named new Supreme Leader.",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260309_SAU_R01",
+    "event_id": "IR_20260309_SAU",
+    "conflict": "iran_2026",
+    "date": "2026-03-09",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": "E",
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "name": "Isfahan (Badr Air Base)",
+        "lat": 32.62,
+        "lon": 51.7,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Shiraz",
+        "lat": 29.72,
+        "lon": 52.56,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Persian Gulf",
+        "lat": 26.8,
+        "lon": 52.5,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Shaybah Oil Field",
+        "lat": 22.52,
+        "lon": 54.0,
+        "type": "intercept",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Long-range drone route to Shaybah in the Empty Quarter. Intercepted by Saudi air defenses.",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260309_SAU_R02",
+    "event_id": "IR_20260309_SAU",
+    "conflict": "iran_2026",
+    "date": "2026-03-09",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": "E",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "name": "Khuzestan",
+        "lat": 31.32,
+        "lon": 48.67,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Persian Gulf (north)",
+        "lat": 28.5,
+        "lon": 50.0,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Saudi airspace",
+        "lat": 26.0,
+        "lon": 47.0,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Al-Kharj residential area",
+        "lat": 24.15,
+        "lon": 47.31,
+        "type": "target",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Struck residential facility in Al-Kharj \u2014 2 Saudi civilians killed, first Saudi civilian deaths of the conflict.",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260309_UAE_R01",
+    "event_id": "IR_20260309_UAE",
+    "conflict": "iran_2026",
+    "date": "2026-03-09",
+    "drone_type": "shahed_136",
+    "drone_count": null,
+    "route_type": "direct",
+    "approach_direction": "NE",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "name": "Hajiabad Missile Base",
+        "lat": 28.3,
+        "lon": 55.9,
+        "type": "launch",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Gulf of Oman",
+        "lat": 25.5,
+        "lon": 57.0,
+        "type": "transit",
+        "altitude_m": null,
+        "time_approx": null
+      },
+      {
+        "name": "Fujairah Oil Facility",
+        "lat": 25.12,
+        "lon": 56.33,
+        "type": "target",
+        "altitude_m": null,
+        "time_approx": null
+      }
+    ],
+    "notes": "Direct route from Hajiabad base across Gulf of Oman to Fujairah. Debris from interception caused fire at oil storage tanks.",
+    "sources": [
+      {
+        "name": "Asaru interpolation from OSINT",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260310_BHR_R01",
+    "event_id": "IR_20260310_BHR",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Hajiabad",
+        "lat": 28.3,
+        "lon": 55.9,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Persian Gulf",
+        "lat": 27.0,
+        "lon": 53.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Qatar coast",
+        "lat": 26.0,
+        "lon": 51.5,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Manama (Al Seef)",
+        "lat": 26.23,
+        "lon": 50.56,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "E",
+    "route_type": "direct",
+    "estimated_distance_km": 700,
+    "notes": "Drone struck residential building in Al Seef, Manama. 1 woman killed, 8 injured.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from launch region and target",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260310_UAE_R01",
+    "event_id": "IR_20260310_UAE",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Isfahan",
+        "lat": 32.65,
+        "lon": 51.68,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Shiraz",
+        "lat": 29.59,
+        "lon": 52.58,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Bushehr coast",
+        "lat": 28.97,
+        "lon": 50.84,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Persian Gulf crossing",
+        "lat": 26.5,
+        "lon": 52.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 4,
+        "name": "Ruwais Industrial Complex",
+        "lat": 24.11,
+        "lon": 52.73,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "NE",
+    "route_type": "direct",
+    "estimated_distance_km": 1200,
+    "notes": "Strike route to Ruwais/ADNOC refinery. Drone hit industrial complex causing fire, forcing shutdown of 922,000 bpd refinery.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from launch region and target",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260312_BHR_R01",
+    "event_id": "IR_20260312_BHR",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Hajiabad",
+        "lat": 28.3,
+        "lon": 55.9,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Persian Gulf",
+        "lat": 27.0,
+        "lon": 53.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Bahrain approach",
+        "lat": 26.5,
+        "lon": 50.8,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Bahrain International Airport (Muharraq)",
+        "lat": 26.27,
+        "lon": 50.63,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "E",
+    "route_type": "direct",
+    "estimated_distance_km": 700,
+    "notes": "Drone struck Bahrain airport on Muharraq Island, setting fuel tanks on fire.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from launch region and target",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260312_IRQ_R01",
+    "event_id": "IR_20260312_IRQ",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Mahidasht (Kermanshah)",
+        "lat": 34.32,
+        "lon": 46.76,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Iraq border",
+        "lat": 34.5,
+        "lon": 45.5,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Erbil (coalition base)",
+        "lat": 36.19,
+        "lon": 44.01,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "E",
+    "route_type": "direct",
+    "estimated_distance_km": 350,
+    "notes": "Strike on coalition military camp near Erbil. US soldiers wounded.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from launch region and target",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260313_SAU_R01",
+    "event_id": "IR_20260313_SAU",
+    "drone_count": 50,
+    "drone_type": "shahed_136",
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Isfahan",
+        "lat": 32.65,
+        "lon": 51.68,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Persian Gulf crossing",
+        "lat": 28.0,
+        "lon": 50.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Bahrain strait",
+        "lat": 26.5,
+        "lon": 50.5,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Saudi eastern coast",
+        "lat": 26.27,
+        "lon": 50.14,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 4,
+        "name": "Prince Sultan Air Base (Al-Kharj)",
+        "lat": 24.06,
+        "lon": 47.58,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "NE",
+    "route_type": "circuitous",
+    "estimated_distance_km": 1400,
+    "notes": "Largest single drone wave against Saudi Arabia \u2014 50 drones within hours. Most intercepted by Patriot systems.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from launch region and target",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260316_UAE_R01",
+    "event_id": "IR_20260316_UAE",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Hajiabad",
+        "lat": 28.3,
+        "lon": 55.9,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Strait of Hormuz",
+        "lat": 26.56,
+        "lon": 56.25,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Sharjah coast",
+        "lat": 25.4,
+        "lon": 55.5,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Dubai International Airport",
+        "lat": 25.25,
+        "lon": 55.36,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "E",
+    "route_type": "direct",
+    "estimated_distance_km": 350,
+    "notes": "Shahed drone hit fuel storage tank at Dubai Int'l Airport. Flights suspended 7+ hours. World's busiest airport by international passengers.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from launch region and target",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260316_UAE_R02",
+    "event_id": "IR_20260316_UAE",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Isfahan",
+        "lat": 32.65,
+        "lon": 51.68,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Shiraz",
+        "lat": 29.59,
+        "lon": 52.58,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Persian Gulf coast",
+        "lat": 27.0,
+        "lon": 52.5,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "UAE interior",
+        "lat": 24.5,
+        "lon": 54.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 4,
+        "name": "Shah Gas Field",
+        "lat": 23.55,
+        "lon": 53.77,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "NE",
+    "route_type": "direct",
+    "estimated_distance_km": 1250,
+    "notes": "Drone struck Shah gas field operated by ADNOC/Occidental, sparking fire.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from launch region and target",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260318_ISR_R01",
+    "event_id": "IR_20260318_ISR",
+    "drone_count": null,
+    "drone_type": "emad_ballistic",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Kermanshah",
+        "lat": 34.31,
+        "lon": 47.06,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Iraq airspace",
+        "lat": 33.5,
+        "lon": 44.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Jordan airspace",
+        "lat": 32.0,
+        "lon": 37.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Jerusalem Old City",
+        "lat": 31.78,
+        "lon": 35.23,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "E",
+    "route_type": "ballistic_trajectory",
+    "estimated_distance_km": 1200,
+    "notes": "Ballistic missile trajectory. Debris fell on Temple Mount (Al-Aqsa damage), Church of Holy Sepulchre, Jewish Quarter. Beit Shemesh synagogue shelter struck \u2014 9 killed.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from launch region and target",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260318_QAT_R01",
+    "event_id": "IR_20260318_QAT",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Isfahan",
+        "lat": 32.65,
+        "lon": 51.68,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Bushehr coast",
+        "lat": 28.97,
+        "lon": 50.84,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Persian Gulf",
+        "lat": 27.0,
+        "lon": 51.5,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Ras Laffan Industrial City",
+        "lat": 25.91,
+        "lon": 51.56,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "NE",
+    "route_type": "direct",
+    "estimated_distance_km": 800,
+    "notes": "Strike on Qatar's Ras Laffan LNG facility \u2014 world's largest LNG complex. 'Extensive damage' cutting ~17% of output potentially for 5 years.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from launch region and target",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260319_ISR_R01",
+    "event_id": "IR_20260319_ISR",
+    "drone_count": null,
+    "drone_type": "emad_ballistic",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Tabriz",
+        "lat": 38.25,
+        "lon": 46.13,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Turkey/Iraq border region",
+        "lat": 37.0,
+        "lon": 43.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Northern Iraq",
+        "lat": 36.0,
+        "lon": 40.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Haifa (Bazan Refinery)",
+        "lat": 32.82,
+        "lon": 35.0,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "NE",
+    "route_type": "ballistic_trajectory",
+    "estimated_distance_km": 1400,
+    "notes": "Ballistic missile from Tabriz to Haifa. Bazan oil refinery damaged. 5 salvos at Jerusalem/northern Israel within 1 hour.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from launch region and target",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260320_KWT_R01",
+    "event_id": "IR_20260320_KWT",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "hit_target",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Mahidasht (Kermanshah)",
+        "lat": 34.32,
+        "lon": 46.76,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Iraq airspace (Basra)",
+        "lat": 30.5,
+        "lon": 47.8,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Northern Kuwait",
+        "lat": 29.8,
+        "lon": 47.9,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Mina Al-Ahmadi Refinery",
+        "lat": 29.06,
+        "lon": 48.15,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "NE",
+    "route_type": "direct",
+    "estimated_distance_km": 600,
+    "notes": "Drone struck Kuwait's largest oil refinery (730,000 bpd). Fires at multiple units. Attack during Eid al-Fitr.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from launch region and target",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260320_SAU_R01",
+    "event_id": "IR_20260320_SAU",
+    "drone_count": null,
+    "drone_type": "shahed_136",
+    "outcome": "intercepted",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Isfahan",
+        "lat": 32.65,
+        "lon": 51.68,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Persian Gulf",
+        "lat": 28.0,
+        "lon": 50.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Saudi eastern coast",
+        "lat": 26.7,
+        "lon": 50.1,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Ras Tanura oil terminal",
+        "lat": 26.64,
+        "lon": 50.17,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "NE",
+    "route_type": "direct",
+    "estimated_distance_km": 900,
+    "notes": "Drones targeted Ras Tanura oil terminal. Most intercepted by Saudi Patriot systems.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "Estimated from launch region and target",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  },
+  {
+    "id": "IR_20260321_MULTI_R01",
+    "event_id": "IR_20260321_MULTI",
+    "drone_count": null,
+    "drone_type": "irbm_shahab_variant",
+    "outcome": "missed",
+    "waypoints": [
+      {
+        "seq": 0,
+        "name": "Central Iran (unknown IRBM site)",
+        "lat": 33.5,
+        "lon": 52.0,
+        "type": "launch",
+        "time_approx": null
+      },
+      {
+        "seq": 1,
+        "name": "Southern Iran",
+        "lat": 27.0,
+        "lon": 56.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 2,
+        "name": "Arabian Sea",
+        "lat": 15.0,
+        "lon": 65.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 3,
+        "name": "Indian Ocean",
+        "lat": 0.0,
+        "lon": 70.0,
+        "type": "transit",
+        "time_approx": null
+      },
+      {
+        "seq": 4,
+        "name": "Diego Garcia (US-UK base)",
+        "lat": -7.32,
+        "lon": 72.42,
+        "type": "target",
+        "time_approx": null
+      }
+    ],
+    "approach_direction": "N",
+    "route_type": "ballistic_trajectory",
+    "estimated_distance_km": 4000,
+    "notes": "IRBM trajectory to Diego Garcia \u2014 ~4,000km range. Both missiles missed (1 failed mid-flight, 1 possibly intercepted by SM-3). First use of IRBMs in the war, revealing Iran has greater range than publicly admitted. Unprecedented targeting of Indian Ocean base.",
+    "conflict": "iran_2026",
+    "sources": [
+      {
+        "name": "CNBC",
+        "url": "https://www.cnbc.com/2026/03/21/iran-targeted-but-did-not-hit-diego-garcia-base-with-missiles-wsj.html",
+        "confidence": "news_report"
+      },
+      {
+        "name": "Estimated trajectory",
+        "url": null,
+        "confidence": "estimate"
+      }
+    ]
+  }
+]

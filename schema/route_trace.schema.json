@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OpenSkyData Route Trace",
+  "description": "An observed flight path of a drone or group of drones during an attack event. Reconstructed from ground observer reports, air force tracking, and OSINT. These are approximate routes through named locations, not precise GPS tracks.",
+  "type": "object",
+  "required": ["id", "event_id", "waypoints", "source"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique route ID. Format: {event_id}_R{seq}. e.g. UA_20250907_001_R01",
+      "pattern": "^(UA|IR)_\\d{8}_[A-Z0-9]{3}_R\\d{2}$"
+    },
+    "event_id": {
+      "type": "string",
+      "description": "Links to the parent attack event"
+    },
+    "drone_count": {
+      "type": ["integer", "null"],
+      "description": "Number of drones on this route if distinguishable. Often 1, sometimes a group. Null if unknown."
+    },
+    "drone_type": {
+      "type": ["string", "null"],
+      "description": "Type of drone if identifiable. e.g. 'shahed_136', 'geran_3', 'gerbera_decoy'. Null if unknown."
+    },
+    "outcome": {
+      "type": ["string", "null"],
+      "enum": ["intercepted", "hit_target", "crashed", "lost_radar", "returned", "ew_suppressed", "unknown", null],
+      "description": "What happened to this drone/group. Null if unknown."
+    },
+    "waypoints": {
+      "type": "array",
+      "description": "Ordered sequence of locations the drone was observed passing through or near. Minimum 2 (origin and last known position).",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "seq": {
+            "type": "integer",
+            "description": "Waypoint sequence number starting at 0"
+          },
+          "name": {
+            "type": "string",
+            "description": "Location name. Use oblast/region for broad tracking, city for precise. e.g. 'Mykolaiv', 'Kirovohrad Oblast', 'Kyiv'"
+          },
+          "lat": {
+            "type": ["number", "null"],
+            "description": "Latitude. Can be geocoded from name if not provided directly."
+          },
+          "lon": {
+            "type": ["number", "null"],
+            "description": "Longitude. Can be geocoded from name if not provided directly."
+          },
+          "type": {
+            "type": "string",
+            "enum": ["launch", "transit", "target", "intercept", "last_known"],
+            "description": "What this waypoint represents in the route"
+          },
+          "time_approx": {
+            "type": ["string", "null"],
+            "description": "Approximate time at this waypoint (HH:MM UTC) if known"
+          }
+        }
+      }
+    },
+    "approach_direction": {
+      "type": ["string", "null"],
+      "enum": ["N", "NE", "E", "SE", "S", "SW", "W", "NW", null],
+      "description": "Overall approach direction toward target. Null if unclear or circuitous route."
+    },
+    "route_type": {
+      "type": ["string", "null"],
+      "enum": ["direct", "circuitous", "looping", "unknown", null],
+      "description": "Route behaviour pattern. 'direct'=roughly straight line, 'circuitous'=deliberate detour through multiple oblasts, 'looping'=drone observed doubling back."
+    },
+    "estimated_distance_km": {
+      "type": ["number", "null"],
+      "description": "Approximate total route distance in km if calculable from waypoints."
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Notable observations. e.g. 'Drone circled Khmelnytskyi twice before heading to Ternopil', 'Intercepted by Sting over Vinnytsia'"
+    },
+    "source": {
+      "type": "object",
+      "required": ["name", "confidence"],
+      "properties": {
+        "name": { "type": "string" },
+        "url": { "type": ["string", "null"] },
+        "confidence": {
+          "type": "string",
+          "enum": ["official", "verified_osint", "osint", "news_report", "estimate"]
+        }
+      }
+    }
+  }
+}

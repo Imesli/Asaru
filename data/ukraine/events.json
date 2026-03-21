@@ -1,0 +1,982 @@
+[
+  {
+    "id": "UA_20250101_AGG",
+    "conflict": "ukraine_russia",
+    "date": "2025-01-01",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 2629,
+      "launched_drones": 2629,
+      "launched_drones_strike": 1551,
+      "launched_drones_decoy": 1078,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": 2539,
+      "intercepted_drones": 2539,
+      "hits": 90,
+      "lost_location": null,
+      "interception_rate": 0.9658
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 },
+      { "model": "gerbera_decoy", "count": 1078, "speed_kmh": 150 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": "Highest interception rate month of 2025 at 96.58%. Daily average 84.81 drones."
+    },
+    "notes": "MONTHLY AGGREGATE for January 2025. Strike drone proportion 59%. Lowest daily average of the year, pre-escalation baseline.",
+    "sources": [
+      {
+        "name": "ISIS Monthly Analysis - Shahed Deployment",
+        "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_total", "totals.launched_drones_strike", "totals.launched_drones_decoy", "totals.intercepted_total", "totals.hits", "totals.interception_rate"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20250201_AGG",
+    "conflict": "ukraine_russia",
+    "date": "2025-02-01",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 3904,
+      "launched_drones": 3904,
+      "launched_drones_strike": 2303,
+      "launched_drones_decoy": 1601,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": 3802,
+      "intercepted_drones": 3802,
+      "hits": 102,
+      "lost_location": null,
+      "interception_rate": 0.9739
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 },
+      { "model": "gerbera_decoy", "count": 1601, "speed_kmh": 150 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": "Peak interception rate of 97.39% - best month of the entire war for air defence. Daily average 139.43."
+    },
+    "notes": "MONTHLY AGGREGATE for February 2025. Highest interception rate recorded (97.39%). Significant ramp-up from January (+48% launches).",
+    "sources": [
+      {
+        "name": "ISIS Monthly Analysis - Shahed Deployment",
+        "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_total", "totals.launched_drones_strike", "totals.launched_drones_decoy", "totals.intercepted_total", "totals.hits", "totals.interception_rate"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20250301_AGG",
+    "conflict": "ukraine_russia",
+    "date": "2025-03-01",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 4198,
+      "launched_drones": 4198,
+      "launched_drones_strike": 2477,
+      "launched_drones_decoy": 1721,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": 3821,
+      "intercepted_drones": 3821,
+      "hits": 377,
+      "lost_location": null,
+      "interception_rate": 0.9102
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 },
+      { "model": "gerbera_decoy", "count": 1721, "speed_kmh": 150 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": "Sharp drop in interception rate from 97% to 91%. Hit rate jumped from 2.6% to 9%. Daily average 135.42."
+    },
+    "notes": "MONTHLY AGGREGATE for March 2025. First sign of interception rate decline. Hits quadrupled vs February. Beginning of effectiveness degradation pattern.",
+    "sources": [
+      {
+        "name": "ISIS Monthly Analysis - Shahed Deployment",
+        "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_total", "totals.launched_drones_strike", "totals.launched_drones_decoy", "totals.intercepted_total", "totals.hits", "totals.interception_rate"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20250401_AGG",
+    "conflict": "ukraine_russia",
+    "date": "2025-04-01",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 2422,
+      "launched_drones": 2422,
+      "launched_drones_strike": 1429,
+      "launched_drones_decoy": 993,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": 2043,
+      "intercepted_drones": 2043,
+      "hits": 379,
+      "lost_location": null,
+      "interception_rate": 0.8435
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 },
+      { "model": "gerbera_decoy", "count": 993, "speed_kmh": 150 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": "Lowest launch volume of 2025 (2,422) but highest hit rate at 15.65%. Daily average 80.73. Interception effectiveness dropped sharply."
+    },
+    "notes": "MONTHLY AGGREGATE for April 2025. Volume dip but hit rate surged to 15.65% — nearly 6x February. Suggests Russian tactical adaptation in targeting or routing.",
+    "sources": [
+      {
+        "name": "ISIS Monthly Analysis - Shahed Deployment",
+        "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_total", "totals.launched_drones_strike", "totals.launched_drones_decoy", "totals.intercepted_total", "totals.hits", "totals.interception_rate"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20250501_AGG",
+    "conflict": "ukraine_russia",
+    "date": "2025-05-01",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 4003,
+      "launched_drones": 4003,
+      "launched_drones_strike": 2362,
+      "launched_drones_decoy": 1641,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": 3289,
+      "intercepted_drones": 3289,
+      "hits": 714,
+      "lost_location": null,
+      "interception_rate": 0.8216
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 },
+      { "model": "gerbera_decoy", "count": 1641, "speed_kmh": 150 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": "Record broken on May 26 with 367 drones in single night. Daily average 129.13."
+    },
+    "notes": "MONTHLY AGGREGATE for May 2025. Volume nearly doubled vs April. Worst interception rate so far at 82.16%. 714 hits — highest monthly total to date.",
+    "sources": [
+      {
+        "name": "ISIS Monthly Analysis - Shahed Deployment",
+        "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_total", "totals.launched_drones_strike", "totals.launched_drones_decoy", "totals.intercepted_total", "totals.hits", "totals.interception_rate"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20250526_001",
+    "conflict": "ukraine_russia",
+    "date": "2025-05-26",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 367,
+      "launched_drones": 367,
+      "launched_drones_strike": null,
+      "launched_drones_decoy": null,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": null,
+      "intercepted_drones": null,
+      "hits": null,
+      "lost_location": null,
+      "interception_rate": null
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "Single-night record at time of launch (367 drones). Record held for less than a week before being broken on June 1.",
+    "sources": [
+      {
+        "name": "Kyiv Independent",
+        "url": "https://kyivindependent.com/russia-shatters-drone-record-launches-472-uavs-at-ukraine-night-before-kyivs-strike-on-russian-airfields/",
+        "confidence": "news_report",
+        "fields_sourced": ["totals.launched_total", "date"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20250601_001",
+    "conflict": "ukraine_russia",
+    "date": "2025-06-01",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 472,
+      "launched_drones": 472,
+      "launched_drones_strike": null,
+      "launched_drones_decoy": null,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": null,
+      "intercepted_drones": null,
+      "hits": null,
+      "lost_location": null,
+      "interception_rate": null
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": "Launched night before Ukraine's strike on Russian airfields."
+    },
+    "notes": "New single-night record of 472 Shahed-type drones. Broke previous record (367 on May 26) by over 100. Preceded Ukrainian counter-strike on Russian airfields.",
+    "sources": [
+      {
+        "name": "Kyiv Independent",
+        "url": "https://kyivindependent.com/russia-shatters-drone-record-launches-472-uavs-at-ukraine-night-before-kyivs-strike-on-russian-airfields/",
+        "confidence": "news_report",
+        "fields_sourced": ["totals.launched_total", "date"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20250601_AGG",
+    "conflict": "ukraine_russia",
+    "date": "2025-06-01",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 5438,
+      "launched_drones": 5438,
+      "launched_drones_strike": 3208,
+      "launched_drones_decoy": 2230,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": 4678,
+      "intercepted_drones": 4678,
+      "hits": 760,
+      "lost_location": null,
+      "interception_rate": 0.8602
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 },
+      { "model": "gerbera_decoy", "count": 2230, "speed_kmh": 150 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": "Daily average 181.27 drones. New single-night record set June 1 (472). Euronews reported 5,337-5,438 total for month."
+    },
+    "notes": "MONTHLY AGGREGATE for June 2025. First 5,000+ month. Daily average 181. Multiple records broken. Escalation from spring rate.",
+    "sources": [
+      {
+        "name": "ISIS Monthly Analysis - Shahed Deployment",
+        "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_total", "totals.launched_drones_strike", "totals.launched_drones_decoy", "totals.intercepted_total", "totals.hits", "totals.interception_rate"]
+      },
+      {
+        "name": "Euronews",
+        "url": "https://www.euronews.com/my-europe/2025/07/01/russia-launched-record-5337-drones-at-ukraine-in-june-alone",
+        "confidence": "news_report",
+        "fields_sourced": ["totals.launched_total"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20250701_AGG",
+    "conflict": "ukraine_russia",
+    "date": "2025-07-01",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 6297,
+      "launched_drones": 6297,
+      "launched_drones_strike": 3715,
+      "launched_drones_decoy": 2582,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": 5574,
+      "intercepted_drones": 5574,
+      "hits": 723,
+      "lost_location": null,
+      "interception_rate": 0.8852
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 },
+      { "model": "geran_2", "count": null, "speed_kmh": 180 },
+      { "model": "gerbera_decoy", "count": 2582, "speed_kmh": 150 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": "Peak month of entire war. Daily average 203.13. Large offensives 4-5 times during month. Record single-night attacks on Jul 9 (728) and Jul 12 (597)."
+    },
+    "notes": "MONTHLY AGGREGATE for July 2025. ALL-TIME PEAK: 6,297 drones launched — 203/day average. Single-night record of 728 drones on July 9. 4-5 large-scale offensives during month.",
+    "sources": [
+      {
+        "name": "ISIS Monthly Analysis - Shahed Deployment",
+        "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_total", "totals.launched_drones_strike", "totals.launched_drones_decoy", "totals.intercepted_total", "totals.hits", "totals.interception_rate"]
+      },
+      {
+        "name": "Military.com",
+        "url": "https://www.military.com/daily-news/2025/07/09/russia-launches-another-record-drone-attack-ukraine-ukrainian-officials-say.html",
+        "confidence": "news_report",
+        "fields_sourced": ["notes"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20250709_001",
+    "conflict": "ukraine_russia",
+    "date": "2025-07-09",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "combined_drone_missile",
+    "totals": {
+      "launched_total": 741,
+      "launched_drones": 728,
+      "launched_drones_strike": null,
+      "launched_drones_decoy": null,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": 13,
+      "intercepted_total": null,
+      "intercepted_drones": null,
+      "hits": null,
+      "lost_location": null,
+      "interception_rate": null
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 },
+      { "model": "gerbera_decoy", "count": null, "speed_kmh": 150 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "Single-night record: 728 Shahed-type drones plus 13 cruise and ballistic missiles. Second-largest single attack of the war at time. Combined with missile salvo for saturation effect.",
+    "sources": [
+      {
+        "name": "Military.com / Ukrainian Air Force",
+        "url": "https://www.military.com/daily-news/2025/07/09/russia-launches-another-record-drone-attack-ukraine-ukrainian-officials-say.html",
+        "confidence": "official",
+        "fields_sourced": ["totals.launched_drones", "totals.launched_missiles_ballistic", "date"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20250801_AGG",
+    "conflict": "ukraine_russia",
+    "date": "2025-08-01",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 4128,
+      "launched_drones": 4128,
+      "launched_drones_strike": 2436,
+      "launched_drones_decoy": 1692,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": 3448,
+      "intercepted_drones": 3448,
+      "hits": 680,
+      "lost_location": null,
+      "interception_rate": 0.8353
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 },
+      { "model": "gerbera_decoy", "count": 1692, "speed_kmh": 150 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": "Sharp volume drop in first 20 days (daily avg 88), then recovery to 133/day. Interception rate 83.53%."
+    },
+    "notes": "MONTHLY AGGREGATE for August 2025. Volume dropped 34% from July peak. Brief lull in first 20 days (88/day avg) before recovery. 3 large-scale offensives (fewest of summer).",
+    "sources": [
+      {
+        "name": "ISIS Monthly Analysis - Shahed Deployment",
+        "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_total", "totals.launched_drones_strike", "totals.launched_drones_decoy", "totals.intercepted_total", "totals.hits", "totals.interception_rate"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20250901_AGG",
+    "conflict": "ukraine_russia",
+    "date": "2025-09-01",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 5643,
+      "launched_drones": 5643,
+      "launched_drones_strike": 3245,
+      "launched_drones_decoy": 2398,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": 4906,
+      "intercepted_drones": 4906,
+      "hits": 737,
+      "lost_location": null,
+      "interception_rate": 0.8694
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 },
+      { "model": "geran_2", "count": null, "speed_kmh": 180 },
+      { "model": "gerbera_decoy", "count": 2398, "speed_kmh": 150 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": "Daily average 188.10. Ukrainian Air Force began officially publishing strike/decoy breakdown from this month. Decoy proportion 42.5%."
+    },
+    "notes": "MONTHLY AGGREGATE for September 2025. Record single attack on Sep 7 (805-810 drones). First month with official strike/decoy split published. Autumn escalation campaign begins.",
+    "sources": [
+      {
+        "name": "ISIS Monthly Analysis - Shahed Deployment",
+        "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_total", "totals.launched_drones_strike", "totals.launched_drones_decoy", "totals.intercepted_total", "totals.hits", "totals.interception_rate"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20250907_001",
+    "conflict": "ukraine_russia",
+    "date": "2025-09-07",
+    "time_start": "20:30",
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 810,
+      "launched_drones": 810,
+      "launched_drones_strike": null,
+      "launched_drones_decoy": null,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": null,
+      "intercepted_drones": null,
+      "hits": null,
+      "lost_location": null,
+      "interception_rate": null
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 },
+      { "model": "gerbera_decoy", "count": null, "speed_kmh": 150 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": null
+    },
+    "notes": "ALL-TIME SINGLE-NIGHT RECORD: 805-810 Shahed-type drones in one attack. Largest single drone assault of the Russia-Ukraine war. Part of sustained autumn 2025 escalation.",
+    "sources": [
+      {
+        "name": "ASPI Strategist",
+        "url": "https://www.aspistrategist.org.au/editors-picks-for-2025-ever-faster-weapon-cycles-innovation-and-economics-in-the-war-in-ukraine/",
+        "confidence": "news_report",
+        "fields_sourced": ["totals.launched_total", "date"]
+      },
+      {
+        "name": "ISIS 2025 Comprehensive Review",
+        "url": "https://isis-online.org/isis-reports/a-comprehensive-analytical-review-of-russian-shahed-type-uavs-deployment-against-ukraine-in-2025",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_total"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20251001_AGG",
+    "conflict": "ukraine_russia",
+    "date": "2025-10-01",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 5298,
+      "launched_drones": 5298,
+      "launched_drones_strike": 3063,
+      "launched_drones_decoy": 2235,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": 4309,
+      "intercepted_drones": 4309,
+      "hits": 989,
+      "lost_location": null,
+      "interception_rate": 0.8132
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 },
+      { "model": "geran_2", "count": null, "speed_kmh": 180 },
+      { "model": "geran_3", "count": null, "speed_kmh": 600 },
+      { "model": "gerbera_decoy", "count": 2235, "speed_kmh": 150 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": "Lowest interception rate of 2025 at 81.32%. 989 hits — worst month for targets struck. Daily average 170.90."
+    },
+    "notes": "MONTHLY AGGREGATE for October 2025. WORST MONTH: lowest interception rate (81.32%) and highest hits (989). Geran-3 jet variant increasingly observed. Interception effectiveness crisis.",
+    "sources": [
+      {
+        "name": "ISIS Monthly Analysis - Shahed Deployment",
+        "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_total", "totals.launched_drones_strike", "totals.launched_drones_decoy", "totals.intercepted_total", "totals.hits", "totals.interception_rate"]
+      },
+      {
+        "name": "ABC News / Ukrainian Air Force data",
+        "url": "https://abcnews.go.com/International/ukraines-interception-rates-russias-drones-missiles-slipping-data/story?id=127216305",
+        "confidence": "official",
+        "fields_sourced": ["totals.interception_rate"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20251101_AGG",
+    "conflict": "ukraine_russia",
+    "date": "2025-11-01",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 5447,
+      "launched_drones": 5447,
+      "launched_drones_strike": 3355,
+      "launched_drones_decoy": 2092,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": 4621,
+      "intercepted_drones": 4621,
+      "hits": 826,
+      "lost_location": null,
+      "interception_rate": 0.8488
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 },
+      { "model": "geran_2", "count": null, "speed_kmh": 180 },
+      { "model": "gerbera_decoy", "count": 2092, "speed_kmh": 150 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": null,
+      "sorties_flown": null,
+      "notes": "Interception rate recovered slightly to 84.88% from October's 81.32%. Daily average 181.57. Steady state pattern established."
+    },
+    "notes": "MONTHLY AGGREGATE for November 2025. Steady state: ~176/day average from autumn onwards. Slight interception recovery. Decoy proportion decreased to 38.4%.",
+    "sources": [
+      {
+        "name": "ISIS Monthly Analysis - Shahed Deployment",
+        "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_total", "totals.launched_drones_strike", "totals.launched_drones_decoy", "totals.intercepted_total", "totals.hits", "totals.interception_rate"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20251201_AGG",
+    "conflict": "ukraine_russia",
+    "date": "2025-12-01",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 5131,
+      "launched_drones": 5131,
+      "launched_drones_strike": 3065,
+      "launched_drones_decoy": 2066,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": 4245,
+      "intercepted_drones": 4245,
+      "hits": 886,
+      "lost_location": null,
+      "interception_rate": 0.8277
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 },
+      { "model": "geran_2", "count": null, "speed_kmh": 180 },
+      { "model": "gerbera_decoy", "count": 2066, "speed_kmh": 150 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": null,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": 1500,
+      "sorties_flown": null,
+      "notes": "Ukraine producing 1,500+ interceptor drones per day by Dec/Jan. 100,000 produced in 2025 total. Interceptor drones now primary interception method."
+    },
+    "notes": "MONTHLY AGGREGATE for December 2025. Strike effectiveness against energy infra increased despite lower volume — winter targeting amplifies damage. Daily average 165.52.",
+    "sources": [
+      {
+        "name": "ISIS Monthly Analysis - Shahed Deployment",
+        "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_total", "totals.launched_drones_strike", "totals.launched_drones_decoy", "totals.intercepted_total", "totals.hits", "totals.interception_rate"]
+      },
+      {
+        "name": "Defense News - Interceptor Drones",
+        "url": "https://www.defensenews.com/global/europe/2026/03/05/novel-interceptor-drones-bend-air-defense-economics-in-ukraines-favor/",
+        "confidence": "news_report",
+        "fields_sourced": ["defence_context.interceptor_drones_deployed"]
+      }
+    ]
+  },
+  {
+    "id": "UA_20260101_AGG",
+    "conflict": "ukraine_russia",
+    "date": "2026-01-01",
+    "time_start": null,
+    "time_end": null,
+    "duration_hours": null,
+    "attack_type": "drone_only",
+    "totals": {
+      "launched_total": 4442,
+      "launched_drones": 4442,
+      "launched_drones_strike": 2915,
+      "launched_drones_decoy": 1527,
+      "launched_missiles_cruise": null,
+      "launched_missiles_ballistic": null,
+      "intercepted_total": 3793,
+      "intercepted_drones": 3793,
+      "hits": 649,
+      "lost_location": null,
+      "interception_rate": 0.8539
+    },
+    "drone_types": [
+      { "model": "shahed_136", "count": null, "speed_kmh": 180 },
+      { "model": "geran_2", "count": null, "speed_kmh": 180 },
+      { "model": "gerbera_decoy", "count": 1527, "speed_kmh": 150 }
+    ],
+    "launch_regions": [
+      { "name": "Kursk Oblast", "lat": 51.73, "lon": 36.19, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Krasnodar Krai", "lat": 45.04, "lon": 38.97, "bearing_deg": null, "confidence": "likely" },
+      { "name": "Crimea", "lat": 44.95, "lon": 34.10, "bearing_deg": null, "confidence": "likely" }
+    ],
+    "target_regions": [],
+    "waves": [],
+    "interception_methods": {
+      "interceptor_drone": 1704,
+      "sam_missile": null,
+      "electronic_warfare": null,
+      "anti_aircraft_guns": null,
+      "aircraft": null,
+      "other": null
+    },
+    "defence_context": {
+      "interceptor_drones_deployed": 1500,
+      "sorties_flown": 6300,
+      "notes": "Record 1,704 Shaheds destroyed by interceptor drones alone (70% of kills over Kyiv). 1,500+ interceptors deployed per day. ~6,300 monthly sorties. Interceptor success rate ~68%."
+    },
+    "notes": "MONTHLY AGGREGATE for January 2026. Lowest launch total since autumn (4,442) but HIGHEST strike proportion ever at 66%. Decoy ratio dropped to 34%. Zero days without attacks. Hit rate 14.61% overall, 22.26% for strike-type. Notable developments: BM-35/Italmas strike drones used deep inside Ukraine for first time; Starlink integration attempted on Shaheds for manual guidance (one flew over Kyiv for 4 hours on Jan 26); relay drones with radio modems forming airborne mesh networks; 16-element CRPA antennas improving EW resistance. Russia began launching drones during daytime, not just at night. Primary targets: 750kV high-voltage substations and thermal power plants.",
+    "sources": [
+      {
+        "name": "ISIS Monthly Analysis - Shahed Deployment",
+        "url": "https://isis-online.org/isis-reports/monthly-analysis-of-russian-shahed-136-deployment-against-ukraine",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_total", "totals.launched_drones_strike", "totals.launched_drones_decoy", "totals.intercepted_total", "totals.hits", "totals.interception_rate"]
+      },
+      {
+        "name": "Shahed Tracker (@ShahedTracker)",
+        "url": "https://x.com/ShahedTracker",
+        "confidence": "verified_osint",
+        "fields_sourced": ["totals.launched_total", "totals.launched_drones_strike"]
+      },
+      {
+        "name": "Defense News - Interceptor Drones",
+        "url": "https://www.defensenews.com/global/europe/2026/03/05/novel-interceptor-drones-bend-air-defense-economics-in-ukraines-favor/",
+        "confidence": "news_report",
+        "fields_sourced": ["interception_methods.interceptor_drone", "defence_context.interceptor_drones_deployed", "defence_context.sorties_flown"]
+      }
+    ]
+  }
+]
