@@ -1433,6 +1433,50 @@
 
 /* ── Empty state & button group ── */
 
+/* ── Scenario buttons ── */
+
+.sim-scenarios {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sim-scenario-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 6px;
+  background: rgba(59, 130, 246, 0.04);
+  cursor: pointer;
+  transition: all 0.12s;
+  text-align: left;
+}
+
+.sim-scenario-btn:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.sim-scenario-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sim-scenario-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+.sim-scenario-meta {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .sim-empty-state {
   text-align: center;
   color: rgba(255, 255, 255, 0.2);

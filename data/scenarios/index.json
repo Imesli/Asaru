@@ -1,0 +1,18 @@
+[
+  {
+    "id": "scenario_ua_dec6_2025",
+    "name": "Record Night: Dec 6, 2025",
+    "file": "ukraine_dec6_2025.json",
+    "theater": "ukraine",
+    "difficulty": "extreme",
+    "description": "704 launched (653 drones + 51 missiles). Largest attack of 2025."
+  },
+  {
+    "id": "scenario_gulf_feb28_2026",
+    "name": "Iran Strikes the Gulf: Feb 28, 2026",
+    "file": "gulf_feb28_2026.json",
+    "theater": "gulf",
+    "difficulty": "extreme",
+    "description": "2,500 launched (2,000 drones + 500 missiles). First mass attack on Gulf states. ~93% intercept rate."
+  }
+]

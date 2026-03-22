@@ -1,0 +1,197 @@
+{
+  "id": "scenario_ua_dec6_2025",
+  "name": "Record Night: Dec 6, 2025",
+  "description": "704 total (653 drones + 51 missiles). Largest single-night attack of 2025. 615 intercepted. Fastiv railway station destroyed. Tests Kyiv's layered defense under maximum stress.",
+  "conflict": "ukraine_russia",
+  "event_id": "UA_20251206_001",
+  "theater": "ukraine",
+  "difficulty": "extreme",
+  "attack": {
+    "total_launched": 704,
+    "drones": 653,
+    "missiles": 51,
+    "strike_drones": 392,
+    "decoy_drones": 261,
+    "drone_types": [
+      {"type": "shahed_136", "count": 300, "speed_kmh": 180},
+      {"type": "geran_2", "count": 60, "speed_kmh": 185},
+      {"type": "geran_3", "count": 32, "speed_kmh": 600},
+      {"type": "gerbera_decoy", "count": 230, "speed_kmh": 150},
+      {"type": "parody_decoy", "count": 31, "speed_kmh": 140}
+    ],
+    "launch_regions": ["Kursk Oblast", "Krasnodar Krai", "Crimea", "Sea of Azov"],
+    "waves": 3,
+    "duration_hours": 8,
+    "actual_intercept_rate": 0.87
+  },
+  "defense_sites": [
+    {
+      "id": "DS_KYIV_N",
+      "name": "Kyiv North (Brovary)",
+      "lat": 50.52,
+      "lon": 30.80,
+      "description": "Primary interceptor drone base protecting northern approaches to Kyiv",
+      "assets": [
+        {"type": "interceptor_drone", "weapon": "sting", "stock": 80, "range_km": 15, "speed_kmh": 250, "reload_time_s": 8,
+         "kill_probability": {"shahed_136": 0.82, "geran_2": 0.78, "geran_3": 0.45, "gerbera_decoy": 0.85, "unknown": 0.70},
+         "can_discriminate_decoys": false},
+        {"type": "interceptor_drone", "weapon": "bullet", "stock": 50, "range_km": 12, "speed_kmh": 300, "reload_time_s": 5,
+         "kill_probability": {"shahed_136": 0.88, "geran_2": 0.84, "geran_3": 0.55, "gerbera_decoy": 0.90, "unknown": 0.75},
+         "can_discriminate_decoys": false}
+      ],
+      "radar_range_km": 80
+    },
+    {
+      "id": "DS_KYIV_S",
+      "name": "Kyiv South (Vasylkiv)",
+      "lat": 50.18,
+      "lon": 30.32,
+      "description": "Mixed defense covering southern Kyiv approaches, includes Gepard SPAAG",
+      "assets": [
+        {"type": "interceptor_drone", "weapon": "octopus", "stock": 60, "range_km": 20, "speed_kmh": 220, "reload_time_s": 12,
+         "kill_probability": {"shahed_136": 0.78, "geran_2": 0.74, "geran_3": 0.40, "gerbera_decoy": 0.80, "unknown": 0.65},
+         "can_discriminate_decoys": true},
+        {"type": "aaa", "weapon": "gepard", "stock": 300, "range_km": 4, "speed_kmh": null, "reload_time_s": 0.1,
+         "kill_probability": {"shahed_136": 0.65, "geran_2": 0.62, "geran_3": 0.35, "gerbera_decoy": 0.60, "unknown": 0.50},
+         "can_discriminate_decoys": false}
+      ],
+      "radar_range_km": 60
+    },
+    {
+      "id": "DS_KYIV_W",
+      "name": "Kyiv West (Zhytomyr highway)",
+      "lat": 50.43,
+      "lon": 30.15,
+      "description": "NASAMS battery + interceptor drones covering western corridor",
+      "assets": [
+        {"type": "sam_missile", "weapon": "nasams", "stock": 24, "range_km": 25, "speed_kmh": null, "reload_time_s": 15,
+         "kill_probability": {"shahed_136": 0.95, "geran_2": 0.93, "geran_3": 0.80, "gerbera_decoy": 0.95, "unknown": 0.85},
+         "can_discriminate_decoys": false},
+        {"type": "interceptor_drone", "weapon": "sting", "stock": 40, "range_km": 15, "speed_kmh": 250, "reload_time_s": 8,
+         "kill_probability": {"shahed_136": 0.82, "geran_2": 0.78, "geran_3": 0.45, "gerbera_decoy": 0.85, "unknown": 0.70},
+         "can_discriminate_decoys": false}
+      ],
+      "radar_range_km": 120
+    },
+    {
+      "id": "DS_KYIV_E",
+      "name": "Kyiv East (Boryspil)",
+      "lat": 50.35,
+      "lon": 30.95,
+      "description": "IRIS-T SLM covering eastern approach, airport defense",
+      "assets": [
+        {"type": "sam_missile", "weapon": "iris_t", "stock": 16, "range_km": 40, "speed_kmh": null, "reload_time_s": 20,
+         "kill_probability": {"shahed_136": 0.93, "geran_2": 0.90, "geran_3": 0.75, "gerbera_decoy": 0.93, "unknown": 0.82},
+         "can_discriminate_decoys": true},
+        {"type": "interceptor_drone", "weapon": "bullet", "stock": 30, "range_km": 12, "speed_kmh": 300, "reload_time_s": 5,
+         "kill_probability": {"shahed_136": 0.88, "geran_2": 0.84, "geran_3": 0.55, "gerbera_decoy": 0.90, "unknown": 0.75},
+         "can_discriminate_decoys": false}
+      ],
+      "radar_range_km": 100
+    },
+    {
+      "id": "DS_VINNYTSIA",
+      "name": "Vinnytsia (transit corridor)",
+      "lat": 49.23,
+      "lon": 28.47,
+      "description": "Forward interceptor base on main Shahed transit corridor from south",
+      "assets": [
+        {"type": "interceptor_drone", "weapon": "bullet", "stock": 40, "range_km": 12, "speed_kmh": 300, "reload_time_s": 5,
+         "kill_probability": {"shahed_136": 0.88, "geran_2": 0.84, "geran_3": 0.55, "gerbera_decoy": 0.90, "unknown": 0.75},
+         "can_discriminate_decoys": false},
+        {"type": "ew", "weapon": "ew_jammer", "stock": 1, "range_km": 30, "speed_kmh": null, "reload_time_s": null,
+         "kill_probability": {"shahed_136": 0.25, "geran_2": 0.20, "geran_3": 0.10, "gerbera_decoy": 0.30, "unknown": 0.15},
+         "can_discriminate_decoys": true}
+      ],
+      "radar_range_km": 80
+    },
+    {
+      "id": "DS_ODESA",
+      "name": "Odesa (port defense)",
+      "lat": 46.48,
+      "lon": 30.74,
+      "description": "IRIS-T + interceptor drones + Gepard defending port infrastructure",
+      "assets": [
+        {"type": "sam_missile", "weapon": "iris_t", "stock": 16, "range_km": 40, "speed_kmh": null, "reload_time_s": 20,
+         "kill_probability": {"shahed_136": 0.93, "geran_2": 0.90, "geran_3": 0.75, "gerbera_decoy": 0.93, "unknown": 0.82},
+         "can_discriminate_decoys": true},
+        {"type": "interceptor_drone", "weapon": "sting", "stock": 50, "range_km": 15, "speed_kmh": 250, "reload_time_s": 8,
+         "kill_probability": {"shahed_136": 0.82, "geran_2": 0.78, "geran_3": 0.45, "gerbera_decoy": 0.85, "unknown": 0.70},
+         "can_discriminate_decoys": false},
+        {"type": "aaa", "weapon": "gepard", "stock": 200, "range_km": 4, "speed_kmh": null, "reload_time_s": 0.1,
+         "kill_probability": {"shahed_136": 0.65, "geran_2": 0.62, "geran_3": 0.35, "gerbera_decoy": 0.60, "unknown": 0.50},
+         "can_discriminate_decoys": false}
+      ],
+      "radar_range_km": 100
+    },
+    {
+      "id": "DS_KHARKIV",
+      "name": "Kharkiv (frontline defense)",
+      "lat": 49.99,
+      "lon": 36.23,
+      "description": "Hawk batteries + interceptor drones, close to Russian launch sites",
+      "assets": [
+        {"type": "sam_missile", "weapon": "hawk", "stock": 20, "range_km": 30, "speed_kmh": null, "reload_time_s": 12,
+         "kill_probability": {"shahed_136": 0.85, "geran_2": 0.82, "geran_3": 0.60, "gerbera_decoy": 0.85, "unknown": 0.75},
+         "can_discriminate_decoys": false},
+        {"type": "interceptor_drone", "weapon": "sting", "stock": 60, "range_km": 15, "speed_kmh": 250, "reload_time_s": 8,
+         "kill_probability": {"shahed_136": 0.82, "geran_2": 0.78, "geran_3": 0.45, "gerbera_decoy": 0.85, "unknown": 0.70},
+         "can_discriminate_decoys": false}
+      ],
+      "radar_range_km": 80
+    },
+    {
+      "id": "DS_DNIPRO",
+      "name": "Dnipro (eastern hub)",
+      "lat": 48.46,
+      "lon": 35.04,
+      "description": "Interceptor drones + EW covering eastern transit routes",
+      "assets": [
+        {"type": "interceptor_drone", "weapon": "bullet", "stock": 45, "range_km": 12, "speed_kmh": 300, "reload_time_s": 5,
+         "kill_probability": {"shahed_136": 0.88, "geran_2": 0.84, "geran_3": 0.55, "gerbera_decoy": 0.90, "unknown": 0.75},
+         "can_discriminate_decoys": false},
+        {"type": "ew", "weapon": "ew_jammer", "stock": 1, "range_km": 30, "speed_kmh": null, "reload_time_s": null,
+         "kill_probability": {"shahed_136": 0.25, "geran_2": 0.20, "geran_3": 0.10, "gerbera_decoy": 0.30, "unknown": 0.15},
+         "can_discriminate_decoys": true}
+      ],
+      "radar_range_km": 80
+    },
+    {
+      "id": "DS_KHMELNYTSKYI",
+      "name": "Khmelnytskyi (western corridor)",
+      "lat": 49.42,
+      "lon": 27.00,
+      "description": "Forward base on western Shahed route through Vinnytsia corridor",
+      "assets": [
+        {"type": "interceptor_drone", "weapon": "sting", "stock": 35, "range_km": 15, "speed_kmh": 250, "reload_time_s": 8,
+         "kill_probability": {"shahed_136": 0.82, "geran_2": 0.78, "geran_3": 0.45, "gerbera_decoy": 0.85, "unknown": 0.70},
+         "can_discriminate_decoys": false}
+      ],
+      "radar_range_km": 60
+    },
+    {
+      "id": "DS_CHERKASY",
+      "name": "Cherkasy (central intercept)",
+      "lat": 49.44,
+      "lon": 32.06,
+      "description": "Central Ukraine intercept point on southern approach routes to Kyiv",
+      "assets": [
+        {"type": "interceptor_drone", "weapon": "octopus", "stock": 30, "range_km": 20, "speed_kmh": 220, "reload_time_s": 12,
+         "kill_probability": {"shahed_136": 0.78, "geran_2": 0.74, "geran_3": 0.40, "gerbera_decoy": 0.80, "unknown": 0.65},
+         "can_discriminate_decoys": true}
+      ],
+      "radar_range_km": 60
+    }
+  ],
+  "validation": {
+    "actual_intercepted": 615,
+    "actual_intercept_rate": 0.87,
+    "notes": "Sim should target 80-90% intercept rate to be realistic. Real rate was ~87%. Fastiv station was destroyed, indicating leakers in the Kyiv western corridor."
+  },
+  "sources": [
+    {"name": "Ukrainian Air Force (via ISIS Comprehensive Review Dec 2025)", "confidence": "verified_osint"},
+    {"name": "Ukrainian interceptor drone deployment reports (Militarnyi, Defense Express)", "confidence": "osint"},
+    {"name": "German Gepard deployment announcements", "confidence": "official"},
+    {"name": "NASAMS/IRIS-T delivery confirmations (Norwegian/German MOD)", "confidence": "official"}
+  ]
+}

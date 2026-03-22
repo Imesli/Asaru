@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { runSimulation } from './engine.js';
+import { generateScenarioRoutes } from './routeGenerator.js';
 
 const WEAPON_PRESETS = {
   interceptor_base: {
@@ -68,21 +69,102 @@ export default function SimPanel({
   const [activeSection, setActiveSection] = useState('attack'); // attack | defense | results
   const [editingSiteId, setEditingSiteId] = useState(null);
   const [comparisonResult, setComparisonResult] = useState(null);
+  const [scenarios, setScenarios] = useState([]);
+  const [loadingScenario, setLoadingScenario] = useState(false);
+  const [scenarioData, setScenarioData] = useState(null); // loaded scenario with attack config + generated routes
   const ticksRef = useRef([]);
   const animRef = useRef(null);
   const lastFrameRef = useRef(0);
 
+  // Load available scenarios
+  useEffect(() => {
+    const base = import.meta.env.BASE_URL;
+    fetch(`${base}data/scenarios/index.json`).then(r => r.json())
+      .then(setScenarios)
+      .catch(() => setScenarios([]));
+  }, []);
+
+  const loadScenario = useCallback((scenarioFile) => {
+    setLoadingScenario(true);
+    const base = import.meta.env.BASE_URL;
+    fetch(`${base}data/scenarios/${scenarioFile}`).then(r => r.json())
+      .then(scenario => {
+        // Load the defense sites from the scenario
+        if (scenario.defense_sites && onUpdateDefenseSites) {
+          onUpdateDefenseSites(scenario.defense_sites);
+        }
+
+        // Check if we have real routes for this scenario's event_id
+        const realRoutes = routes.filter(r => r.event_id === scenario.event_id);
+        if (realRoutes.length > 0) {
+          // Use real routes
+          setSelectedEventId(scenario.event_id);
+          setScenarioData(null);
+        } else {
+          // Generate synthetic routes from scenario attack config
+          const syntheticRoutes = generateScenarioRoutes(scenario);
+          setScenarioData({ ...scenario, generatedRoutes: syntheticRoutes });
+          setSelectedEventId(scenario.event_id || scenario.id);
+        }
+
+        setSimState('idle');
+        setSimResults(null);
+        setComparisonResult(null);
+        setLoadingScenario(false);
+      })
+      .catch(() => setLoadingScenario(false));
+  }, [onUpdateDefenseSites, routes]);
+
   const simableEvents = useMemo(() => {
     const routeEventIds = new Set(routes.map(r => r.event_id));
-    return events.filter(e => routeEventIds.has(e.id)).sort((a, b) => b.date.localeCompare(a.date));
-  }, [events, routes]);
+    const fromData = events.filter(e => routeEventIds.has(e.id));
+    // Also include scenario-loaded events
+    if (scenarioData) {
+      const scenarioEventId = scenarioData.event_id || scenarioData.id;
+      if (!fromData.find(e => e.id === scenarioEventId)) {
+        fromData.push({
+          id: scenarioEventId,
+          date: scenarioData.name,
+          conflict: scenarioData.conflict || 'scenario',
+          totals: {
+            launched_total: scenarioData.attack?.total_launched,
+            intercepted_total: scenarioData.validation?.actual_intercepted,
+          },
+        });
+      }
+    }
+    return fromData.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  }, [events, routes, scenarioData]);
 
   const eventRoutes = useMemo(() => {
     if (!selectedEventId) return [];
+    // If we have scenario-generated routes for this event, use those
+    if (scenarioData && (scenarioData.event_id === selectedEventId || scenarioData.id === selectedEventId)) {
+      return scenarioData.generatedRoutes || [];
+    }
     return routes.filter(r => r.event_id === selectedEventId);
-  }, [routes, selectedEventId]);
+  }, [routes, selectedEventId, scenarioData]);
 
-  const selectedEvent = useMemo(() => events.find(e => e.id === selectedEventId), [events, selectedEventId]);
+  const selectedEvent = useMemo(() => {
+    const fromEvents = events.find(e => e.id === selectedEventId);
+    if (fromEvents) return fromEvents;
+    // Fallback to scenario-generated event
+    if (scenarioData && (scenarioData.event_id === selectedEventId || scenarioData.id === selectedEventId)) {
+      return {
+        id: selectedEventId,
+        date: scenarioData.name,
+        conflict: scenarioData.conflict,
+        totals: {
+          launched_total: scenarioData.attack?.total_launched,
+          intercepted_total: scenarioData.validation?.actual_intercepted,
+        },
+        drone_types: scenarioData.attack?.drone_types?.map(dt => ({
+          model: dt.type, type: dt.type, count: dt.count, speed_kmh: dt.speed_kmh,
+        })),
+      };
+    }
+    return null;
+  }, [events, selectedEventId, scenarioData]);
 
   // Run sim
   const handleRun = useCallback(() => {
@@ -208,6 +290,22 @@ export default function SimPanel({
       {/* ─── ATTACK section ─── */}
       {activeSection === 'attack' && (
         <>
+          {scenarios.length > 0 && (
+            <div className="sim-section">
+              <div className="sim-label">War Game Scenarios</div>
+              <div className="sim-scenarios">
+                {scenarios.map(s => (
+                  <button key={s.id} className="sim-scenario-btn"
+                    onClick={() => loadScenario(s.file)}
+                    disabled={loadingScenario}>
+                    <span className="sim-scenario-name">{s.name}</span>
+                    <span className="sim-scenario-meta">{s.theater.toUpperCase()} — {s.difficulty}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div className="sim-section">
             <label className="sim-label">Attack event</label>
             <select className="sim-select" value={selectedEventId || ''}

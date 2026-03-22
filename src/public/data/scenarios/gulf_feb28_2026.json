@@ -1,0 +1,182 @@
+{
+  "id": "scenario_gulf_feb28_2026",
+  "name": "Iran Strikes the Gulf: Feb 28, 2026",
+  "description": "2,500 total (2,000 drones + 500 missiles) launched by Iran against UAE, Bahrain, Kuwait, and Qatar. First mass drone-and-missile attack on Gulf states. UAE intercepted 1,001 of 1,072 drones detected (~93%). Tests Western SAM-heavy layered defense against saturating swarm attack.",
+  "conflict": "iran_gulf",
+  "event_id": "GULF_20260228_001",
+  "theater": "gulf",
+  "difficulty": "extreme",
+  "attack": {
+    "total_launched": 2500,
+    "drones": 2000,
+    "missiles": 500,
+    "strike_drones": 1400,
+    "decoy_drones": 600,
+    "drone_types": [
+      {"type": "shahed_136", "count": 1100, "speed_kmh": 180},
+      {"type": "mohajer_6", "count": 250, "speed_kmh": 200},
+      {"type": "ababil_3", "count": 350, "speed_kmh": 220},
+      {"type": "shahed_136_decoy", "count": 300, "speed_kmh": 150}
+    ],
+    "missile_types": [
+      {"type": "fateh_110", "count": 350, "speed_kmh": 5400},
+      {"type": "shahab_3", "count": 150, "speed_kmh": 8500}
+    ],
+    "launch_regions": ["Kerman Province", "Fars Province", "Khuzestan Province", "Hormozgan Province", "Sistan-Baluchestan Province"],
+    "waves": 5,
+    "duration_hours": 14,
+    "actual_intercept_rate": 0.93
+  },
+  "defense_sites": [
+    {
+      "id": "DS_ABU_DHABI",
+      "name": "Abu Dhabi (capital defense)",
+      "lat": 24.45,
+      "lon": 54.65,
+      "description": "Primary UAE capital defense with Patriot PAC-3 and THAAD covering Abu Dhabi and surrounding critical infrastructure",
+      "assets": [
+        {"type": "sam_missile", "weapon": "patriot_pac3", "stock": 64, "range_km": 70, "speed_kmh": null, "reload_time_s": 25,
+         "kill_probability": {"shahed_136": 0.97, "mohajer_6": 0.96, "ababil_3": 0.96, "shahed_136_decoy": 0.97, "fateh_110": 0.88, "shahab_3": 0.82, "unknown": 0.85},
+         "can_discriminate_decoys": true},
+        {"type": "sam_missile", "weapon": "thaad", "stock": 48, "range_km": 200, "speed_kmh": null, "reload_time_s": 30,
+         "kill_probability": {"shahed_136": 0.60, "mohajer_6": 0.55, "ababil_3": 0.55, "shahed_136_decoy": 0.60, "fateh_110": 0.92, "shahab_3": 0.90, "unknown": 0.70},
+         "can_discriminate_decoys": true}
+      ],
+      "radar_range_km": 300
+    },
+    {
+      "id": "DS_AL_DHAFRA",
+      "name": "Al Dhafra Air Base (US/UAE)",
+      "lat": 24.25,
+      "lon": 54.55,
+      "description": "US Air Force base southwest of Abu Dhabi. Patriot PAC-3 battery protecting F-35 and tanker fleet",
+      "assets": [
+        {"type": "sam_missile", "weapon": "patriot_pac3", "stock": 32, "range_km": 70, "speed_kmh": null, "reload_time_s": 25,
+         "kill_probability": {"shahed_136": 0.97, "mohajer_6": 0.96, "ababil_3": 0.96, "shahed_136_decoy": 0.97, "fateh_110": 0.88, "shahab_3": 0.82, "unknown": 0.85},
+         "can_discriminate_decoys": true},
+        {"type": "shorad", "weapon": "nasams", "stock": 36, "range_km": 25, "speed_kmh": null, "reload_time_s": 15,
+         "kill_probability": {"shahed_136": 0.95, "mohajer_6": 0.93, "ababil_3": 0.93, "shahed_136_decoy": 0.95, "fateh_110": 0.40, "shahab_3": 0.15, "unknown": 0.80},
+         "can_discriminate_decoys": false}
+      ],
+      "radar_range_km": 200
+    },
+    {
+      "id": "DS_DUBAI",
+      "name": "Dubai (commercial hub defense)",
+      "lat": 25.20,
+      "lon": 55.27,
+      "description": "Pantsir-S1 SHORAD and Patriot covering Dubai airport, Jebel Ali port, and downtown",
+      "assets": [
+        {"type": "sam_missile", "weapon": "patriot_pac3", "stock": 32, "range_km": 70, "speed_kmh": null, "reload_time_s": 25,
+         "kill_probability": {"shahed_136": 0.97, "mohajer_6": 0.96, "ababil_3": 0.96, "shahed_136_decoy": 0.97, "fateh_110": 0.88, "shahab_3": 0.82, "unknown": 0.85},
+         "can_discriminate_decoys": true},
+        {"type": "shorad", "weapon": "pantsir_s1", "stock": 48, "range_km": 18, "speed_kmh": null, "reload_time_s": 3,
+         "kill_probability": {"shahed_136": 0.90, "mohajer_6": 0.88, "ababil_3": 0.88, "shahed_136_decoy": 0.90, "fateh_110": 0.35, "shahab_3": 0.10, "unknown": 0.75},
+         "can_discriminate_decoys": false}
+      ],
+      "radar_range_km": 150
+    },
+    {
+      "id": "DS_FUJAIRAH",
+      "name": "Fujairah (east coast forward defense)",
+      "lat": 25.12,
+      "lon": 56.33,
+      "description": "Forward Pantsir-S1 battery on UAE east coast, first line of defense against Iranian drones crossing the Gulf of Oman",
+      "assets": [
+        {"type": "shorad", "weapon": "pantsir_s1", "stock": 36, "range_km": 18, "speed_kmh": null, "reload_time_s": 3,
+         "kill_probability": {"shahed_136": 0.90, "mohajer_6": 0.88, "ababil_3": 0.88, "shahed_136_decoy": 0.90, "fateh_110": 0.35, "shahab_3": 0.10, "unknown": 0.75},
+         "can_discriminate_decoys": false}
+      ],
+      "radar_range_km": 80
+    },
+    {
+      "id": "DS_AL_UDEID",
+      "name": "Al Udeid Air Base (US/Qatar)",
+      "lat": 25.12,
+      "lon": 51.31,
+      "description": "CENTCOM forward HQ. Patriot PAC-3 and THAAD defending the most important US military installation in the Gulf",
+      "assets": [
+        {"type": "sam_missile", "weapon": "patriot_pac3", "stock": 64, "range_km": 70, "speed_kmh": null, "reload_time_s": 25,
+         "kill_probability": {"shahed_136": 0.97, "mohajer_6": 0.96, "ababil_3": 0.96, "shahed_136_decoy": 0.97, "fateh_110": 0.88, "shahab_3": 0.82, "unknown": 0.85},
+         "can_discriminate_decoys": true},
+        {"type": "sam_missile", "weapon": "thaad", "stock": 48, "range_km": 200, "speed_kmh": null, "reload_time_s": 30,
+         "kill_probability": {"shahed_136": 0.60, "mohajer_6": 0.55, "ababil_3": 0.55, "shahed_136_decoy": 0.60, "fateh_110": 0.92, "shahab_3": 0.90, "unknown": 0.70},
+         "can_discriminate_decoys": true}
+      ],
+      "radar_range_km": 300
+    },
+    {
+      "id": "DS_DOHA",
+      "name": "Doha (Qatar capital defense)",
+      "lat": 25.29,
+      "lon": 51.53,
+      "description": "Qatari Patriot PAC-3 battery protecting capital, LNG terminals at Ras Laffan, and The Pearl",
+      "assets": [
+        {"type": "sam_missile", "weapon": "patriot_pac3", "stock": 32, "range_km": 70, "speed_kmh": null, "reload_time_s": 25,
+         "kill_probability": {"shahed_136": 0.97, "mohajer_6": 0.96, "ababil_3": 0.96, "shahed_136_decoy": 0.97, "fateh_110": 0.88, "shahab_3": 0.82, "unknown": 0.85},
+         "can_discriminate_decoys": true}
+      ],
+      "radar_range_km": 200
+    },
+    {
+      "id": "DS_BAHRAIN",
+      "name": "Bahrain (ISA Air Base / US 5th Fleet)",
+      "lat": 26.22,
+      "lon": 50.59,
+      "description": "Patriot PAC-2 and Hawk batteries defending US Naval Support Activity and Bahrain international airport",
+      "assets": [
+        {"type": "sam_missile", "weapon": "patriot_pac2", "stock": 32, "range_km": 70, "speed_kmh": null, "reload_time_s": 25,
+         "kill_probability": {"shahed_136": 0.92, "mohajer_6": 0.90, "ababil_3": 0.90, "shahed_136_decoy": 0.92, "fateh_110": 0.78, "shahab_3": 0.65, "unknown": 0.80},
+         "can_discriminate_decoys": false},
+        {"type": "sam_missile", "weapon": "hawk", "stock": 24, "range_km": 30, "speed_kmh": null, "reload_time_s": 12,
+         "kill_probability": {"shahed_136": 0.85, "mohajer_6": 0.82, "ababil_3": 0.82, "shahed_136_decoy": 0.85, "fateh_110": 0.50, "shahab_3": 0.20, "unknown": 0.70},
+         "can_discriminate_decoys": false}
+      ],
+      "radar_range_km": 150
+    },
+    {
+      "id": "DS_KUWAIT_CITY",
+      "name": "Kuwait City (Ali Al Salem / Camp Arifjan)",
+      "lat": 29.23,
+      "lon": 47.97,
+      "description": "Patriot PAC-3 and Hawk defending Kuwait City, oil infrastructure, and US Army Camp Arifjan",
+      "assets": [
+        {"type": "sam_missile", "weapon": "patriot_pac3", "stock": 48, "range_km": 70, "speed_kmh": null, "reload_time_s": 25,
+         "kill_probability": {"shahed_136": 0.97, "mohajer_6": 0.96, "ababil_3": 0.96, "shahed_136_decoy": 0.97, "fateh_110": 0.88, "shahab_3": 0.82, "unknown": 0.85},
+         "can_discriminate_decoys": true},
+        {"type": "sam_missile", "weapon": "hawk", "stock": 24, "range_km": 30, "speed_kmh": null, "reload_time_s": 12,
+         "kill_probability": {"shahed_136": 0.85, "mohajer_6": 0.82, "ababil_3": 0.82, "shahed_136_decoy": 0.85, "fateh_110": 0.50, "shahab_3": 0.20, "unknown": 0.70},
+         "can_discriminate_decoys": false}
+      ],
+      "radar_range_km": 200
+    },
+    {
+      "id": "DS_BUBIYAN",
+      "name": "Bubiyan Island (Kuwait forward)",
+      "lat": 29.78,
+      "lon": 48.32,
+      "description": "Forward Hawk battery on Kuwait's northern island, early intercept of Iranian threats from Iraqi airspace",
+      "assets": [
+        {"type": "sam_missile", "weapon": "hawk", "stock": 16, "range_km": 30, "speed_kmh": null, "reload_time_s": 12,
+         "kill_probability": {"shahed_136": 0.85, "mohajer_6": 0.82, "ababil_3": 0.82, "shahed_136_decoy": 0.85, "fateh_110": 0.50, "shahab_3": 0.20, "unknown": 0.70},
+         "can_discriminate_decoys": false}
+      ],
+      "radar_range_km": 100
+    }
+  ],
+  "validation": {
+    "actual_intercepted": 2325,
+    "actual_intercept_rate": 0.93,
+    "notes": "Sim should target 90-95% intercept rate to be realistic. UAE reported 1,001/1,072 drones intercepted (~93%). Bahrain destroyed 123. Kuwait intercepted 384. Qatar intercepted 24/39. Key concern is SAM ammo depletion — Patriots are expensive ($3-4M per interceptor) and limited in stock vs cheap mass drones ($20-50K each). Residual leakers likely hit oil infrastructure and military installations."
+  },
+  "sources": [
+    {"name": "UAE Ministry of Defence intercept figures (1,072 detected, 1,001 intercepted)", "confidence": "official"},
+    {"name": "Bahrain Defence Force statement (123 destroyed)", "confidence": "official"},
+    {"name": "Kuwait Ministry of Defence (384 intercepted)", "confidence": "official"},
+    {"name": "Qatar MOD statement (39 detected, 24 intercepted)", "confidence": "official"},
+    {"name": "CENTCOM statements on Al Udeid and Al Dhafra defense operations", "confidence": "official"},
+    {"name": "Defense News, CNBC, Al Jazeera reporting on Iranian drone/missile types", "confidence": "news_report"},
+    {"name": "OSINT analysis of Iranian launch sites (Telegram, X/Twitter)", "confidence": "osint"},
+    {"name": "IISS Military Balance — Gulf state air defense inventories", "confidence": "verified_osint"}
+  ]
+}
