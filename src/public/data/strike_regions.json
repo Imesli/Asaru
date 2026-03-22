@@ -1,0 +1,145 @@
+{
+  "description": "Iran's expanding drone and missile strike envelope, March 2026",
+  "last_updated": "2026-03-22",
+  "launch_sites": [
+    {
+      "name": "Isfahan (central staging)",
+      "lat": 32.65,
+      "lon": 51.68,
+      "type": "drone_and_missile"
+    },
+    {
+      "name": "Chabahar (southeast, Indian Ocean access)",
+      "lat": 25.29,
+      "lon": 60.64,
+      "type": "drone_and_missile"
+    },
+    {
+      "name": "Bandar Abbas (Strait of Hormuz)",
+      "lat": 27.19,
+      "lon": 56.27,
+      "type": "drone_and_missile"
+    },
+    {
+      "name": "Shiraz (southwest staging)",
+      "lat": 29.59,
+      "lon": 52.58,
+      "type": "drone"
+    },
+    {
+      "name": "Kermanshah (western staging)",
+      "lat": 34.31,
+      "lon": 47.06,
+      "type": "missile"
+    }
+  ],
+  "range_rings": [
+    {
+      "label": "Shahed-136 / Geran-2 range",
+      "range_km": 2500,
+      "color": [239, 68, 68],
+      "type": "drone",
+      "notes": "Covers all Gulf states, Iraq, parts of Pakistan, eastern Mediterranean"
+    },
+    {
+      "label": "Geran-3 (jet variant) range",
+      "range_km": 1500,
+      "color": [245, 158, 11],
+      "type": "drone_fast",
+      "notes": "Faster but shorter range, 600km/h, harder to intercept"
+    },
+    {
+      "label": "Ballistic missile range (Fateh-110)",
+      "range_km": 700,
+      "color": [192, 132, 252],
+      "type": "missile_srbm",
+      "notes": "Short-range ballistic, covers Gulf states"
+    },
+    {
+      "label": "MRBM range (Shahab-3 / Emad)",
+      "range_km": 2000,
+      "color": [244, 114, 182],
+      "type": "missile_mrbm",
+      "notes": "Medium-range ballistic missiles"
+    },
+    {
+      "label": "Extended range (Khorramshahr / cruise)",
+      "range_km": 3500,
+      "color": [239, 68, 68],
+      "type": "missile_extended",
+      "notes": "Reaches Diego Garcia, eastern Africa, parts of southern Asia"
+    }
+  ],
+  "confirmed_targets": [
+    {
+      "name": "UAE",
+      "lat": 24.45,
+      "lon": 54.65,
+      "distance_from_iran_km": 850,
+      "drones_detected": 1072,
+      "drones_intercepted": 1001,
+      "status": "active_target"
+    },
+    {
+      "name": "Bahrain",
+      "lat": 26.07,
+      "lon": 50.55,
+      "distance_from_iran_km": 750,
+      "drones_detected": null,
+      "drones_intercepted": 123,
+      "status": "active_target"
+    },
+    {
+      "name": "Kuwait",
+      "lat": 29.38,
+      "lon": 47.99,
+      "distance_from_iran_km": 650,
+      "drones_detected": null,
+      "drones_intercepted": 384,
+      "status": "active_target"
+    },
+    {
+      "name": "Qatar",
+      "lat": 25.29,
+      "lon": 51.53,
+      "distance_from_iran_km": 680,
+      "drones_detected": 39,
+      "drones_intercepted": 24,
+      "status": "active_target"
+    },
+    {
+      "name": "Diego Garcia (US/UK base)",
+      "lat": -7.32,
+      "lon": 72.42,
+      "distance_from_iran_km": 4100,
+      "drones_detected": null,
+      "drones_intercepted": null,
+      "status": "within_expanded_range",
+      "notes": "Now within strike envelope following range expansion, March 2026"
+    },
+    {
+      "name": "Al Udeid Air Base (US, Qatar)",
+      "lat": 25.12,
+      "lon": 51.31,
+      "distance_from_iran_km": 700,
+      "drones_detected": null,
+      "drones_intercepted": null,
+      "status": "high_value_target"
+    },
+    {
+      "name": "Al Dhafra Air Base (US, UAE)",
+      "lat": 24.25,
+      "lon": 54.55,
+      "distance_from_iran_km": 830,
+      "drones_detected": null,
+      "drones_intercepted": null,
+      "status": "high_value_target"
+    }
+  ],
+  "sources": [
+    {"name": "Gulf state defence ministry statements", "confidence": "official"},
+    {"name": "CENTCOM statements", "confidence": "official"},
+    {"name": "CSIS missile threat project", "confidence": "verified_osint"},
+    {"name": "News reporting (Defense News, CNBC, Al Jazeera)", "confidence": "news_report"}
+  ]
+}

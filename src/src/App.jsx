@@ -60,14 +60,17 @@ function App() {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [activeTab, setActiveTab] = useState('sit');
   const [mapHighlight, setMapHighlight] = useState(null);
+  const [sidebarOpen, setSidebarOpen] = useState(() => window.innerWidth >= 768);
   const [layers, setLayers] = useState({
     arcs: true,
     routes: true,
     launches: true,
     targets: true,
     labels: true,
+    iranReach: false,
   });
   const [defenseSites, setDefenseSites] = useState([]);
+  const [iranStrikeRegions, setIranStrikeRegions] = useState(null);
   const [simTick, setSimTick] = useState(null);
   const [simResults, setSimResults] = useState(null);
   const [placeSiteMode, setPlaceSiteMode] = useState(null); // null or preset key string
@@ -112,10 +115,12 @@ function App() {
       fetch(`${base}data/events.json`).then(r => r.json()),
       fetch(`${base}data/routes.json`).then(r => r.json()),
       fetch(`${base}data/defense_sites.json`).then(r => r.json()).catch(() => []),
-    ]).then(([evts, rts, sites]) => {
+      fetch(`${base}data/strike_regions.json`).then(r => r.json()).catch(() => null),
+    ]).then(([evts, rts, sites, strikeRegions]) => {
       setEvents(evts);
       setRoutes(rts);
       setDefenseSites(sites);
+      setIranStrikeRegions(strikeRegions);
       setBootCounts({ events: evts.length, routes: rts.length, sites: sites.length });
       setLoading(false);
     });
@@ -550,7 +555,14 @@ function App() {
 
   return (
     <div className="app">
-      <div className="sidebar">
+      <button
+        className="mobile-toggle"
+        onClick={() => setSidebarOpen(prev => !prev)}
+        aria-label="Toggle sidebar"
+      >
+        {sidebarOpen ? '\u2715' : '\u2630'}
+      </button>
+      <div className={`sidebar ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
         <div className="sidebar-header">
           <div className="sh-top">
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -620,6 +632,7 @@ function App() {
           simMode={activeTab === 'sim'}
           placeSiteMode={placeSiteMode}
           onPlaceSite={handleMapPlaceSite}
+          iranStrikeRegions={iranStrikeRegions}
         />
       </div>
     </div>

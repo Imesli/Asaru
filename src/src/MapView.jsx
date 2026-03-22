@@ -53,6 +53,7 @@ const LAYER_DEFS = [
   { key: 'launches', label: 'Launch sites', color: '#34d399' },
   { key: 'targets', label: 'Targets', color: '#ef4444' },
   { key: 'labels', label: 'Labels', color: '#ffffff' },
+  { key: 'iranReach', label: 'Iran strike range', color: '#ef4444' },
 ];
 
 const WEAPON_PRESETS = {
@@ -109,7 +110,7 @@ const WEAPON_PRESETS = {
   },
 };
 
-export default function MapView({ events, routes, selectedEvent, onSelectEvent, mapHighlight, visibleLayers = {}, onToggleLayer, simTick, defenseSites = [], simMode = false, placeSiteMode = null, onPlaceSite }) {
+export default function MapView({ events, routes, selectedEvent, onSelectEvent, mapHighlight, visibleLayers = {}, onToggleLayer, simTick, defenseSites = [], simMode = false, placeSiteMode = null, onPlaceSite, iranStrikeRegions = null }) {
   const [tooltip, setTooltip] = useState(null);
   const [showLayerPanel, setShowLayerPanel] = useState(false);
 
@@ -456,6 +457,89 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
       getCollisionPriority: d => d.eventCount,
     }),
 
+    // ── Iran strike range overlay ──
+
+    // Range rings from Iranian launch sites
+    !simMode && visibleLayers.iranReach !== false && iranStrikeRegions && iranStrikeRegions.launch_sites.flatMap(site =>
+      iranStrikeRegions.range_rings.map(ring => new ScatterplotLayer({
+        id: `iran-range-${site.name}-${ring.label}`.replace(/\s/g, '_'),
+        data: [{ position: [site.lon, site.lat], range_km: ring.range_km, color: ring.color, label: ring.label }],
+        getPosition: d => d.position,
+        getFillColor: [0, 0, 0, 0],
+        getRadius: d => d.range_km * 1000,
+        stroked: true,
+        getLineColor: d => [...d.color, 20],
+        lineWidthMinPixels: 1,
+      }))
+    ),
+
+    // Iranian launch site markers
+    !simMode && visibleLayers.iranReach !== false && iranStrikeRegions && new ScatterplotLayer({
+      id: 'iran-launch-sites',
+      data: iranStrikeRegions.launch_sites,
+      getPosition: d => [d.lon, d.lat],
+      getFillColor: [239, 68, 68, 200],
+      getRadius: 12000,
+      radiusMinPixels: 5,
+      radiusMaxPixels: 12,
+      stroked: true,
+      getLineColor: [239, 68, 68, 60],
+      lineWidthMinPixels: 2,
+      pickable: true,
+      onHover: handleHover,
+    }),
+
+    // Confirmed target markers (diamond-shaped via larger radius + label)
+    !simMode && visibleLayers.iranReach !== false && iranStrikeRegions && new ScatterplotLayer({
+      id: 'iran-targets',
+      data: iranStrikeRegions.confirmed_targets,
+      getPosition: d => [d.lon, d.lat],
+      getFillColor: d => d.status === 'within_expanded_range' ? [245, 158, 11, 160] : [239, 68, 68, 160],
+      getRadius: d => d.status === 'within_expanded_range' ? 14000 : 10000,
+      radiusMinPixels: 4,
+      radiusMaxPixels: 10,
+      stroked: true,
+      getLineColor: d => d.status === 'within_expanded_range' ? [245, 158, 11, 60] : [239, 68, 68, 60],
+      lineWidthMinPixels: 1,
+      pickable: true,
+      onHover: handleHover,
+    }),
+
+    // Iran target labels
+    !simMode && visibleLayers.iranReach !== false && iranStrikeRegions && new TextLayer({
+      id: 'iran-target-labels',
+      data: iranStrikeRegions.confirmed_targets,
+      getPosition: d => [d.lon, d.lat],
+      getText: d => {
+        const intercepted = d.drones_intercepted != null ? ` (${d.drones_intercepted} int.)` : '';
+        return `${d.name}${intercepted}`;
+      },
+      getSize: 10,
+      getColor: d => d.status === 'within_expanded_range' ? [245, 158, 11, 180] : [239, 68, 68, 180],
+      getTextAnchor: 'start',
+      getPixelOffset: [14, 0],
+      fontFamily: '-apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+      fontWeight: 500,
+      outlineWidth: 2,
+      outlineColor: [8, 9, 14, 220],
+    }),
+
+    // Iran launch site labels
+    !simMode && visibleLayers.iranReach !== false && iranStrikeRegions && new TextLayer({
+      id: 'iran-launch-labels',
+      data: iranStrikeRegions.launch_sites,
+      getPosition: d => [d.lon, d.lat],
+      getText: d => d.name,
+      getSize: 9,
+      getColor: [239, 68, 68, 140],
+      getTextAnchor: 'start',
+      getPixelOffset: [14, 0],
+      fontFamily: '-apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+      fontWeight: 500,
+      outlineWidth: 2,
+      outlineColor: [8, 9, 14, 220],
+    }),
+
     // ── Sim layers ──
 
     // Defense site markers (blue diamonds)
@@ -486,6 +570,21 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
       stroked: true,
       getLineColor: [59, 130, 246, 25],
       lineWidthMinPixels: 1,
+    }),
+
+    // Defense site active glow (pulsing ring when sim is running)
+    simTick && defenseSites.length > 0 && new ScatterplotLayer({
+      id: 'defense-active-glow',
+      data: defenseSites,
+      getPosition: d => [d.lon, d.lat],
+      getFillColor: [59, 130, 246, 15 + (simTick.time % 15) * 2],
+      getRadius: 18000 + (simTick.time % 15) * 600,
+      radiusMinPixels: 12,
+      radiusMaxPixels: 28,
+      stroked: true,
+      getLineColor: [59, 130, 246, 40 + (simTick.time % 15) * 3],
+      lineWidthMinPixels: 1,
+      updateTriggers: { getFillColor: [simTick.time], getRadius: [simTick.time], getLineColor: [simTick.time] },
     }),
 
     // Defense site labels
@@ -520,27 +619,33 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
       updateTriggers: { getPath: [simTick.time], getColor: [simTick.time] },
     }),
 
-    // Engagement lines (defense site → drone)
-    simTick && simTick.engagementLines && simTick.engagementLines.length > 0 && new LineLayer({
+    // Engagement arcs (defense site → drone) — green kills, red misses
+    simTick && simTick.engagementLines && simTick.engagementLines.length > 0 && new ArcLayer({
       id: 'sim-engagements',
       data: simTick.engagementLines,
       getSourcePosition: d => [d.from[1], d.from[0]],
       getTargetPosition: d => [d.to[1], d.to[0]],
-      getColor: d => d.outcome === 'intercepted' ? [52, 211, 153, 200] : [239, 68, 68, 150],
-      getWidth: 2,
-      widthMinPixels: 1,
+      getSourceColor: d => d.outcome === 'intercepted' ? [52, 211, 153, 200] : [239, 68, 68, 150],
+      getTargetColor: d => d.outcome === 'intercepted' ? [52, 211, 153, 120] : [239, 68, 68, 80],
+      getWidth: 3,
+      greatCircle: false,
+      updateTriggers: { getSourcePosition: [simTick.time], getTargetPosition: [simTick.time] },
     }),
 
-    // Sim drone positions (animated dots during playback)
+    // Sim drone positions (animated dots during playback) — colored by type
     simTick && new ScatterplotLayer({
       id: 'sim-drones',
       data: simTick.drones.filter(d => d.status === 'inbound'),
       getPosition: d => [d.position[1], d.position[0]],
-      getFillColor: [255, 200, 50, 220],
+      getFillColor: d => {
+        if (d.isDecoy) return [148, 163, 184, 180];       // grey-ish decoys
+        if (d.droneType === 'geran_3') return [249, 115, 22, 240]; // bright orange fast movers
+        return [255, 200, 50, 220];                        // yellow regular strike
+      },
       getRadius: 6000,
       radiusMinPixels: 4,
       radiusMaxPixels: 10,
-      updateTriggers: { getPosition: [simTick.time] },
+      updateTriggers: { getPosition: [simTick.time], getFillColor: [simTick.time] },
     }),
 
     // Sim intercepted markers (green dot)
@@ -572,7 +677,22 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
       lineWidthMinPixels: 2,
       updateTriggers: { getPosition: [simTick.time] },
     }),
-  ].filter(Boolean);
+
+    // Sim leaker threat rings — pulsing danger zone around leakers
+    simTick && new ScatterplotLayer({
+      id: 'sim-leaker-threat',
+      data: simTick.drones.filter(d => d.status === 'hit_target'),
+      getPosition: d => [d.position[1], d.position[0]],
+      getFillColor: [239, 68, 68, 30],
+      getRadius: 25000 + (simTick.time % 20) * 1500,
+      radiusMinPixels: 14,
+      radiusMaxPixels: 40,
+      stroked: true,
+      getLineColor: [239, 68, 68, 50],
+      lineWidthMinPixels: 1,
+      updateTriggers: { getPosition: [simTick.time], getRadius: [simTick.time] },
+    }),
+  ].flat().filter(Boolean);
 
   // ── Tooltip ──
 
@@ -609,6 +729,13 @@ export default function MapView({ events, routes, selectedEvent, onSelectEvent, 
       const weapons = object.assets.map(a => a.weapon).join(', ');
       sub = `${weapons} \u2014 ${totalStock} total stock`;
       detail = `Radar: ${object.radar_range_km || '?'}km`;
+    } else if (layerId === 'iran-launch-sites') {
+      title = `IRAN LAUNCH: ${object.name}`;
+      sub = `Type: ${object.type.replace(/_/g, ' ')}`;
+    } else if (layerId === 'iran-targets') {
+      title = object.name;
+      sub = object.drones_intercepted != null ? `${object.drones_intercepted} intercepted` : object.status.replace(/_/g, ' ');
+      detail = `${object.distance_from_iran_km}km from Iran${object.notes ? ' \u2014 ' + object.notes : ''}`;
     }
 
     return (
